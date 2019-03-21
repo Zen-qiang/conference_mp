@@ -58,12 +58,12 @@ Page({
       }
       app.nPost(data).then(res => {
         app.showMsg("登录成功");
-        console.log('999')
-        app.saveValue('sessionKey', res.datasessionToken);
         if (res.data) {
-          wx.navigateTo({
-            url: '/pages/index/index',
+          wx.reLaunch({
+            url: '/pages/home/home',
           })
+          app.saveValue('sessionKey', res.datasessionToken);
+          app.saveValue('loginData', res.data);
         }
       }, res => {
       });
