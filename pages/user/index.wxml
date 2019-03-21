@@ -2,14 +2,23 @@
 <view class="box">
   <!-- 头部卡片 -->
   <view class="top-card">
-    <view class="head-img-box">
-      <image src="../../common/resource/default.jpg" mode="widthFix"></image>
+    <view class="top-card-left">
+      <view class="head-img-box">
+        <image src="../../common/resource/default.jpg" mode="widthFix"></image>
+      </view>
+      <view class="top-card-left-text">
+        <view>南通鸿翔管理员</view>
+        <view>南通鸿翔贸易有限公司</view>
+      </view>
     </view>
-    <view class="set-icon"></view>
+    <view class="set-icon">
+      <image src="../../common/resource/set.png" mode="widthFix"></image>
+    </view>
   </view>
   <!-- 中上切换 -->
   <view class="switch">
-    <view class="switch-icon">切换</view>
+    <text>阿迪达斯订货会2</text>
+    <view class="switch-icon" bindtap='switch'>切换</view>
   </view>
   <!-- 中间表格 -->
   <view class="center-table">
@@ -25,7 +34,14 @@
   <!-- 底部cell -->
   <view class="cell-list">
     <view>最新状态</view>
-    <view></view>
+    <view class="cell-list-right">
+      <view class="point-box">
+        <view></view>
+      </view>
+      <view class="arrow-right">
+        <image src="../../common/resource/arrow-right.png" mode="widthFix"></image>
+      </view>
+    </view>
   </view>
 
 </view>

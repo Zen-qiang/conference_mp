@@ -1,7 +1,7 @@
 <!--pages/login/index.wxml-->
 <view class="login">
   <view class="top-img">
-    <van-icon name="wap-home" size="40px"></van-icon>
+    <image src="../../common/resource/ad.png" mode="widthFix"></image>
   </view>
   <!-- 账号 -->
   <view class="login-name">

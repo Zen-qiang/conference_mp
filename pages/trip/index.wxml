@@ -27,10 +27,10 @@
                 </view>
               </view>
             </view>
-            <van-field value="{{ username }}" clearable input-align="right" label="到达城市" placeholder="请输入到达城市" bind:click-icon="onClickIcon" />
-            <van-field value="{{ username }}" clearable input-align="right" label="到达地点" placeholder="请输入到达地点" bind:click-icon="onClickIcon" />
-            <van-field value="{{ username }}" clearable input-align="right" label="到达时间" placeholder="请输入到达地点" bind:click-icon="onClickIcon" />
-            <van-field value="{{ username }}" clearable input-align="right" label="班次号" placeholder="请输入班次号" bind:click-icon="onClickIcon" />
+            <van-field value="{{ city }}" clearable input-align="right" label="到达城市" placeholder="请输入到达城市"  bind:blur="blur"/>
+            <van-field value="{{ addr }}" clearable input-align="right" label="到达地点" placeholder="请输入到达地点"  />
+            <van-field value="{{ time }}" clearable input-align="right" label="到达时间" placeholder="请输入到达时间"  />
+            <van-field value="{{ shifts }}" clearable input-align="right" label="班次号" placeholder="请输入班次号"  />
           </van-cell-group>
 
         </view>

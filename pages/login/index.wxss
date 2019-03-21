@@ -8,9 +8,11 @@
 .top-img {
   width: 300rpx;
   height: 100rpx;
-  background-color: red;
   margin: 0 auto;
   margin-bottom: 100rpx;
+}
+.top-img image {
+    width: 300rpx;
 }
 /* 账号 */
 .login-name {

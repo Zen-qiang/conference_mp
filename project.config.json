@@ -4,11 +4,12 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"autoAudits": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.2",
@@ -51,22 +52,23 @@
 				},
 				{
 					"id": -1,
-					"name": "行程",
-					"pathName": "pages/trip/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "行程完成",
-					"pathName": "pages/finishTrip/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
 					"name": "添加人员",
 					"pathName": "pages/addPerson/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "行程",
+					"pathName": "pages/activetab/activetab",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "行程信息",
+					"pathName": "pages/trip/index",
+					"query": "",
 					"scene": null
 				}
 			]
