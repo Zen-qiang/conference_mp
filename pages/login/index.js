@@ -46,9 +46,9 @@ Page({
   },
   // 登陆
   login() {
+    console.log('11')
+
     if (this.data.nameValue && this.data.passValue) {
-    // 账号密码都不为空
-    // 登陆请求login
       var data = {
         url: config.login,
         params: {
@@ -59,20 +59,15 @@ Page({
       app.nPost(data).then(res => {
         app.showMsg("登录成功");
         if (res.data) {
+          wx.reLaunch({
+            url: '/pages/home/home',
+          })
+          app.saveValue('sessionKey', res.datasessionToken);
+          app.saveValue('loginData', res.data);
         }
-        app.saveValue('uid', res.data.uid);
-        app.saveValue('sessionKey', res.data.sessionToken);
       }, res => {
-        this.setData({
-          show: false,
-          disabled: false
-        })
-        // console.error(res);
       });
-      return false
     } else {
-      //账号 或 密码 为空
-      app.showMsg("请输入账号或密码！");
     }
   },
   // 账号清除

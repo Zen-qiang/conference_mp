@@ -14,6 +14,21 @@
   padding: 0 30rpx;
   box-sizing: border-box;
 }
+.top-card-left {
+  display: flex;
+  justify-content: flex-start;
+}
+.top-card-left-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 30rpx;
+  font-size: 12px;
+  color: #fff;
+}
+.top-card-left-text view:nth-child(1) {
+  font-size: 14px;
+}
 .head-img-box {
   width: 200rpx;
   height: 200rpx;
@@ -27,19 +42,24 @@
 .set-icon {
   width: 50rpx;
   height: 50rpx;
-  background-color: green;
   margin: auto 0;
+}
+.set-icon image {
+    width: 50rpx;
+  height: 50rpx;
 }
 /* 中上  切换按钮 */
 .switch {
   width: 100%;
   height: 100rpx;
+  line-height: 100rpx;
+  font-size: 14px;
   background-color: #fff;
-  display: flex;
-  justify-content: flex-end;
   border-bottom: 1px solid #ddd;
   padding: 0 30rpx;
   box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
 }
 .switch-icon {
   width: 100rpx;
@@ -95,7 +115,7 @@
 .cell-list {
   width: 100%;
   height: 100rpx;
-  line-height: 100rpx;
+  line-height: 90rpx;
   display: flex;
   justify-content: space-between;
   border-top: 1px solid #ddd;
@@ -105,4 +125,28 @@
   background-color: #fff;
   margin-top: 20rpx;
   font-size: 14px;
+}
+.cell-list-right {
+  display: flex;
+}
+.point-box {
+  height: 100rpx;
+  padding-top: 31.5rpx;
+  box-sizing: border-box;
+}
+.point-box view {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  background: #5dcf58;
+  border: 1px solid #ccf4cb;
+}
+.arrow-right {
+  width: 40rpx;
+  height: 40rpx;
+}
+.arrow-right image {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
 }

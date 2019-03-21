@@ -1,16 +1,11 @@
-// pages/finishTrip/index.js
+// pages/meeting/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    // tab 是否禁用
-    disabled: false,
-    // 显示下划线
-    activeNum: 0,
-    changeName: '编辑',
-    showClearBtn: false
+    switchName: '切换'
   },
 
   /**
@@ -33,31 +28,16 @@ Page({
   onShow: function () {
 
   },
-  // 点击 编辑
-  showClearIcon() {
-    this.setData({
-      showClearBtn: !this.data.showClearBtn
-    })
-    if(this.data.changeName == '编辑') {
+  switch() {
+    if (this.data.switchName == '切换') {
       this.setData({
-        changeName: '完成'
+        switchName: '当前会务'
       })
     }else{
       this.setData({
-        changeName: '编辑'
+        switchName: '切换'
       })
     }
-  },
-  // 点击 + 
-  addPerson() {
-    wx.navigateTo({
-      url: '/pages/trip/index?activeNum=' + this.data.activeNum,
-    })
-  },
-  // 点击 底部我的专车 按钮
-  toCar() {
-    wx.navigateTo({
-    })
   },
   /**
    * 生命周期函数--监听页面隐藏

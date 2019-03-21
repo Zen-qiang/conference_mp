@@ -1,0 +1,86 @@
+/* pages/meeting/index.wxss */
+.meeting {
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+  padding-top: 20rpx;
+  box-sizing: border-box;
+}
+.card {
+  width: 100%;
+  height: 300rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.card-top {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1px dashed #ccc;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+
+}
+.switch-icon {
+  min-width: 100rpx;
+  height: 50rpx;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+  border: 1px solid #0cb4ce;
+  background-color: #edf9f8;
+  color: #0cb4ce;
+  border-radius: 10rpx;
+  margin: auto 0;
+  text-align: center;
+  line-height: 50rpx;
+}
+.switch-icon-active {
+  background-color: #0cb4ce;
+    border-radius: 10rpx;
+  color: #fff;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+   height: 50rpx;
+     margin: auto 0;
+  text-align: center;
+  line-height: 50rpx;
+}
+.card-center {
+  display: flex;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+}
+.card-center-left {
+  width: 220rpx;
+  height: 150rpx;
+}
+.card-center-left image {
+    width: 220rpx;
+  height: 150rpx;
+}
+.card-center-right {
+  margin-left: 30rpx;
+  font-size: 12px;
+}
+.status-left {
+  margin-right: 70rpx;
+}
+.point {
+  display: inline-block;
+  width: 15rpx;
+  height: 15rpx;
+  border-radius: 50%;
+  background: #5dcf58;
+  border: 1px solid #ccf4cb;
+}
+.personNum {
+  color: #0cb4ce;
+}
+.addr {
+  margin: 10rpx 0;
+}
+.startTime {
+  margin-right: 30rpx;
+}

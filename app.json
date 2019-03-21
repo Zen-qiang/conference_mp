@@ -10,7 +10,8 @@
     "pages/activetab/activetab",
     "pages/acconmmodation/acconmmodation",
     "pages/sendcar/sendcar",
-    "pages/index/index"
+    "pages/index/index",
+    "pages/meeting/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

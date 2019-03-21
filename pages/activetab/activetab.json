@@ -1,3 +1,7 @@
 {
-  "navigationBarTitleText": "行程"
+  "navigationBarTitleText": "行程",
+  "usingComponents": {
+    "van-tab": "/common/lib/vantUI/tab/index",
+    "van-tabs": "/common/lib/vantUI/tabs/index"
+  }
 }

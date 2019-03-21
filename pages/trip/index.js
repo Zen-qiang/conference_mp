@@ -89,6 +89,13 @@ Page({
       showList: !this.data.showList
     })
   },
+  onClickIcon() {
+    console.log('22')
+  },
+  blur(e) {
+    console.log(e)
+    console.log('444')
+  },
   /**
    * 返回
    */

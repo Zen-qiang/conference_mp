@@ -36,6 +36,11 @@ Page({
   onShow: function () {
 
   },
+  switch() {
+    wx.navigateTo({
+      url: '/pages/meeting/index',
+    })
+  },
   //  根据点击的信息 跳转
   toPage(e) {
     let content = e.currentTarget.dataset.content
@@ -48,7 +53,7 @@ Page({
         break;
       case '行程安排':
         wx.navigateTo({
-          url: '/pages/finishTrip/index',
+          // url: '/pages/activetable/index',
         })
         break;
       case '派车管理':

@@ -1,0 +1,28 @@
+<!--pages/meeting/index.wxml-->
+<view class="meeting">
+  <view class="card">
+    <view class="card-top">
+      <text>阿迪达斯订货会2</text>
+         <view class="{{switchName == '当前会务' ? 'switch-icon-active' : 'switch-icon'}}" bindtap='switch'>{{switchName}}</view>
+    </view>
+    <view class="card-center">
+      <view class="card-center-left">
+        <image src="../../common/resource/ad.png" mode="widthFix"></image>
+      </view>
+      <view class="card-center-right">
+        <view class="status">
+          <text class="status-left">状态: <text class="point"></text> 即将开始</text>
+          <text>人数: <text class="personNum">0</text>人</text>
+        </view>
+        <view class="addr">
+          <text>地址: 上海浦东新区</text>
+        </view>
+        <view class="time">
+          <text class="startTime">开始: 2018-04-13</text>
+          <text>结束: 2018-04-14</text>
+        </view>
+      </view>
+    
+    </view>
+  </view>
+</view>
