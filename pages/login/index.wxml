@@ -1,0 +1,32 @@
+<!--pages/login/index.wxml-->
+<view class="login">
+  <view class="top-img">
+    <van-icon name="wap-home" size="40px"></van-icon>
+  </view>
+  <!-- 账号 -->
+  <view class="login-name">
+    <view class="icon-input">
+      <view class="name-icon">
+        <image src="../../common/resource/name.png" mode="widthFix"></image>
+      </view>
+      <input placeholder="请输入账号" value='{{nameValue}}' bindinput="nameInput"></input>
+      <view class="clear-icon" bindtap='nameClear'>
+        <image wx:if="{{nameValue !== ''}}" src="../../common/resource/clear.png" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+  <!-- <!-- 密码  -->
+  <view class="login-pass">
+    <view class="icon-input">
+      <view class="pass-icon">
+        <image src="../../common/resource/pass.png" mode="widthFix"></image>
+      </view>
+      <input placeholder="请输入密码" password value='{{passValue}}' bindinput="passInput"></input>
+      <view class="clear-icon" bindtap='passClear'>
+        <image wx:if="{{passValue !== ''}}" src="../../common/resource/clear.png" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 登陆按钮 -->
+  <view class="login-btn" bindtap='login'>登 陆</view>
+</view>

@@ -1,0 +1,31 @@
+<!--pages/user/index.wxml-->
+<view class="box">
+  <!-- 头部卡片 -->
+  <view class="top-card">
+    <view class="head-img-box">
+      <image src="../../common/resource/default.jpg" mode="widthFix"></image>
+    </view>
+    <view class="set-icon"></view>
+  </view>
+  <!-- 中上切换 -->
+  <view class="switch">
+    <view class="switch-icon">切换</view>
+  </view>
+  <!-- 中间表格 -->
+  <view class="center-table">
+    <view class="child" wx:for="{{tableList}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}" data-content="{{item.name}}" bindtap='toPage'>
+      <view class="one-text">
+        <view class="one-text-img">
+          <image src="{{item.img}}" mode="widthFix"></image>
+        </view>
+        <view>{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 底部cell -->
+  <view class="cell-list">
+    <view>最新状态</view>
+    <view></view>
+  </view>
+
+</view>

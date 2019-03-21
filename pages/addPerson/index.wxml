@@ -1,0 +1,65 @@
+<!--pages/addPerson/index.wxml-->
+<view class="addPerson">
+  <view class="top">
+    <text>成员信息</text>
+    <text bindtap='addText'>增加</text>
+  </view>
+  <view class="center">
+    <view class="imgBox">
+      <view class="img">
+        <image src="../../common/resource/default.jpg" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="imgBox">
+      <view class="img">
+        <image src="../../common/resource/default.jpg" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="imgBox">
+      <view class="img">
+        <image src="../../common/resource/default.jpg" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="imgBox">
+      <view class="img">
+        <image src="../../common/resource/default.jpg" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="imgBox">
+      <view class="img">
+        <image src="../../common/resource/default.jpg" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="imgBox">
+      <view class="img">
+        <image src="../../common/resource/default.jpg" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="imgBox">
+      <view class="img">
+        <image src="../../common/resource/default.jpg" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="imgBox">
+      <view class="img">
+        <image src="../../common/resource/default.jpg" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="imgBox">
+      <view class="img">
+        <image src="../../common/resource/default.jpg" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="imgBox">
+      <view class="img">
+        <image src="../../common/resource/default.jpg" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="imgBox">
+      <view class="img">
+        <image src="../../common/resource/default.jpg" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+  <view class="footBtn" bindtap='addTrip'>添 加 至 行 程</view>
+</view>

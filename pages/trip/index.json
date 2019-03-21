@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "navigationBarTitleText": "添加行程",
+  "usingComponents": {
+    "van-tab": "/common/lib/vantUI/tab/index",
+    "van-tabs": "/common/lib/vantUI/tabs/index",
+    "van-switch": "/common/lib/vantUI/switch/index",
+    "van-field": "/common/lib/vantUI/field/index"
+  }
+}

@@ -1,4 +1,11 @@
 /**app.wxss**/
+@import './common/lib/zanUI/index.wxss';
+@import './common/lib/weui.wxss';
+@import './common/lib/vantUI/common/index.wxss';
+page {
+  width: 100%;
+  height: 100%;
+}
 .container {
   height: 100%;
   display: flex;

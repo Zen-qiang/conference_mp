@@ -12,7 +12,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.2",
-	"appid": "wx029c287ecdfccc8c",
+	"appid": "wxfd263e8b00d0e2f8",
 	"projectname": "conference_mp",
 	"isGameTourist": false,
 	"condition": {
@@ -24,13 +24,52 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 4,
+			"list": [
+				{
+					"id": -1,
+					"name": "用户",
+					"pathName": "pages/user/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "登陆",
+					"pathName": "pages/login/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "行程",
+					"pathName": "pages/trip/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "行程完成",
+					"pathName": "pages/finishTrip/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "添加人员",
+					"pathName": "pages/addPerson/index",
+					"scene": null
+				}
+			]
 		}
 	}
 }

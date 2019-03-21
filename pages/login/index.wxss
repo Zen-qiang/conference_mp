@@ -1,0 +1,105 @@
+/* pages/login/index.wxss */
+.login {
+  width: 100%;
+  height: 100%;
+  padding-top: 100rpx;
+  box-sizing: border-box;
+}
+.top-img {
+  width: 300rpx;
+  height: 100rpx;
+  background-color: red;
+  margin: 0 auto;
+  margin-bottom: 100rpx;
+}
+/* 账号 */
+.login-name {
+  width: 560rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 50rpx;
+  border: 1px solid #496b89;
+  margin: 0 auto;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.icon-input {
+  display: flex;
+  width: 100%;
+  height: 70rpx;
+  box-sizing: border-box;
+  /* background-color: green; */
+}
+.name-icon {
+  display: inline-block;
+  width: 60rpx;
+  height: 100%;
+  /* background-color: blue; */
+}
+.name-icon image {
+  width: 60rpx;
+}
+.login-name input {
+  height: 100%;
+  width: 400rpx;
+  border-radius: 50rpx;
+  /* background-color: red; */
+  font-size: 14px;
+  padding-left: 30rpx;
+}
+.clear-icon {
+  width: 50rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.clear-icon image {
+  width: 70rpx;
+}
+/* 密码 */
+.login-pass {
+  width: 560rpx;
+  height: 100rpx;
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+   border-radius: 50rpx;
+  border: 1px solid #496b89;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  margin-bottom: 60rpx;
+    padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.pass-icon {
+  display: inline-block;
+  width: 60rpx;
+  height: 100%;
+  /* background-color: blue; */
+}
+.pass-icon image {
+  width: 60rpx;
+}
+.login-pass input {
+  height: 100%;
+  width: 400rpx;
+  border-radius: 50rpx;
+  /* background-color: red; */
+  font-size: 14px;
+  padding-left: 30rpx;
+}
+/* 登陆按钮 */
+.login-btn {
+  width: 560rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  border-radius: 50rpx;
+  background-color: #002c56;
+  font-size: 18px;
+  color: #fff;
+  margin: 0 auto;
+}

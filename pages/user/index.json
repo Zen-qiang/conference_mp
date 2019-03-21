@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "navigationBarTitleText": "用户中心",
+  "usingComponents": {
+    "van-button": "/common/lib/vantUI/button/index",
+    "zan-icon": "/common/lib/zanUI/icon/index",
+    "van-icon": "/common/lib/vantUI/icon/index"
+  }
+}
