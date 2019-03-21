@@ -1,17 +1,59 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/login/index",
     "pages/logs/logs",
     "pages/user/index",
-    "pages/login/index",
     "pages/trip/index",
     "pages/finishTrip/index",
-    "pages/addPerson/index"
+    "pages/addPerson/index",
+    "pages/home/home",
+    "pages/activetab/activetab",
+    "pages/acconmmodation/acconmmodation",
+    "pages/sendcar/sendcar",
+    "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectColor": "#333",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "会务",
+        "iconPath": "common/resource/home.png",
+        "selectedIconPath": "common/resource/home-selected.png"
+      },
+      {
+        "pagePath": "pages/activetab/activetab",
+        "text": "行程",
+        "iconPath": "common/resource/hero.png",
+        "selectedIconPath": "common/resource/hero-selected.png"
+      },
+      {
+        "pagePath": "pages/acconmmodation/acconmmodation",
+        "text": "住宿",
+        "iconPath": "common/resource/cart.png",
+        "selectedIconPath": "common/resource/cart-selected.png"
+      },
+      {
+        "pagePath": "pages/sendcar/sendcar",
+        "text": "派车",
+        "iconPath": "common/resource/addr1.png",
+        "selectIconPath": "common/resource/addr.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "个人",
+        "iconPath": "common/resource/account.png",
+        "selectedIconPath": "common/resource/account-selected.png"
+      }
+    ]
   }
 }
