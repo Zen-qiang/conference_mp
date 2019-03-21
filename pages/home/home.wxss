@@ -1,0 +1,54 @@
+Page {
+  background: #f0f0f0;
+}
+.home {
+  padding: 25px 15px 0 100px;
+  position: relative;
+}
+.left {
+  position: absolute;
+  left: 15px;
+  top: 20px;
+  width: 70px;
+  padding: 20px 0;
+  background: #fff;
+  text-align: center;
+}
+.left text {
+  display: block;
+}
+.left .month {
+  font-size: 14px;
+  line-height: 14px;
+}
+.left .day {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: bold;
+  color: #0eabc7;
+}
+.left .year {
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: bold;
+}
+.right {
+  padding-bottom: 25px;
+  border-bottom: 1px solid #ddd;
+}
+.right .img image {
+  width: 100%;
+  height: auto;
+}
+.right .name {
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.right .state {
+  font-size: 22rpx;
+  color: #999;
+}
+.right .desc {
+  font-size: 24rpx;
+  color: #999;
+}

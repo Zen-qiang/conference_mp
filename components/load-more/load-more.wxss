@@ -1,0 +1,11 @@
+.my-loadmore {
+  text-align: center;
+  padding: 10rpx;
+}
+.loadtext {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 12px;
+  color: #b2b2b2;
+  margin-left: 4px;
+}
