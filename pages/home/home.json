@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "会务"
+  "navigationBarTitleText": "会务",
+  "usingComponents": {
+    "load-more": "/components/load-more/load-more"
+  }
 }

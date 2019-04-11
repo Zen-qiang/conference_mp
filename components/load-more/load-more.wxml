@@ -1,0 +1,9 @@
+<view class="my-loadmore">
+  <block wx:if="{{!noMore}}">
+    <van-loading type="spinner" size="16px"></van-loading>
+    <text class="loadtext">{{loadingText}}</text>
+  </block>
+  <block wx:else>
+    <text class="loadtext">{{loadedText}}</text>
+  </block>
+</view>
