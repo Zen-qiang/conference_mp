@@ -4,14 +4,16 @@
     "pages/logs/logs",
     "pages/user/index",
     "pages/trip/index",
-    "pages/finishTrip/index",
     "pages/addPerson/index",
     "pages/home/home",
     "pages/activetab/activetab",
     "pages/acconmmodation/acconmmodation",
     "pages/sendcar/sendcar",
     "pages/index/index",
-    "pages/meeting/index"
+    "pages/meeting/index",
+    "pages/memberInfo/index",
+    "pages/hotel/index",
+    "pages/peopleManage/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

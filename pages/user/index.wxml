@@ -4,11 +4,11 @@
   <view class="top-card">
     <view class="top-card-left">
       <view class="head-img-box">
-        <image src="../../common/resource/default.jpg" mode="widthFix"></image>
+        <image src="{{userInfo.profilePhoto}}" mode="scaleToFill"></image>
       </view>
       <view class="top-card-left-text">
-        <view>南通鸿翔管理员</view>
-        <view>南通鸿翔贸易有限公司</view>
+        <view>{{userInfo.name}}</view>
+        <view>{{userInfo.company.name}}</view>
       </view>
     </view>
     <view class="set-icon">
@@ -17,7 +17,7 @@
   </view>
   <!-- 中上切换 -->
   <view class="switch">
-    <text>阿迪达斯订货会2</text>
+    <text>{{userInfo.defaultConference.subject}}</text>
     <view class="switch-icon" bindtap='switch'>切换</view>
   </view>
   <!-- 中间表格 -->

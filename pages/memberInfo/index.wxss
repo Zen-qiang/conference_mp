@@ -1,0 +1,163 @@
+/* pages/memberInfo/index.wxss */
+.memberInfo {
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+}
+.paddingTop {
+  padding-top: 30rpx;
+  box-sizing: border-box;
+}
+.topCard {
+  width: 100%;
+  height: 200rpx;
+  border-top: 1px solid #ccc;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  display: flex;
+  font-size: 14px;
+}
+.topCard-left {
+  width: 200rpx;
+  height: 200rpx;
+  background-color: red;
+}
+.topCard-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.center {
+  width: 100%;
+  background-color: #fff;
+}
+.center-head {
+  width: 100%;
+  height: 100rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
+  line-height: 100rpx;
+  font-size: 14px;
+  /* color: #0cb4ce; */
+  color: #ccc;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+.center-content {
+  width: 100%;
+}
+.center-content-one {
+  width: 100%;
+  /* height: 200rpx; */
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.one-top {
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 100%;
+  display: flex;
+}
+.one-top-img {
+  width: 50rpx;
+  height: 50rpx;
+  margin: auto 0;
+  background-color: green;
+}
+.memberName {
+  margin-left: 30rpx;
+  font-size: 12px;
+  color: #ccc;
+  display: flex;
+}
+.text-border {
+  height: 100rpx;
+  width: 30rpx;
+  margin-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.text-con {
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  border: 1px solid red;
+}
+.one-phone {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-left: 70rpx;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.phone {
+  border-top: 1px solid #ccc;
+
+}
+.footBtn {
+width: 100%;
+height: 100rpx;
+text-align: center;
+line-height: 100rpx;
+font-size: 16px;
+color: #fff;
+background-color: #0cb4ce;
+position: fixed;
+left: 0;
+bottom: 0;
+}
+.trip {
+  border-top: 1px solid #ccc;
+}
+.img-name {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.manInfo {
+  width: 25%;
+  margin-bottom: 40rpx;
+}
+.imgBox {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+}
+.imgBox image {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+.selectIcon {
+  width:35rpx;
+  height: 35rpx;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 8rpx;
+  right: -10rpx;
+}
+.selectIcon image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.imgBoxBottom {
+  font-size: 26rpx;
+  text-align: center;
+}
+.bgcActive {
+  border: 1px solid #0cb4ce;
+}

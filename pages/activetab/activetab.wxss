@@ -4,45 +4,75 @@
   height: 100%;
   background-color: #f2f2f2;
 }
-.top {
-  position: relative;
+.head {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 14px;
+  color: #ccc;
+  display: flex;
+  justify-content: flex-start;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9;
+}
+.head-left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.head-right {
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.border-bottom{
+  height: 100rpx;
+  width: 120rpx;
+  text-align: center;
+}
+.border-bottom-active {
+  color: #000;
+  border-bottom: 2px solid #0cb4ce;
+}
+.addIcon {
+  width: 50rpx;
+  height: 50rpx;
+  padding-top:15rpx;
+  padding-right: 35rpx;
+  box-sizing: border-box;
+}
+.addIcon image {
+width: 50rpx;
 }
 .change {
-  width:100rpx;
-  height: 88rpx;
   text-align: center;
-  line-height: 80rpx;
   color: red;
   font-size: 14px;
-  position: absolute;
-  left: 0;
-  top: 5rpx;
-  z-index: 9;
 }
 .changeActive {
   color: #0cb4ce;
 }
-.addIcon {
-  width:100rpx;
-  height: 88rpx;
-  text-align: center;
-  line-height: 75rpx;
-  color: red;
-  font-size: 30px;
-  position: absolute;
-  right: 0;
-  top: 0rpx;
-  z-index: 9;
-}
 .one {
   width: 100%;
   padding: 30rpx;
+  padding-top: 130rpx;
+  padding-bottom: 100rpx;
   box-sizing: border-box;
+  /* margin-bottom: 400rpx; */
+  background-color: #f2f2f2;
 }
 .card1 {
   width: 100%;
   height: 320rpx;
   border-radius: 15rpx;
+  margin-bottom: 30rpx;
   box-sizing: border-box;
   background-color: #ffff;
   position: relative;

@@ -59,10 +59,12 @@ Page({
       app.nPost(data).then(res => {
         app.showMsg("登录成功");
         if (res.data) {
+          console.log(res.data)
           wx.reLaunch({
             url: '/pages/home/home',
           })
-          app.saveValue('sessionKey', res.datasessionToken);
+          console.log(res.data.sessionToken)
+          app.saveValue('sessionKey', res.data.sessionToken);
           app.saveValue('loginData', res.data);
         }
       }, res => {

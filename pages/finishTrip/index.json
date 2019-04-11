@@ -1,8 +1,0 @@
-{
-  "component": true,
-  "navigationBarTitleText": "行程管理",
-  "usingComponents": {
-    "van-tab": "/common/lib/vantUI/tab/index",
-    "van-tabs": "/common/lib/vantUI/tabs/index"
-  }
-}

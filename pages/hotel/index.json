@@ -1,11 +1,9 @@
 {
-    "component": true,
-    "navigationBarTitleText": "添加行程",
+  "navigationBarTitleText": "酒店",
   "usingComponents": {
+    "van-field": "/common/lib/vantUI/field/index",
     "van-tab": "/common/lib/vantUI/tab/index",
     "van-tabs": "/common/lib/vantUI/tabs/index",
-    "van-switch": "/common/lib/vantUI/switch/index",
-    "van-field": "/common/lib/vantUI/field/index",
     "van-popup": "/common/lib/vantUI/popup/index",
     "van-datetime-picker": "/common/lib/vantUI/datetime-picker/index"
   }

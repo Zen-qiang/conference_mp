@@ -1,0 +1,10 @@
+<!--pages/peopleManage/index.wxml-->
+<view class="peopleManage">
+  <view class="top">
+  <text class="textTitle1 {{title == '取消' ? 'textTitle' : ''}}" bindtap='switchTitle'>{{title}}</text>
+  </view>
+  <view class="foot">
+    <view class="footLeft">新增房型</view>
+    <view class="footRight">保存</view>
+  </view>
+</view>

@@ -1,14 +1,11 @@
-// pages/finishTrip/index.js
+// pages/peopleManage/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    // tab 是否禁用
-    disabled: false,
-    // 显示下划线
-    activeNum: 0,
+    title: '删除',
   },
 
   /**
@@ -24,6 +21,17 @@ Page({
   onReady: function () {
 
   },
+  switchTitle () {
+    if(this.data.title == '删除') {
+      this.setData({
+        title: '取消'
+      })
+    }else {
+      this.setData({
+        title: '删除'
+      })
+    }
+  },
 
   /**
    * 生命周期函数--监听页面显示
@@ -31,21 +39,7 @@ Page({
   onShow: function () {
 
   },
-  // 点击 编辑
-  showClearIcon() {
-    console.log('444')
-  },
-  // 点击 + 
-  addPerson() {
-    wx.navigateTo({
-      url: '/pages/trip/index?activeNum=' + this.data.activeNum,
-    })
-  },
-  // 点击 底部我的专车 按钮
-  toCar() {
-    wx.navigateTo({
-    })
-  },
+
   /**
    * 生命周期函数--监听页面隐藏
    */

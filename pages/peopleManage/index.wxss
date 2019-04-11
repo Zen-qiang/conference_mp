@@ -1,0 +1,49 @@
+/* pages/peopleManage/index.wxss */
+.peopleManage {
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+}
+.top {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-top: 1px solid #eee;
+  padding-left: 15rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  font-size: 26rpx;
+  display: flex;
+}
+.top text {
+  display: inline-block;
+}
+.textTitle1 {
+  color: red;
+}
+.textTitle {
+  color: #0cb4ce;
+}
+.foot {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-top: 1px solid #eee;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  background-color: #fff;
+  font-size: 30rpx;
+}
+.foot view{
+  width: 50%;
+  height: 100%;
+  text-align: center;
+}
+.footLeft {
+  color: #0cb4ce;
+}
+.footRight {
+  background-color: #f2f2f2;
+}

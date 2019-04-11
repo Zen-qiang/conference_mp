@@ -1,17 +1,20 @@
 // pages/user/index.js
+const app = getApp();
+import config from '../../config.js';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    userInfo: '',
     tableList: [
-      { name: '报名信息', img: '../../common/resource/account.png', index: 0 },
-      { name: '行程安排', img: '../../common/resource/account.png', index: 1 },
-      { name: '派车管理', img: '../../common/resource/account.png', index: 2 },
-      { name: '住宿登记', img: '../../common/resource/account.png', index: 3 },
-      { name: '用餐扫码', img: '../../common/resource/account.png', index: 4 },
-      { name: '证件通行', img: '../../common/resource/account.png', index: 5}
+      { name: '报名信息', img: '../../common/resource/enroll.svg', index: 0 },
+      { name: '行程安排', img: '../../common/resource/trip.svg', index: 1 },
+      { name: '派车管理', img: '../../common/resource/cart.svg', index: 2 },
+      { name: '住宿登记', img: '../../common/resource/room.svg', index: 3 },
+      { name: '用餐扫码', img: '../../common/resource/sm.svg', index: 4 },
+      { name: '证件通行', img: '../../common/resource/paper.svg', index: 5}
     ],
 
   },
@@ -20,7 +23,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getUserInfo()
   },
 
   /**
@@ -34,7 +37,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
   },
   switch() {
     wx.navigateTo({
@@ -52,15 +54,17 @@ Page({
         console.log(1)
         break;
       case '行程安排':
-        wx.navigateTo({
-          // url: '/pages/activetable/index',
+        wx.reLaunch({
+          url: '/pages/activetab/activetab',
         })
         break;
       case '派车管理':
         console.log(3)
         break;
       case '住宿登记':
-        console.log(4)
+        wx.reLaunch({
+          url: '/pages/acconmmodation/acconmmodation'
+        })
         break;
       case '用餐扫码':
         console.log(5)
@@ -69,6 +73,24 @@ Page({
         console.log(6)
         break;
     }
+  },
+
+  // 获取个人数据
+  getUserInfo() {
+    var data = {
+      url: config.userInfo,
+      params: {},
+    }
+    app.nGet(data).then(data => {
+      if(data.data) {
+        this.setData({
+          userInfo: data.data
+        })
+      }
+
+    },res => {
+
+    })
   },
 
   /**
