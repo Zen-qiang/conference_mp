@@ -4,13 +4,13 @@
   <swiper class="out-box" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" current="{{current}}" indicator-color="#fff" indicator-active-color="#0cb4ce">
     <swiper-item class="swiper-wrapper" wx:for="{{imgUrls}}" wx:for-index="index" wx:for-item="order" wx:key="{{index}}">
       <view class="swiper-slide">
-        <image src="{{order.url}}" mode='widthFix' />
+        <image src="{{order}}" mode='widthFix' />
       </view>
     </swiper-item>
   </swiper>
   <!--  -->
   <view class="mapIcon">
-    <view>天上人间酒店</view>
+    <view>{{hotelsInfo.name}}</view>
     <view class="mapImg">
       <image src="../../common/resource/map.png"></image>
     </view>
@@ -39,11 +39,11 @@
   <!--  -->
   <view class="manNum">
     <view>
-      <text>入住信息</text> <text class="numRatio"><text>1</text>/10 人</text>
+      <text>入住信息</text> <text class="numRatio"><text>{{hotelsInfo.status}}</text>/10 人</text>
     </view>
   </view>
   <view class="remark">
     <view class="remarkTitle">住宿备注</view>
-    <view>本次住宿由XX集团提供，感觉对方立即给肌肤带来感觉了发达国家独领风队你卡数量单价你大夫克罗米芬队价你大夫克罗米芬队你卡数量单价你大夫克罗米芬队你卡数量单价你大夫克罗米芬队你卡数量单价你大夫克罗米芬队你卡</view>
+    <view>{{hotelsInfo.description}}</view>
   </view>
 </view>

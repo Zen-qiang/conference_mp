@@ -36,7 +36,7 @@
   height: 100rpx;
   padding: 0 30rpx;
   box-sizing: border-box;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #f2f2f2;
   line-height: 100rpx;
   font-size: 14px;
   /* color: #0cb4ce; */
@@ -50,6 +50,7 @@
 }
 .center-content-one {
   width: 100%;
+  border-bottom: 1px solid #f2f2f2;
   /* height: 200rpx; */
   padding: 0 30rpx;
   box-sizing: border-box;
@@ -64,7 +65,10 @@
   width: 50rpx;
   height: 50rpx;
   margin: auto 0;
-  background-color: green;
+}
+.one-top-img image{
+  width: 100%;
+  height: 100%;
 }
 .memberName {
   margin-left: 30rpx;

@@ -1,0 +1,245 @@
+.page-sendcar {
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+}
+/* 添加我的班次 */
+.box {
+  width: 100%;
+  /* background-color: #fff; */
+}
+.addCarBox {
+  width: 100%;
+  padding: 30rpx;
+  padding-bottom: 0;
+  box-sizing: border-box;
+}
+.addCar {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  background-color: #0cb4ce;
+  border-radius: 50rpx;
+  margin-bottom: 30rpx;
+}
+.addCarList {
+  width: 100%;
+  padding: 30rpx;
+  padding-bottom: 0;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.addCarImg {
+  width: 100%;
+}
+.addCarImg image {
+  width: 100%;
+  position: relative;
+}
+.bgc {
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.bgc view {
+  position: absolute;
+  color: #fff;
+  font-size: 60rpx;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%)
+}
+.carName {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 26rpx;
+}
+.stateRed {
+  color: red;
+}
+.stateColor {
+  color: #c5c5c5;
+}
+.addCarTime {
+  display: flex;
+  justify-content: space-between;
+  font-size: 26rpx;
+}
+.addCarTime view:nth-child(2) text {
+  color: red;
+}
+.addCarAddr {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 26rpx;
+}
+.passengerInfo {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  border-top: 1px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+  display: flex;
+  justify-content: space-between;
+}
+.passengerInfo view:nth-child(2) {
+  display: flex;
+  justify-content: flex-start;
+}
+.sm {
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 26rpx;
+  display: flex;
+  color: #0cb4ce;
+  justify-content: space-between;
+}
+.sm view:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+.sm view:nth-child(2) text {
+   width: 140rpx;
+  line-height: 45rpx;
+  text-align: center;
+  background-color: #0cb4ce;
+  border-radius: 10rpx;
+}
+.headImg {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  margin-right: 15rpx;
+}
+.headImg image {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+
+.top {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #fff;
+  display: flex;
+  border-top: 1px solid #f2f2f2;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 5;
+}
+.top view {
+  width: 50%;
+  text-align: center;
+  font-size: 26rpx;
+}
+.top view text {
+  display: inline-block;
+  padding: 0 15rpx;
+  box-sizing: border-box;
+  height: 100rpx;
+}
+.borderActive {
+  border-bottom: 2px solid #0cb4ce;
+  color: #000;
+}
+/* 全部车辆 */
+.content {
+  width: 100%;
+  background-color: #f2f2f2;
+  position: absolute;
+  left: 0;
+  top: 130rpx;
+}
+.content1 {
+  width: 100%;
+  background-color: #f2f2f2;
+  position: absolute;
+  left: 0;
+  top: 130rpx;
+}
+.cardBox {
+  width: 100%;
+  padding: 30rpx 30rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  position: relative;
+}
+.rightArrow {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 30rpx;
+  bottom: 50rpx;
+}
+.rightArrow image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.imgBox {
+  width: 500rpx;
+  margin: 0 auto;
+}
+.imgBox image {
+  width: 100%;
+  margin: 0 auto;
+}
+.carType-state {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 26rpx;
+}
+.state {
+  color: #79cd80;
+}
+.carPhone {
+  width: 100%;
+}
+.carPhone text {
+  padding: 0 15rpx;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  color: #787878;
+  font-size: 26rpx;
+  border-radius: 10rpx;
+}
+.carTime {
+  width: 100%;
+  font-size: 26rpx;
+}
+.carAddr {
+    width: 100%;
+  font-size: 26rpx;
+}
+.nowCover {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-bottom: 30rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  background-color: #0cb4ce;
+}
+
+/* 已报名车辆 */
+.content1 {
+  width: 100%;
+}

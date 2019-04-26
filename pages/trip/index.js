@@ -117,7 +117,7 @@ Page({
         activeNum: 1,
         checked1: entryObj.isHandleByOneself || '',
         ind1: entryObj.ind1 || '',
-        value1: entryObj.trafficValue || '',
+        value1: entryObj.trafficValue || '高铁',
         valueId1: entryObj.fkVehiclesId || '',
         city1: entryObj.arriveCity || '',
         addr1: entryObj.arrivePlace || '',
@@ -328,7 +328,7 @@ Page({
     })
   },
   // 成员信息
-  memberInfo() {
+  memberInfo(e) {
     // 将填入的信息存起来  从其他成员页面跳回时 回显在页面上
     if (this.data.journeyType == 'ARRIVE') {
       let entryToObj = {
@@ -357,12 +357,13 @@ Page({
       }
       app.saveValue('entryObj', entryBackObj);
     }
-    wx.reLaunch({
+    wx.navigateTo({
       url: '/pages/memberInfo/index?page=' + 'trip' + '&journeyType=' + this.data.journeyType,
     })
   },
   // 点击完成  添加成员
   toDetail() {
+    console.log('5555')
     // selectId
     wx.removeStorageSync('entryObj')
     wx.removeStorageSync('journeyType')

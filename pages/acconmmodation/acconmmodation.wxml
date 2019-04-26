@@ -1,64 +1,119 @@
 <view class="acconmmodation">
-<block wx:if="{{!user}}">
-  <view class="top">
-    <view wx:for="{{topList}}" bindtap='switchTopTitle' data-index="{{index}}"  wx:for-index="index" wx:for-item="item" wx:key="{{index}}"><text class="{{index == inx ? 'borderActive' : ''}}">{{item.title}}</text></view>
-  </view>
-  <view class="card" hidden="{{inx != 0}}">
-    <view >
-      <van-cell-group>
-        <view class="fieldBox">
-          <van-field value="{{ startTime }}" bindtap="showpopup" bind:change="blurTime" icon="arrow" label="请输入起始时间" input-align="right" title-width="200px" border="{{false}}" placeholder="请输入起始时间"  />
+  <block wx:if="{{!user}}">
+    <view class="top">
+      <view wx:for="{{topList}}" bindtap='switchTopTitle' data-index="{{index}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+        <text class="{{index == inx ? 'borderActive' : ''}}">{{item.title}}</text>
+      </view>
+    </view>
+
+    <!-- 安排入住 -->
+    <view hidden="{{inx != 0}}">
+      <view class="card">
+        <view class="kong"></view>
+        <view class="cardSelectop">
+          <van-cell-group>
+            <view class="fieldBox">
+              <van-field value="{{ startTime }}" bindtap="showpopup" bind:change="blurTime" icon="arrow" label="请输入起始时间" input-align="right" title-width="200px" border="{{false}}" placeholder="请输入起始时间" />
+            </view>
+            <view class="fieldBox">
+              <van-field value="{{ endTime }}" bindtap="showpopup1" bind:change="blurTime" icon="arrow" label="请输入截止时间" placeholder="请输入截止时间" input-align="right" border="{{false}}" title-width="200px" />
+            </view>
+          </van-cell-group>
+          <view class="selectHotel" bindtap='selectHotels'>筛选酒店</view>
         </view>
-        <view class="fieldBox">
-          <van-field value="{{ endTime }}" bindtap="showpopup1" bind:change="blurTime" icon="arrow" label="请输入截止时间" placeholder="请输入截止时间" input-align="right" border="{{false}}" title-width="200px"  />
-        </view>
-      </van-cell-group>
-      <view class="selectHotel">筛选酒店</view>
-  </view>
-  </view>
-    <!--  -->
-    <view class="cardInfo">
-      <view  hidden="{{inx != 1}}">
-      <!-- ditu -->
-        <view class="mapIcon">
-          <view>天上人间酒店</view>
-          <view class="mapImg"><image src="../../common/resource/map.png"></image></view>
-        </view>
-        <!-- zhong -->
-        <view class="hotelInfo">
-          <view class="leftImg"></view>
-          <view class="rightText" bindtap='toHotel'>
-            <view>房型：豪华别墅</view>
-            <view>地址：天上人间</view>
-            <view>
-              <text class="textOne">开始：2019-4-20</text>  <text>结束：2019-4-25</text>
+      </view>
+
+      <!-- 酒店列表 -->
+      <view class="hotelList">
+        <view class="hotelBox" wx:for="{{hotelsList}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
+          <view class="mapIcon">
+            <view>{{item.name}}</view>
+            <view class="mapImg">
+              <image src="../../common/resource/map.png"></image>
+            </view>
+          </view>
+          <!-- zhong -->
+          <view class="hotelInfo" data-id="{{item.id}}" bindtap='toHotelInfo'>
+            <view class="leftImg">
+              <image src="{{item.photo}}"></image>
+            </view>
+            <view class="rightText" bindtap='toHotel'>
+              <view>房型：{{item.roomType}}</view>
+              <view>地址：{{item.address}}</view>
+              <view>
+                <text class="textOne">开始：{{item.startTime}}</text>
+                <text>结束：{{item.endTime}}</text>
+              </view>
             </view>
           </view>
         </view>
-        <view class="manName">
-          <text>入住人员</text>
-        </view>
-        <view class="footCar">安排接送车辆</view>
+      </view>
+
+    </view>
+
+    <!-- 已经入住  -->
+    <view class="cardInfo">
+      <view class="kong"></view>
+      <view hidden="{{inx != 1}}">
+        <!-- ditu -->
+        <block wx:for="{{hotelRoomReserveMembers}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
+          <view class="oldhotel">
+            <view class="oldhotel-mapIcon">
+              <view>{{item.hotelInfo.name}}</view>
+              <view class="mapImg">
+                <image src="{{item.hotelInfo.photo}}"></image>
+              </view>
+            </view>
+            <!-- zhong -->
+            <view class="oldhotel-hotelInfo">
+              <view class="oldhotel-leftImg"></view>
+              <view class="oldhotel-rightText">
+                <view>房型：{{item.hotelInfo.roomType}}</view>
+                <view>地址：{{item.hotelInfo.address}}</view>
+                <view>
+                  <text class="oldhotel-textOne">开始：{{item.hotelInfo.startTime}}</text>
+                  <text>结束：{{item.hotelInfo.endTime}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="manName">
+            <text>入住人员</text>
+            <view class="headImg">
+              <view  wx:for="{{item.memberInfo}}" wx:for-item="order" wx:for-index="index" wx:key="{{index}}">
+                <image src="{{order.photo}}"></image>
+              </view>
+            </view>
+          </view>
+        </block>
+        <view class="footCar" bindtap='toCar'>安排接送车辆</view>
       </view>
     </view>
-      <!-- 日期弹窗 -->
-  <van-popup show="{{ show }}" position="bottom" overlay="{{ true }}" bind:close="onClose">
-    <van-datetime-picker type="date" min-date="{{ minDate }}" bind:confirm='confirm' bind:cancel='cancel' />
-  </van-popup>
-  <van-popup show="{{ show1 }}" position="bottom" overlay="{{ true }}" bind:close="onClose">
-    <van-datetime-picker type="date" min-date="{{ minDate }}" bind:confirm='confirm1' bind:cancel='cancel1' />
-  </van-popup>
-</block>
-  <!--  -->
-<block wx:else>
-  <view class="kongBox"></view>
-  <view class="smBox">
-    <view class="scanning">
-      <view class="smImg"><image src="../../common/resource/sm.png"></image>  扫描用户</view>
-    </view>
+    <!-- 日期弹窗 -->
+    <van-popup show="{{ show }}" position="bottom" overlay="{{ true }}" bind:close="onClose">
+      <van-datetime-picker type="date" min-date="{{ minDate }}" bind:confirm='confirm' bind:cancel='cancel' />
+    </van-popup>
+    <van-popup show="{{ show1 }}" position="bottom" overlay="{{ true }}" bind:close="onClose">
+      <van-datetime-picker type="date" min-date="{{ minDate }}" bind:confirm='confirm1' bind:cancel='cancel1' />
+    </van-popup>
+  </block>
+
+
+  <!-- admin 登录  -->
+  <block wx:else>
+    <view class="kongBox"></view>
+    <view class="smBox">
+      <view class="scanning" bindtap='showScan'>
+        <view class="smImg">
+          <image src="../../common/resource/sm.png"></image>
+          <text class="smText">扫描用户</text>
+        </view>
+      </view>
     </view>
     <view class="tab">
-      <view class="one" bindtap='switchTab' data-index="{{index}}" wx:for="{{tabList}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}"><text class="{{index == ind ? 'borderActive' : ''}}">{{item.title}} <text class="{{item.active}}">{{item.num}}</text></text></view>
+      <view class="one" bindtap='switchTab' data-index="{{index}}" wx:for="{{tabList}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+        <text class="{{index == ind ? 'borderActive' : ''}}">{{item.title}} <text class="{{item.active}}">{{item.num}}</text></text>
+      </view>
     </view>
     <view class="listBox">
       <view hidden="{{ind != 0}}" class="roomNo">
@@ -126,7 +181,9 @@
                 <text class="comp">南通鸿翔贸易有限公司</text>
               </view>
               <view class="phone">手机：1222222222222</view>
-              <view class="roomType">房间类型：<text class="roomTypeText">标间</text> 房间号：<text>8401</text> </view>
+              <view class="roomType">房间类型：
+                <text class="roomTypeText">标间</text> 房间号：
+                <text>8401</text> </view>
             </view>
           </view>
           <view class="right">

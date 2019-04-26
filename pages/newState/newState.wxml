@@ -1,0 +1,37 @@
+<!--pages/newState/newState.wxml-->
+<view class="newState">
+
+  <view class="card">
+    <view class="card-top">
+      <text>{{currentConference.subject}}</text>
+      <!-- <view class="{{switchName == '当前会务' ? 'switch-icon-active' : 'switch-icon'}}" bindtap='switch'>{{switchName}}</view> -->
+      <view class="switch-icon-active">当前会务</view>
+    </view>
+    <view class="card-center">
+      <view class="card-center-left">
+        <image src="{{currentConference.conferenceCoverUrl}}" mode="widthFix"></image>
+      </view>
+      <view class="card-center-right">
+        <view class="status">
+          <text class="status-left">状态: <text class="point"></text>{{currentConference.valueDefault}}</text>
+          <text>人数: <text class="personNum">{{currentConference.peopleNum}}</text>人</text>
+        </view>
+        <view class="addr">
+          <text>地址: {{currentConference.address}}</text>
+        </view>
+        <view class="time">
+          <text class="startTime">开始: {{currentConference.startTime}}</text>
+          <text>结束: {{currentConference.endTime}}</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <van-steps
+  steps="{{ steps }}"
+  active="{{ active }}"
+  direction="vertical"
+  active-color="#5dce58"
+/>
+</view>

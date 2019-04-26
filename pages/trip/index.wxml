@@ -36,7 +36,7 @@
         </view>
         <view class="bottom">
           <text>其他成员</text>
-          <view class="moreImg" bindtap='memberInfo'>
+          <view class="moreImg" bindtap="memberInfo">
             <view wx:for="{{selectMemberInfo}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
               <image src="{{item.photo}}"></image>
             </view>

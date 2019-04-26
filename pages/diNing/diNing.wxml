@@ -1,0 +1,35 @@
+<!--pages/diNing/diNing.wxml-->
+<view class="diNing">
+  <block  wx:if="{{!user}}">
+    <view class="smBox">
+    <view class="scanning" bindtap='showScan'>
+      <view class="smImg"><image src="../../common/resource/sm.png"></image>  <text class="smText">扫描用户</text></view>
+    </view>
+    </view>
+  </block>
+  <!-- 非管理员 -->
+  <block wx:else>
+    <view class="card">
+    <!--  -->
+      <view class="top">
+        <view class="topLeft">
+          <image src="../../common/resource/breakfast2.png"></image>
+        </view>
+        <view class="topRight">
+          <view class="comp">上海繁聚德贸易有限公司</view>
+          <view class="hotel">仅限上海全季酒店陆家嘴店使用</view>
+          <view> 其他门店无效...</view>
+          <view class="time">周一至周五 08：00-10：00 </view>
+          <view class="date">2018.1.23 - 2018.1.27</view>
+        </view>
+      </view>
+      <!--  -->
+      <view class="center">
+        <view class="centerTitle">用餐前请出示二维码</view>
+        <view class="erImg">
+          <image src="../../common/resource/erweima2.png"></image>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

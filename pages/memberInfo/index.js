@@ -32,7 +32,7 @@ Page({
       this.setData({
         journeyid: options.journeyid
       })
-      // this.getMembersInfo()
+      this.getMembersInfo()
     }
   },
 

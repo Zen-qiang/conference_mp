@@ -16,13 +16,15 @@
           <text>同行人员</text>
           <text>{{membersInfo.membersInfo.length}}</text>
         </view>
-        <view class="center-contant">
+        <view class="center-content">
           <!-- <view class="center-content-one" wx:for="{{membersInfo.membersInfo}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}"> -->
-          <view class="center-content-one">
+          <view class="center-content-one" wx:for="{{membersInfo.membersInfo}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
             <view class="one-top">
-              <view class="one-top-img"></view>
+              <view class="one-top-img">
+                <image src="{{item.photo}}"></image>
+              </view>
               <view class="memberName">
-                <text>名字</text>
+                <text>{{item.name}}</text>
                 <view class="text-border">
                   <view class="text-con">代</view>
                 </view>
@@ -33,19 +35,19 @@
               <view class="phone">{{item.phoneNo}}</view>
             </view>
             <!-- 身份证 -->
-            <view class="one-phone">
+            <view class="one-phone" hidden='{{!item.idNumber}}'>
               <view class="phone">{{item.idNumber}}</view>
             </view>
             <!-- 酒店 -->
-            <view class="one-phone">
+            <view class="one-phone" hidden='{{!item.hotelName}}'>
               <view class="phone">{{item.hotelName}}</view>
             </view>
             <!-- 房间类型 -->
-            <view class="one-phone">
+            <view class="one-phone" hidden='{{!item.roomType}}'>
               <view class="phone">{{item.roomType}}</view>
             </view>
             <!-- 房间序号 -->
-            <view class="one-phone">
+            <view class="one-phone" hidden='{{!item.room_seq}}'>
               <view class="phone">{{item.room_seq}}</view>
             </view>
           </view>

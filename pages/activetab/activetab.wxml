@@ -32,7 +32,9 @@
           <!-- 箭头指示 -->
           <view class="longArrow">
             <text class="topTime">{{item.week}}</text>
-            <view class="centerArrow"></view>
+            <view class="centerArrow">
+              <view class="sj"></view>
+            </view>
             <text class="footCar">{{item.numberOfRuns}}</text>
           </view>
           <!-- 到站信息 -->
@@ -70,7 +72,8 @@
                 <!-- 箭头指示 -->
                 <view class="longArrow">
                   <text class="topTime">{{item.week}}</text>
-                  <view class="centerArrowColor"></view>
+                  <view class="centerArrowColor">
+                    <view class="sjRed"></view></view>
                   <text class="footCar">{{item.numberOfRuns}}</text>
                 </view>
                 <!-- 到站信息 -->
@@ -83,16 +86,10 @@
                 </view>
               </view>
               <view class="card1-foot">
-                <text>其他成员 8人</text>
-                <view class="moreImg">
-                  <view>
-                    <image src="../../common/resource/default.jpg"></image>
-                  </view>
-                  <view>
-                    <image src="../../common/resource/default.jpg"></image>
-                  </view>
-                  <view>
-                    <image src="../../common/resource/default.jpg"></image>
+                <text>其他成员 {{item.membersSize}}人</text>
+                <view class="moreImg" wx:if="{{item.members.length > 0}}">
+                  <view wx:for="{{item.members}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+                    <image src="{{item.photo}}"></image>
                   </view>
                   <text data-journeyId="{{item.id}}" bindtap='toMemberList'>more</text>
                 </view>

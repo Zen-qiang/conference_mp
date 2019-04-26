@@ -1,0 +1,88 @@
+/* pages/accomAdd/accomAdd.wxss */
+.accomAdd {
+  width: 100%;
+  height: 100%;
+  padding-top: 30rpx;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+}
+.top {
+  width: 100%;
+  height: 100rpx;
+  background-color: #fff;
+  border-top: 1px solid #f2f2f2;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  line-height: 100rpx;
+  font-size: 26rpx;
+  color: #0cb4ce;
+}
+
+.content {
+  width: 100%;
+  background-color: #fff;
+}
+
+.img-name {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.manInfo {
+  width: 25%;
+  margin-bottom: 40rpx;
+}
+.imgBox {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: red;
+  margin: 0 auto;
+  position: relative;
+}
+.clickNo {
+  pointer-events: none;
+}
+.imgBox image {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+.selectIcon {
+  width:35rpx;
+  height: 35rpx;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 8rpx;
+  right: -10rpx;
+}
+.selectIcon image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.imgBoxBottom {
+  font-size: 26rpx;
+  text-align: center;
+}
+.bgcActive {
+  border: 1px solid #0cb4ce;
+}
+.foot {
+  width: 100%;
+  height: 100rpx;
+  background-color: #0cb4ce;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}

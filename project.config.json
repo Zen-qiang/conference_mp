@@ -34,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 11,
 			"list": [
 				{
 					"id": -1,
@@ -89,6 +89,34 @@
 					"id": -1,
 					"name": "酒店",
 					"pathName": "pages/hotel/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "用餐详情",
+					"pathName": "pages/diNingDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "用餐详情",
+					"pathName": "pages/diNing/diNing",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "派车",
+					"pathName": "pages/sendcar/sendcar",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "房间",
+					"pathName": "pages/peopleManage/index",
 					"query": "",
 					"scene": null
 				}

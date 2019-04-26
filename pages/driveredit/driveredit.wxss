@@ -1,0 +1,81 @@
+/* pages/driveredit/driveredit.wxss */
+.driveredit {
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+}
+.top {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  margin-bottom: 30rpx;
+  border-top: 1px solid #f2f2f2;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  font-size: 26rpx;
+}
+.top view:nth-child(2) {
+  color: #0cb4ce;
+}
+.content {
+  width: 100%;
+  background-color: #fff;
+}
+.padding {
+  padding: 0 30rpx;
+}
+.carPhoto {
+  display: flex;
+  justify-content: space-between;
+  /* padding: 30rpx 30rpx; */
+  height: 176rpx;
+  line-height: 176rpx;
+  box-sizing: border-box;
+}
+.carPhotoLeft {
+  display: flex;
+  font-size: 26rpx;
+  justify-content: flex-start;
+}
+.carPhotoLeft view:nth-child(1) {
+  margin-right: 50rpx;
+} 
+.carPhotoLeft view:nth-child(2) {
+  width: 208rpx;
+  height: 118rpx;
+}
+.carPhotoLeft view:nth-child(2) image {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+.carPhotoRight {
+  width: 48rpx;
+  height: 40rpx;
+}
+.carPhotoRight image {
+  width: 100%;
+  height: 100%;
+}
+.border {
+  border-top: 1px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+
+
+.foot {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  background-color: #0cb4ce;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}

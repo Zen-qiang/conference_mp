@@ -10,6 +10,9 @@
   background-color: #fff;
   display: flex;
   border-top: 1px solid #f2f2f2;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 .top view {
   width: 50%;
@@ -22,18 +25,31 @@
   box-sizing: border-box;
   height: 100rpx;
 }
+
+/* 安排入住 */
 .card {
   width: 100%;
-  margin-top: 30rpx;
+  position: fixed;
+  left: 0;
+  top: 103rpx;
+  z-index: 9;
+}
+.kong {
+  width: 100%;
+  height: 30rpx;
+  background-color: #f2f2f2;
+}
+.cardSelectop {
+  margin-bottom: 30rpx;
   background-color: #fff;
-  padding-bottom: 50rpx;
+  padding-bottom: 10rpx;
   box-sizing: border-box;
 }
 .fieldBox {
   width: 100%;
   height: 100rpx;
   line-height: 100rpx;
-  border-bottom: 1px solid #f2f2f2;
+  border-bottom: 1px solid #000;
 }
 .van-cell {
   line-height: 65rpx !important;
@@ -47,16 +63,24 @@
   background-color: #0cb4ce;
   border-radius: 50rpx;
   margin: 50rpx auto;
-  margin-bottom: 0;
   color: #fff;
   text-align: center;
   line-height: 100rpx;
   font-size: 30rpx;
 }
-.cardInfo {
+
+/* 酒店列表 */
+.hotelList {
   width: 100%;
-  margin-top: 30rpx;
+  padding-top: 600rpx;
+  padding-bottom: 10rpx;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+}
+.hotelBox {
   background-color: #fff;
+  margin-bottom: 30rpx;
+  border-bottom: 1px solid #ccc;
 }
 .mapIcon {
   width: 100%;
@@ -75,7 +99,7 @@
   margin: auto 0;
 }
 .mapImg image {
-    width: 64rpx;
+  width: 64rpx;
   height: 64rpx;
 }
 .hotelInfo {
@@ -102,6 +126,62 @@
 .textOne {
   margin-right: 10rpx;
 }
+.cardInfo {
+  width: 100%;
+}
+
+
+/* 已经入住 */
+.oldhotel {
+  width: 100%;
+  margin-top: 103rpx;
+  background-color: #fff;
+}
+.oldhotel-mapIcon {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1px solid #f2f2f2;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  font-size: 30rpx;
+}
+.oldhotel-mapImg {
+    width: 64rpx;
+  height: 64rpx;
+  margin: auto 0;
+}
+.oldhotel-mapImg iamge {
+      width: 64rpx;
+  height: 64rpx;
+}
+.oldhotel-hotelInfo {
+    padding: 30rpx;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.oldhotel-leftImg {
+    width: 180rpx;
+  height: 130rpx;
+  margin: auto 0;
+  background-color: red;
+}
+.oldhotel-leftImg image {
+    width: 180rpx;
+  height: 130rpx;
+}
+.oldhotel-rightText {
+    font-size: 26rpx;
+  color: #c6c6c6;
+}
+.oldhotel-.textOne {
+    margin-right: 10rpx;
+}
+
 .manName {
 width: 100%;
 height: 100rpx;
@@ -113,6 +193,27 @@ border-top: 1px solid #f2f2f2;
 display: flex;
 justify-content: space-between;
 font-size: 28rpx;
+}
+.headImg {
+  display: flex;
+  padding-top: 15rpx;
+  box-sizing: border-box;
+}
+.headImg view {
+  width: 70rpx;
+  height: 70rpx;
+  margin-left: 5rpx;
+  border-radius: 50%;
+  background-color: red;
+  position: relative;
+}
+.headImg view image {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
 }
 .footCar {
   width: 100%;
@@ -128,6 +229,10 @@ font-size: 28rpx;
 }
 
 
+
+
+
+/* admin  登录 */
 .roomNo {
   width: 100%;
   background-color: #fff;
@@ -242,8 +347,16 @@ font-size: 28rpx;
   vertical-align: middle;
 }
 .smImg image {
+  display: inline-block;
   width: 48rpx;
   height: 48rpx;
+  vertical-align: middle;
+}
+.smText {
+  display: inline-block;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-left: 5rpx;
   vertical-align: middle;
 }
 .tab {

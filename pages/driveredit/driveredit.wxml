@@ -1,0 +1,47 @@
+<!--pages/driveredit/driveredit.wxml-->
+<view class="driveredit">
+  <view class="top">
+    <view>当前班次</view>
+    <view bindtap='backPage'>取消</view>
+  </view>
+  <!--  -->
+  <view class="content">
+    <view class="padding carPhoto">
+      <view class="carPhotoLeft">
+        <view>车辆照片</view>
+        <view>
+          <image src="{{carImg}}"></image>
+        </view>
+      </view>
+      <view class="carPhotoRight">
+        <image src="../../common/resource/xj.png"></image>
+      </view>
+    </view>
+
+    <view class="carName border">
+     <van-field value="{{ carName }}" label="车辆名称：" placeholder="请输入车辆名称"  border="{{ false }}" />
+    </view>
+    <view class="">
+      <van-field value="{{ carNum }}" label="车辆号码：" placeholder="请输入车辆号码"  border="{{ false }}" />
+    </view>
+    <view class="border">
+      <van-field value="{{ linkMan }}" label="联系人：" placeholder="请输入联系人"  border="{{ false }}" />
+    </view>
+    <view class="">
+      <van-field value="{{ phone }}" label="手机号：" placeholder="请输入手机号"  border="{{ false }}" />
+    </view>
+    <view class="border">
+      <van-field value="{{ passengerNum }}" label="乘员人数：" placeholder="请输入乘员人数"  border="{{ false }}" />
+    </view>
+    <view class="">
+      <van-field value="{{ departTime }}" label="发车时间：" placeholder="请输入发车时间"  border="{{ false }}" />
+    </view>
+    <view class="border">
+      <van-field value="{{ departAddr }}" label="发车地点：" placeholder="请输入发车地点"  border="{{ false }}" />
+    </view>
+  
+  </view>
+
+
+  <view class="foot">保存</view>
+</view>

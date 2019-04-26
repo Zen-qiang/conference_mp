@@ -1,0 +1,42 @@
+/* pages/passengerInfo/passengerInfo.wxss */
+.passengerInfo {
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+}
+.top {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #fff;
+  display: flex;
+  border-top: 1px solid #f2f2f2;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 5;
+}
+.top view {
+  width: 50%;
+  text-align: center;
+  font-size: 26rpx;
+}
+.top view text {
+  display: inline-block;
+  padding: 0 15rpx;
+  box-sizing: border-box;
+  height: 100rpx;
+}
+.borderActive {
+  border-bottom: 2px solid #0cb4ce;
+  color: #000;
+}
+.top view .num {
+  padding: 0;
+}
+.color1 {
+  color: #0cb4ce;
+}
+.color2 {
+  color: red;
+}

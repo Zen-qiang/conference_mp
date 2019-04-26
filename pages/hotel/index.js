@@ -7,11 +7,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      { url: '../../common/resource/lb1.jpg' },
-      { url: '../../common/resource/lb2.jpg' },
-      { url: '../../common/resource/lb3.jpg' },
-    ],
+    // urlArr: [
+    //   '../../common/resource/lb1.jpg',
+    //   '../../common/resource/lb2.jpg',
+    //   '../../common/resource/lb3.jpg'
+    // ],
     disabled: false,
     // 轮播图 相关
     loop: true,
@@ -21,6 +21,11 @@ Page({
     autoplay: true,
     interval: 3000,
     duration: 1000,
+    // 酒店id
+    hotelId: '',
+    // 酒店信息
+    hotelsInfo: '',
+    imgUrls: '',
     // 日期选择器弹窗
     currentDate: '',
     minDate: new Date().getTime(),
@@ -28,19 +33,28 @@ Page({
     enterTime: '',
     show1: false,
     leaveTime: '',
+    accomAdd: ''
     },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // 选择酒店的 Id 及 日期
+    this.setData({
+      hotelId: options.id,
+      enterTime: options.startTime,
+      leaveTime: options.endTime,
+    })
   },
-
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    // 获取酒店信息
+    this.hotelsInfo()
+    this.hotelsRoomList()
+    this.searchHotelMemberInfo()
   },
   // 时间格式化 年月日
   changeTimeType(time) {
@@ -91,9 +105,10 @@ Page({
       show1: false
     });
   },
+  // 点击安排入住
   toPeoPleManage() {
     wx.navigateTo({
-      url: '/pages/peopleManage/index'
+      url: '/pages/peopleManage/index?hotelId=' + this.data.hotelId + '&hotelName=' + this.data.hotelsInfo.name
     })
   },
   /**
@@ -101,6 +116,67 @@ Page({
    */
   onHide: function () {
 
+  },
+
+  // 酒店信息
+  hotelsInfo() {
+    var data = {
+      url: config.hotelsInfo + this.data.hotelId,
+      // params: {
+      //   hotelId: this.data.hotelId
+      // }
+    }
+    app.nGet(data).then(data => {
+      if (data.data) {
+        this.setData({
+          imgUrls: data.data.photo.split("|"),
+          hotelsInfo: data.data
+        })
+      }
+    }, res => {
+
+    });
+  },
+  // 添加住宿人员列表
+  searchHotelMemberInfo() {
+    var data = {
+      url: config.searchHotelMemberInfo,
+      params: {
+        hotelId: this.data.hotelId
+      }
+    }
+    app.nGet(data).then(data => {
+      if (data.data) {
+        data.data.forEach(e => {
+          e.select = false
+          return data.data
+        })
+        this.setData({
+          accomAdd: data.data,
+        })
+        app.saveValue('accomAdd', this.data.accomAdd)
+        console.log(data.data, '添加')
+      }
+    }, res => {
+
+    });
+  },
+
+  // 酒店房间列表
+  hotelsRoomList() {
+    var data = {
+      url: config.hotelsRoomList + this.data.hotelId,
+      // params: {
+      //   hotelId: ''
+      // }
+    }
+    app.nGet(data).then(data => {
+      if (data.data) {
+        console.log(data.data, '酒店房间')
+      }
+    }, res => {
+
+    });
   },
 
   /**

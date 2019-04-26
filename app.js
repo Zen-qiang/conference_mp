@@ -100,6 +100,10 @@ App({
           'session-Token': sessionKey,
           // 'city': cityId,
         },
+        xhrFields: {
+          withCredentials:true
+        },
+        crossDomain: true,
         success: function (res) { },
         fail: function (res) { },
         complete: function (res) {
@@ -147,6 +151,10 @@ App({
           'session-Token': sessionKey,
           // 'city': cityId,
         },
+        xhrFields: {
+          withCredentials: true
+        },
+        crossDomain: true,
         success: function (res) { },
         fail: function (res) { },
         complete: function (res) {

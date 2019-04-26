@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "van-field": "/common/lib/vantUI/field/index"
+  }
+}

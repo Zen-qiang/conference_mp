@@ -1,1 +1,105 @@
-<view class="page-sendcar">sendcar</view>
+<view class="page-sendcar">
+  <block wx:if="{{!user}}">
+    <view class="top">
+      <view wx:for="{{topList}}" bindtap='switchTopTitle' data-index="{{index}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+        <text class="{{index == inx ? 'borderActive' : ''}}">{{item.title}}</text>
+      </view>
+    </view>
+    <!-- 全部车辆 -->
+    <view class="content" hidden="{{inx != 0}}">
+      <block wx:for="{{carList}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
+        <view class="cardBox">
+          <view class="imgBox" data-id="{{item.id}}" bindtap='toVehicledetails'>
+            <image src="{{item.vehiclesPhoto}}" mode="widthFix"></image>
+          </view>
+          <view class="carType-state">
+            <view class="carType">{{item.vehiclesName}}</view>
+            <view class="state">未发车</view>
+          </view>
+          <view class="carPhone">
+            <text>车牌号码: {{item.licensePlateNumber}}</text>
+          </view>
+          <view class="rightArrow">
+            <image src="../../common/resource/rightArrow.png"></image>
+          </view>
+          <view class="carTime">发车时间: {{item.departTime}}</view>
+          <view class="carAddr">发车地点: {{item.departPlace}}</view>
+        </view>
+        <view class="nowCover" data-id="{{item.id}}" data-index="{{index}}" bindtap='toCoverPage'>立即报名</view>
+      </block>
+    </view>
+
+    <!-- 已报名车辆 -->
+    <view class="content1" hidden="{{inx != 1}}">
+      <block wx:for="{{reportCarList}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
+        <view class="cardBox">
+          <view class="imgBox" data-id="{{item.id}}" bindtap='toVehicledetails'>
+            <image src="{{item.vehiclesPhoto}}" mode="widthFix"></image>
+          </view>
+          <view class="carType-state">
+            <view class="carType">{{item.vehiclesName}}</view>
+            <view class="state">未发车</view>
+          </view>
+          <view class="carPhone">
+            <text>车牌号码: {{item.licensePlateNumber}}</text>
+          </view>
+          <view class="rightArrow">
+            <image src="../../common/resource/rightArrow.png"></image>
+          </view>
+          <view class="carTime">发车时间: {{item.departTime}}</view>
+          <view class="carAddr">发车地点: {{item.departPlace}}</view>
+        </view>
+        <view class="nowCover" data-id="{{item.id}}" bindtap='toCoverPage'>立即报名</view>
+      </block>
+    </view>
+  </block>
+  <!-- 添加我的班次 -->
+  <block wx:else>
+    <view class="box">
+      <view class="addCarBox">
+        <view class="addCar" bindtap='toDriveredit'>添加我的班次</view>
+      </view>
+      <view class="addCarList">
+        <view class="addCarImg">
+          <image src="../../common/resource/car1.png" mode="widthFix">
+            <view class="bgc" wx:if="{{bgcShow}}">
+              <view>已发车</view>
+            </view>
+          </image>
+        </view>
+        <view class="carName">
+          <view>奇瑞</view>
+          <view class="stateRed" wx:if="{{!bgcShow}}">未发车</view>
+          <view clas="stateColor" wx:else>已发车</view>
+        </view>
+        <view class="carPhone">
+          <text>车牌号码: 333333</text>
+        </view>
+        <view class="addCarTime">
+          <view>发车时间: 2019-04-20 13:00:00</view>
+          <view>
+            <text>6</text>/6-10人</view>
+        </view>
+        <view class="addCarAddr">
+          <view>发车地点: 上海</view>
+          <view>5.6km</view>
+        </view>
+        <view class="passengerInfo" bindtap='toPassengerInfo'>
+          <view>乘客信息</view>
+          <view>
+            <view class="headImg">
+              <image src="../../common/resource/car1.png"></image>
+            </view>
+            <view>6/6</view>
+          </view>
+        </view>
+        <view class="sm" wx:if="{{!bgcShow}}">
+          <view bindtap='toPassengerInfo'>乘客扫描笔记</view>
+          <view>
+            <text bindtap='nowClick'>立即发车</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

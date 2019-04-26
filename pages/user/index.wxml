@@ -11,7 +11,7 @@
         <view>{{userInfo.company.name}}</view>
       </view>
     </view>
-    <view class="set-icon">
+    <view class="set-icon" bindtap='toLogOut'>
       <image src="../../common/resource/set.png" mode="widthFix"></image>
     </view>
   </view>
@@ -34,7 +34,7 @@
   <!-- 底部cell -->
   <view class="cell-list">
     <view>最新状态</view>
-    <view class="cell-list-right">
+    <view class="cell-list-right" bindtap='toNewState'>
       <view class="point-box">
         <view></view>
       </view>

@@ -1,0 +1,50 @@
+/* pages/logOut/logOut.wxss */
+.logOut {
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+}
+.top {
+  width: 100%;
+  height: 280rpx;
+  background: linear-gradient(#0c92ce, #0cb4ce);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.userImg {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin: auto auto;
+  border: 1px solid #f2f2f2;
+}
+.userImg image {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+.filed {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1px solid #f2f2f2;
+  background-color: #fff;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  font-size: 26rpx;
+}
+.foot {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  color: red;
+  font-size: 26rpx;
+}

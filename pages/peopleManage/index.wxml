@@ -1,10 +1,53 @@
 <!--pages/peopleManage/index.wxml-->
 <view class="peopleManage">
   <view class="top">
-  <text class="textTitle1 {{title == '取消' ? 'textTitle' : ''}}" bindtap='switchTitle'>{{title}}</text>
+    <text class="textTitle1 {{title == '取消' ? 'textTitle' : ''}}" bindtap='switchTitle'>{{title}}</text>
+    <view>{{hotelName}}</view>
   </view>
+  <view class="kong"></view>
+  <view class="center">
+    <view class="one" wx:for="{{addListNew}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
+      <view class="oneleft">
+        <text>{{index + 1}}</text>
+        <view class="rommType" data-index="{{index}}" bindtap='showSelect'><text>{{item.roomType}}</text>
+          <view class="arrowIcon">
+            <image src="../../common/resource/arrow-down.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class="oneRight">
+        <view class="headImg"  wx:for="{{item.fkMemberId}}" wx:for-item="order" wx:for-index="index" wx:key="{{index}}">
+          <image src="order.photo"></image>
+          <text></text>
+        </view>
+        <view class="titleBtn">
+          <text bindtap='toAccomAdd'data-index="{{index}}">{{item.edit}}</text>
+          <text hidden="{{title == '删除'}}" data-index="{{index}}" bindtap='deleteList'>{{item.delet}}</text>
+        </view>
+      </view>
+    </view>
+  
+  </view>
+  <!--删除确认弹窗 弹窗 -->
+  <van-popup show="{{ show }}" bind:close="onClose">
+    <view class="popupBox">
+      <view class="tipInfo">是否删除此条信息</view>
+      <view class="btn">
+        <view bindtap='cancel'>取消</view>
+        <view bindtap='confirm'>确认</view>
+      </view>
+    </view>
+  </van-popup>
+<!-- 房间类型弹窗 -->
+  <van-popup show="{{ show1 }}" bind:close="onClose"  position="bottom">
+    <van-picker columns="{{columns}}" bind:change="onChange"   show-toolbar
+  title="房型"
+  columns="{{ columns }}"
+  bind:cancel="onCancel"
+  bind:confirm="onConfirm" />
+  </van-popup>
   <view class="foot">
-    <view class="footLeft">新增房型</view>
-    <view class="footRight">保存</view>
+    <view class="footLeft" bindtap='addListNew'>新增房型</view>
+    <view class="footRight" bindtap='keepBtn'>保存</view>
   </view>
 </view>

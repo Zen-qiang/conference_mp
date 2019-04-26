@@ -123,13 +123,35 @@ width: 50rpx;
 }
 .centerArrow {
   width: 250rpx;
-  height: 1px;
-  background-color: green;
+  height: 2px;
+  background-color: #6dd36a;
+  position: relative;
+}
+.sj {
+  width: 0;
+  height: 0;
+  border-color: #6dd36a transparent;
+  border-width: 0 8px 8px 0;
+  border-style: solid;
+  position: absolute;
+  right: -1px;
+  bottom: 0;
 }
 .centerArrowColor {
   width: 250rpx;
-  height: 1px;
+  height: 2px;
   background-color: red;
+  position: relative;
+}
+.sjRed {
+  width: 0;
+  height: 0;
+  border-color: red transparent;
+  border-width: 0 0 8px 8px;
+  border-style: solid;
+  position: absolute;
+  left: -1px;
+  bottom: 0px;
 }
 .topTime {
   font-size: 14px;

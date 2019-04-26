@@ -1,0 +1,21 @@
+<!--pages/carMermber/carMermber.wxml-->
+<view class="carMermber">
+  <view class="top"><text>车辆成员</text></view>
+  <view class="content">
+    <view class="img-name">
+    <!--  -->
+          <view class="manInfo" wx:for="{{membersInfo}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}" data-index="{{index}}" data-selectId="{{item.isChecked}}" bindtap='selectClick'>
+            <view class="imgBox">
+              <image class="{{item.isChecked? 'bgcActive':''}}" src="{{item.photo}}"></image>
+              <view class="selectIcon" wx:if="{{item.isChecked}}">
+                <image src="../../common/resource/selectIcon.png"></image>
+              </view>
+            </view>
+            <view class="imgBoxBottom">{{item.name}}</view>
+          </view>
+
+        </view>
+  </view>
+  <!-- 添加至车辆 -->
+  <view class="foot" bindtap='addCar'>添加至车辆</view>
+</view>

@@ -102,7 +102,7 @@ Page({
     let journeyid = e.currentTarget.dataset.journeyid
     wx.navigateTo({
       // url: '/pages/memberInfo/index?journeyid=' + journeyid,
-      url: '/pages/memberInfo/index'
+      url: '/pages/memberInfo/index?journeyid=' + journeyid,
     })
   },
   // 点击 底部我的专车 按钮

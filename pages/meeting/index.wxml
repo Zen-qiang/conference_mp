@@ -2,27 +2,57 @@
 <view class="meeting">
   <view class="card">
     <view class="card-top">
-      <text>阿迪达斯订货会2</text>
-         <view class="{{switchName == '当前会务' ? 'switch-icon-active' : 'switch-icon'}}" bindtap='switch'>{{switchName}}</view>
+      <text>{{currentConference.subject}}</text>
+      <!-- <view class="{{switchName == '当前会务' ? 'switch-icon-active' : 'switch-icon'}}" bindtap='switch'>{{switchName}}</view> -->
+      <view class="switch-icon-active">当前会务</view>
     </view>
     <view class="card-center">
       <view class="card-center-left">
-        <image src="../../common/resource/ad.png" mode="widthFix"></image>
+        <image src="{{currentConference.conferenceCoverUrl}}" mode="widthFix"></image>
       </view>
       <view class="card-center-right">
         <view class="status">
-          <text class="status-left">状态: <text class="point"></text> 即将开始</text>
-          <text>人数: <text class="personNum">0</text>人</text>
+          <text class="status-left">状态: <text class="point"></text>{{currentConference.valueDefault}}</text>
+          <text>人数: <text class="personNum">{{currentConference.peopleNum}}</text>人</text>
         </view>
         <view class="addr">
-          <text>地址: 上海浦东新区</text>
+          <text>地址: {{currentConference.address}}</text>
         </view>
         <view class="time">
-          <text class="startTime">开始: 2018-04-13</text>
-          <text>结束: 2018-04-14</text>
+          <text class="startTime">开始: {{currentConference.startTime}}</text>
+          <text>结束: {{currentConference.endTime}}</text>
         </view>
       </view>
-    
+
     </view>
   </view>
+
+<!-- 切换的 会务 -->
+<block wx:for="{{canChangeConferenceList}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
+  <view class="card">
+    <view class="card-top">
+      <text>{{item.subject}}</text>
+      <view class="switch-icon" bindtap='switch' data-id="{{item.id}}">切换</view>
+    </view>
+    <view class="card-center">
+      <view class="card-center-left">
+        <image src="{{item.conferenceCoverUrl}}" mode="widthFix"></image>
+      </view>
+      <view class="card-center-right">
+        <view class="status">
+          <text class="status-left">状态: <text class="point"></text> {{item.valueDefault}}</text>
+          <text>人数: <text class="personNum">{{item.peopleNum}}</text>人</text>
+        </view>
+        <view class="addr">
+          <text>地址: {{item.address}}</text>
+        </view>
+        <view class="time">
+          <text class="startTime">开始: {{item.startTime}}</text>
+          <text>结束: {{item.endTime}}</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</block>
 </view>

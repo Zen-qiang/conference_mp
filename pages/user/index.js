@@ -16,7 +16,6 @@ Page({
       { name: '用餐扫码', img: '../../common/resource/sm.svg', index: 4 },
       { name: '证件通行', img: '../../common/resource/paper.svg', index: 5}
     ],
-
   },
 
   /**
@@ -30,13 +29,19 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+  },
+  //  点击设置图标
+  toLogOut() {
+    wx.navigateTo({
+      url: '/pages/logOut/logOut',
+    })
   },
   switch() {
     wx.navigateTo({
@@ -46,9 +51,6 @@ Page({
   //  根据点击的信息 跳转
   toPage(e) {
     let content = e.currentTarget.dataset.content
-    // this.setData({
-    //   content: e.currentTarget.dataset.content
-    // })
     switch (content) {
       case '报名信息':
         console.log(1)
@@ -59,7 +61,9 @@ Page({
         })
         break;
       case '派车管理':
-        console.log(3)
+        wx.reLaunch({
+          url: '/pages/sendcar/sendcar',
+        })
         break;
       case '住宿登记':
         wx.reLaunch({
@@ -67,12 +71,20 @@ Page({
         })
         break;
       case '用餐扫码':
-        console.log(5)
+        wx.navigateTo({
+          url: '/pages/diNing/diNing'
+        })
         break;
       case '证件通行':
         console.log(6)
         break;
     }
+  },
+  // 去最新的状态
+  toNewState() {
+    wx.navigateTo({
+      url: '/pages/newState/newState',
+    })
   },
 
   // 获取个人数据
