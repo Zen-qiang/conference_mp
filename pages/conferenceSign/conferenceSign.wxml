@@ -1,0 +1,81 @@
+<!-- 标题 -->
+<view class="tieleInfo-content">
+  <view class="content title">
+    <view>{{conferenceDetails.subject}}</view>
+    <view>{{conferenceDetails.valueDefault}}</view>
+  </view>
+</view>
+<!-- 报名信息 -->
+<view class="signInfo-content">
+  <view class="content desc">
+    <view>报名信息</view>
+    <view>
+      <van-icon name="add-o" />
+      <text>添加代报名</text>
+    </view>
+  </view>
+  <view class="content">
+    <view>经销商</view>
+    <view>{{conferenceDetails.name}}</view>
+  </view>
+  <view class="content">
+    <view>姓名</view>
+    <view>{{conferenceUserInfo.name}}</view>
+  </view>
+  <view class="content">
+    <view>照片</view>
+    <view>
+      <text>将用于证件打印</text>
+      <van-icon name="photo"/>
+    </view>
+  </view>
+  <view class="content">
+    <view>手机</view>
+    <view>{{conferenceUserInfo.phoneno}}</view>
+  </view>
+  <view class="content">
+    <view>身份证</view>
+    <view>311111111111111111</view>
+  </view>
+  <view class="content">
+    <view>性别</view>
+    <view>
+      <text>男</text>
+      <van-icon name="arrow"/>
+    </view>
+  </view>
+</view>
+<!-- 酒店信息 -->
+<view class="hotelInfo-content">
+  <view class="content desc">
+    <view>酒店信息</view>
+    <view>
+      <text>选择</text>
+      <van-icon name="arrow" />
+    </view>
+  </view>
+  <view class="content">
+    <view>酒店名</view>
+    <view>如家</view>
+  </view>
+  <view class="content">
+    <view>房间类型</view>
+    <view>标间</view>
+  </view>
+  <view class="content">
+    <view>房间序号</view>
+    <view>613</view>
+  </view>
+</view>
+<!-- 代报名成员 -->
+<view class="subSigin-content">
+  <view class="content desc">
+    <view>代报名成员</view>
+    <view>{{memberInfoList.length}}</view>
+  </view>
+  <view class="subMember"></view>
+</view>
+<!-- 提交报名按钮 -->
+<view class="signAction-content">
+  <van-button type="danger" custom-class="myBtn">提交报名</van-button>
+</view>

@@ -1,0 +1,60 @@
+
+<view class="content picture margin2">
+  <view class="coverImg"><image mode="widthFix" lazy-load="{{true}}" src="{{conferenceDetails.conferenceCoverUrl}}"></image></view>
+</view>
+<view class="content margin1">
+  <view class="title">{{conferenceDetails.subject}}</view>
+</view>
+<view class="content item margin2">
+  <view>状态</view>
+  <view>
+    <view>{{conferenceDetails.valueDefault}}</view>
+    <view>{{conferenceDetails.valueDefaultEn}}</view>
+  </view>
+</view>
+<view class="content item margin1">
+  <view>品牌商</view>
+  <view>
+    <view>{{conferenceDetails.name}}</view>
+    <view>1</view>
+  </view>
+</view>
+<view class="content item margin2">
+  <view>时间</view>
+  <view>
+    <view>{{conferenceDetails.timeRange}}</view>
+  </view>
+</view>
+<view class="content item margin8">
+  <view>地址</view>
+  <view bindtap="jumpAddress">
+    <view>{{conferenceDetails.address}}</view>
+    <view><van-icon name="location" /></view>
+  </view>
+</view>
+<view class="content item margin1">
+  <view>报名信息</view>
+  <view>
+    <view>已报名{{userInfo.number}}人</view>
+    <view><image class="userCover" wx:for="{{userInfo.members}}" wx:key="conferenceMembersId" wx:if="{{index < 3}}" src="{{item.photo}}" mode="aspectFill"></image><text>more</text><van-icon name="arrow" /></view>
+  </view>
+</view>
+<view class="content item margin2">
+  <view>经销商</view>
+  <view>
+    <view>{{userInfo.companyName}}</view>
+  </view>
+</view>
+<view class="content item margin8">
+  <view>报名状态</view>
+  <view>
+    <view>{{userInfo.status}}</view>
+  </view>
+</view>
+<view class="content info">
+  <view>会议信息</view>
+  <view><text>{{conferenceDetails.description}}</text></view>
+</view>
+<view class="bottomBtn">
+  <van-button type="default" custom-class="myBtn default" data-id="{{conferenceDetails.id}}" bind:tap="jumpSign">申请报名</van-button>
+</view>

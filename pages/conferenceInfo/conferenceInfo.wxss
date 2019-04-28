@@ -1,0 +1,70 @@
+Page {
+  background: #f0f0f0;
+  padding-bottom: 10px;
+}
+.content {
+  background: #fff;
+  padding: 15px;
+  font-size: 24rpx;
+  color: #666;
+}
+.content .coverImg image {
+  width: 100%;
+  height: auto;
+}
+.content .title {
+  font-size: 28rpx;
+  color: #333;
+}
+.content.item {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.content.item > view:first-of-type {
+  flex: 0 0 125rpx;
+}
+.content.item > view:last-of-type {
+  flex: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.content.info {
+  margin-bottom: 80rpx;
+}
+.userCover {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.userCover + .userCover {
+  margin-left: 10rpx;
+}
+.picture {
+  margin: 10px 0 2px;
+}
+.margin1 {
+  margin-bottom: 1px;
+}
+.margin2 {
+  margin-bottom: 2px;
+}
+.margin8 {
+  margin-bottom: 8px;
+}
+.bottomBtn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.bottomBtn .myBtn {
+  width: 100%;
+  font-size: 28rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 0;
+}

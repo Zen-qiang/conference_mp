@@ -46,8 +46,6 @@ Page({
   },
   // 登陆
   login() {
-    console.log('11')
-
     if (this.data.nameValue && this.data.passValue) {
       var data = {
         url: config.login,
@@ -62,7 +60,17 @@ Page({
           wx.reLaunch({
             url: '/pages/home/home',
           })
-          app.saveValue('sessionKey', res.datasessionToken);
+          const roleSet = res.data.roleSet
+          if (roleSet.includes('admin')){
+            wx.setTabBarItem({
+              index: 1,
+              text: '报名',
+              iconPath: 'common/resource/home.png',
+              selectedIconPath: 'common/resource/home-selected.png'
+            })
+          }
+          // console.log(res)
+          app.saveValue('sessionKey', res.data.sessionToken);
           app.saveValue('loginData', res.data);
         }
       }, res => {

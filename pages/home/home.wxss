@@ -2,15 +2,15 @@ Page {
   background: #f0f0f0;
 }
 .home {
-  padding: 25px 15px 0 100px;
+  padding: 25px 15px 0 90px;
   position: relative;
 }
 .left {
   position: absolute;
   left: 15px;
-  top: 20px;
-  width: 70px;
-  padding: 20px 0;
+  top: 25px;
+  width: 60px;
+  padding: 15px 0;
   background: #fff;
   text-align: center;
 }
@@ -18,7 +18,7 @@ Page {
   display: block;
 }
 .left .month {
-  font-size: 14px;
+  font-size: 12px;
   line-height: 14px;
 }
 .left .day {

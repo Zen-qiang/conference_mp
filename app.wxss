@@ -15,3 +15,11 @@ page {
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+.myBtn.default {
+  background: #0eabc7!important;
+  color: #fff!important;
+  border: none!important;
+}
+.van-icon {
+  vertical-align: middle;
+}

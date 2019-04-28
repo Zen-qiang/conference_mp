@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "会务详情",
+  "usingComponents": {
+    "van-button": "/common/lib/vantUI/button/index",
+    "van-icon": "/common/lib/vantUI/icon/index"
+  }
+}

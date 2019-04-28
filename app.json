@@ -11,7 +11,9 @@
     "pages/acconmmodation/acconmmodation",
     "pages/sendcar/sendcar",
     "pages/index/index",
-    "pages/meeting/index"
+    "pages/meeting/index",
+    "pages/conferenceInfo/conferenceInfo",
+    "pages/conferenceSign/conferenceSign"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -23,7 +25,7 @@
   },
   "tabBar": {
     "color": "#333",
-    "selectColor": "#333",
+    "selectColor": "#0eabc7",
     "backgroundColor": "#fff",
     "borderStyle": "black",
     "list": [

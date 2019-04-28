@@ -12,8 +12,8 @@
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.6.2",
-	"appid": "wxfd263e8b00d0e2f8",
+	"libVersion": "2.6.4",
+	"appid": "wx1e8a20e5b163069e",
 	"projectname": "conference_mp",
 	"isGameTourist": false,
 	"condition": {
@@ -34,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 7,
 			"list": [
 				{
 					"id": -1,
@@ -70,6 +70,24 @@
 					"pathName": "pages/trip/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "会务",
+					"pathName": "pages/home/home",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "会务详情",
+					"pathName": "pages/conferenceInfo/conferenceInfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "申请报名",
+					"pathName": "pages/conferenceSign/conferenceSign",
+					"query": "id=5"
 				}
 			]
 		}

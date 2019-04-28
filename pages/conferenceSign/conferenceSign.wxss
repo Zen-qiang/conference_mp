@@ -1,0 +1,55 @@
+Page {
+  background: #f0f0f0;
+}
+[class$="-content"] {
+  margin-bottom: 8px;
+}
+.content {
+  background: #fff;
+  padding: 15px;
+  font-size: 24rpx;
+  color: #333;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.content + .content {
+  margin-top: 1px;
+}
+.content.title {
+  font-size: 28rpx;
+  margin-top: 2px;
+}
+.content.title > view {
+  flex: auto!important;
+}
+.content.desc {
+  color: #666;
+}
+.content > view:first-of-type {
+  flex: 0 0 125rpx;
+}
+.content > view:last-of-type {
+  flex: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  line-height: 24rpx;
+}
+.content > view:last-of-type > text:not(:last-child) {
+  margin-right: 4px;
+}
+.content > view:last-of-type > text:last-child {
+  margin-left: 4px;
+}
+.signAction-content {
+  margin-bottom: 0;
+}
+.signAction-content .myBtn {
+  width: 100%;
+  font-size: 28rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 0;
+}

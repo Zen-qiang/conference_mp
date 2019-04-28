@@ -1,0 +1,4 @@
+<view class="com-member">
+  <view class="left"><van-icon name="cross" /></view>
+  <view class="right"></view>
+</view>

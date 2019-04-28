@@ -1,15 +1,15 @@
-<block>
+<block wx:for="{{conferenceList}}" wx:key="id">
   <view class="home">
     <view class="left">
       <text class="month">三月</text>
       <text class="day">21</text>
       <text class="year">2019</text>
     </view>
-    <view class="right" bindtap="jumpInfo">
-      <view class="img"><image src="" mode="aspectFit" lazy-load="{{true}}"></image></view>
-      <view class="name">上海订货会</view>
+    <view class="right" bindtap="jumpInfo" data-id="{{item.id}}">
+      <view class="img"><image src="{{item.photo}}" mode="widthFix" lazy-load="{{true}}"></image></view>
+      <view class="name">{{item.subject}}}</view>
       <view class="state"><text>进行中</text></view>
-      <view class="desc"><text>内容</text></view>
+      <view class="desc"><text>{{item.description}}</text></view>
     </view>
   </view>
 </block>
