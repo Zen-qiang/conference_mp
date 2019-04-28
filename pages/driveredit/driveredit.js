@@ -1,14 +1,18 @@
-// pages/finishTrip/index.js
+// pages/driveredit/driveredit.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    // tab 是否禁用
-    disabled: false,
-    // 显示下划线
-    activeNum: 0,
+    carImg: '../../common/resource/car2.png',
+    carName: '',
+    carNum: '',
+    linkMan: '',
+    phone: '',
+    passengerNum: '',
+    departTime: '',
+    departAddr: '',
   },
 
   /**
@@ -31,21 +35,34 @@ Page({
   onShow: function () {
 
   },
-  // 点击 编辑
-  showClearIcon() {
-    console.log('444')
-  },
-  // 点击 + 
-  addPerson() {
-    wx.navigateTo({
-      url: '/pages/trip/index?activeNum=' + this.data.activeNum,
+  backPage() {
+    wx.reLaunch({
+      url: '/pages/sendcar/sendcar',
     })
   },
-  // 点击 底部我的专车 按钮
-  toCar() {
-    wx.navigateTo({
-    })
+
+  // 新增车次信息
+  addCarInfo() {
+    var data = {
+      url: config.addCarInfo,
+      params: {
+        carImg: this.data.carImg,
+        carName: this.data.carName,
+        carNum: this.data.carNum,
+        linkMan: this.data.linkMan,
+        phone: this.data.phone,
+        passengerNum: this.data.passengerNum,
+        departTime: this.data.departTime,
+        departAddr: this.data.departAddr,
+      }
+    };
+    app.nPost(data).then(ret => {
+      
+    }, res => {
+      // console.error(JSON.stringify(res));
+    });
   },
+
   /**
    * 生命周期函数--监听页面隐藏
    */

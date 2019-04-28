@@ -5,6 +5,8 @@
     "van-tab": "/common/lib/vantUI/tab/index",
     "van-tabs": "/common/lib/vantUI/tabs/index",
     "van-switch": "/common/lib/vantUI/switch/index",
-    "van-field": "/common/lib/vantUI/field/index"
+    "van-field": "/common/lib/vantUI/field/index",
+    "van-popup": "/common/lib/vantUI/popup/index",
+    "van-datetime-picker": "/common/lib/vantUI/datetime-picker/index"
   }
 }

@@ -1,0 +1,8 @@
+<!--pages/passengerInfo/passengerInfo.wxml-->
+<view class="passengerInfo">
+    <view class="top">
+    <view wx:for="{{topList}}" bindtap='switchTopTitle' data-index="{{index}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+      <text class="{{index == inx ? 'borderActive' : ''}}">{{item.title}} <text class="num {{index == 0 ? 'color1': ''}}{{index == 1 ? 'color2' : ''}}">{{item.num}}</text></text>
+    </view>
+  </view>
+</view>

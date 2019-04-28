@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "最新状态",
+  "usingComponents": {
+    "van-steps": "/common/lib/vantUI/steps/index"
+  }
+}

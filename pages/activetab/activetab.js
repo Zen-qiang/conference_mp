@@ -1,4 +1,6 @@
 // pages/finishTrip/index.js
+const app = getApp();
+import config from '../../config.js';
 Page({
 
   /**
@@ -10,7 +12,12 @@ Page({
     // 显示下划线
     activeNum: 0,
     changeName: '编辑',
-    showClearBtn: false
+    showClearBtn: false,
+    journeyType: 'ARRIVE',
+    // 行程列表数据
+    journeyList: '',
+    // 删除行程的id
+    journeyId: null
   },
 
   /**
@@ -31,7 +38,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getJourneyList()
   },
   // 点击 编辑
   showClearIcon() {
@@ -54,10 +61,73 @@ Page({
       url: '/pages/trip/index?activeNum=' + this.data.activeNum,
     })
   },
+  // 获取是到站  还是返回
+  toTitle() {
+    this.setData({
+      activeNum: 0,
+      journeyType: 'ARRIVE'
+    })
+    this.getJourneyList()
+  },
+  backTitle() {
+    this.setData({
+      activeNum: 1,
+      journeyType: 'DEPART'
+    })
+    this.getJourneyList()
+  },
+  // 点击 clearIcon 删除行程
+  clearBtn(e) {
+    this.setData({
+      journeyId: e.currentTarget.dataset.id
+    })
+    console.log(this.data.journeyId)
+    var data = {
+      url: config.deleteJourney+'?journeyId=' + this.data.journeyId
+      // params: {
+      //   journeyId: this.data.journeyId
+      // }
+    }
+    app.nDelete(data).then(data => {
+      if(data.code === 0) {
+        this.getJourneyList()
+      }
+
+      },res => {
+
+      })
+  },
+  // 成员列表
+  toMemberList(e) {
+    let journeyid = e.currentTarget.dataset.journeyid
+    wx.navigateTo({
+      // url: '/pages/memberInfo/index?journeyid=' + journeyid,
+      url: '/pages/memberInfo/index?journeyid=' + journeyid,
+    })
+  },
   // 点击 底部我的专车 按钮
   toCar() {
     wx.navigateTo({
     })
+  },
+
+  // 获取行程列表
+  getJourneyList() {
+    var data = {
+      url: config.journeyList,
+      params: {
+        journeyType: this.data.journeyType,
+      }
+    }
+    app.nGet(data).then(data => {
+      if(data.data) {
+        this.setData({
+          journeyList: data.data
+        })
+      }
+      },res => {
+
+    });
   },
   /**
    * 生命周期函数--监听页面隐藏

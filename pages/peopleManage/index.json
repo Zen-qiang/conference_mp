@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-popup": "/common/lib/vantUI/popup/index",
+    "van-picker": "/common/lib/vantUI/picker/index"
+  }
+}

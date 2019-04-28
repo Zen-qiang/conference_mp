@@ -1,98 +1,101 @@
 
 <view class="finishTrip">
-  <view class="top">
-    <view class="change {{changeName == '完成' ? 'changeActive' : ''}}" bindtap='showClearIcon'>{{changeName}}</view>
-    <van-tabs color="#0cb4ce" line-width="70" active="{{activeNum}}">
-      <van-tab title="到站信息">
-        <view class="one" disabled="{{!disabled}}">
-          <view class="card1">
-            <view class="clearIcon" wx:if="{{showClearBtn}}">
-              <image src="../../common/resource/clearRed.png" mode="widthFix"></image>
-            </view>
-            <view class="card1-top">
-              <!-- 头像 -->
-              <view class="headImg">
-                <image src="../../common/resource/default.jpg" mode="widthFix"></image>
-              </view>
-              <!-- 箭头指示 -->
-              <view class="longArrow">
-                <text class="topTime">12月20日 周三</text>
-                <view class="centerArrow"></view>
-                <text class="footCar">中国国航CA3202</text>
-              </view>
-              <!-- 到站信息 -->
-              <view class="comeInfo">
-                <view class="addr">上海</view>
-                <view class="addr-next">虹桥T3</view>
-                <view class="kong"></view>
-                <view class="factTime">08:50</view>
-                <view class="expectTime">预计到达08:50</view>
-              </view>
-            </view>
-            <view class="card1-foot">
-              <text>其他成员 8人</text>
-              <view class="moreImg">
-                <view>
-                  <image src="../../common/resource/default.jpg"></image>
-                </view>
-                <view>
-                  <image src="../../common/resource/default.jpg"></image>
-                </view>
-                <view>
-                  <image src="../../common/resource/default.jpg"></image>
-                </view>
-                <text>more</text>
-              </view>
-            </view>
-          </view>
-        </view>
-      </van-tab>
-      <van-tab title="返回信息" disabled="{{disabled}}">
-        <view class="one">
-          <view class="card1">
-            <view class="clearIcon" wx:if="{{showClearBtn}}">
-              <image src="../../common/resource/clearRed.png" mode="widthFix"></image>
-            </view>
-            <view class="card1-top">
-              <!-- 头像 -->
-              <view class="headImg">
-                <image src="../../common/resource/default.jpg" mode="widthFix"></image>
-              </view>
-              <!-- 箭头指示 -->
-              <view class="longArrow">
-                <text class="topTime">12月20日 周三</text>
-                <view class="centerArrowColor"></view>
-                <text class="footCar">中国国航CA3202</text>
-              </view>
-              <!-- 到站信息 -->
-              <view class="comeInfo">
-                <view class="addr">上海</view>
-                <view class="addr-next">虹桥T3</view>
-                <view class="kong"></view>
-                <view class="factTime">08:50</view>
-                <view class="expectTime">预计到达08:50</view>
-              </view>
-            </view>
-            <view class="card1-foot">
-              <text>其他成员 8人</text>
-              <view class="moreImg">
-                <view>
-                  <image src="../../common/resource/default.jpg"></image>
-                </view>
-                <view>
-                  <image src="../../common/resource/default.jpg"></image>
-                </view>
-                <view>
-                  <image src="../../common/resource/default.jpg"></image>
-                </view>
-                <text>more</text>
-              </view>
-            </view>
-          </view>
-        </view>
-      </van-tab>
-    </van-tabs>
-    <view class="addIcon" bindtap='addPerson'>+</view>
+<!-- 头部tab栏 -->
+  <view class="head">
+        <view class="head-left">
+      <text class="change {{changeName == '完成' ? 'changeActive' : ''}}" bindtap='showClearIcon'>{{changeName}}</text>
+      <view class="border-bottom {{activeNum === 0? '.border-bottom-active' : ''}}" bindtap='toTitle'>到站信息</view>
+    </view>
+    <view class="head-right">
+      <view class="border-bottom {{activeNum === 1? '.border-bottom-active' : ''}}" bindtap='backTitle'>返回信息</view>
+      <view class="addIcon" bindtap='addPerson'>
+        <image src="../../common/resource/addIcon.png" mode="widthFix"></image>
+      </view>
+      </view>
   </view>
+
+
+
+
+  <view class="one">
+            <!-- 到达 -->
+    <block wx:if="{{activeNum == 0}}" wx:for="{{journeyList}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+      <view class="card1">
+        <view class="clearIcon" wx:if="{{showClearBtn}}" data-id="{{item.id}}" bindtap='clearBtn'>
+          <image src="../../common/resource/clearRed.png" mode="widthFix"></image>
+        </view>
+        <view class="card1-top">
+          <!-- 头像 -->
+          <view class="headImg">
+            <image src="{{item.photo}}" mode="scaleToFill"></image>
+          </view>
+          <!-- 箭头指示 -->
+          <view class="longArrow">
+            <text class="topTime">{{item.week}}</text>
+            <view class="centerArrow">
+              <view class="sj"></view>
+            </view>
+            <text class="footCar">{{item.numberOfRuns}}</text>
+          </view>
+          <!-- 到站信息 -->
+          <view class="comeInfo">
+            <view class="addr">{{item.city}}</view>
+            <view class="addr-next">{{item.place}}</view>
+            <view class="kong"></view>
+            <view class="factTime">{{item.hour}}</view>
+            <view class="expectTime">预计到达 {{item.hour}}</view>
+          </view>
+        </view>
+        <view class="card1-foot">
+          <text>其他成员 {{item.membersSize}}人</text>
+          <view class="moreImg" wx:if="{{item.members.length > 0}}">
+            <view wx:for="{{item.members}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+              <image src="{{item.photo}}"></image>
+            </view>
+            <text data-journeyId="{{item.id}}" bindtap='toMemberList'>more</text>
+          </view>
+        </view>
+      </view>
+    </block>
+            <!-- 返程== -->
+
+      <block wx:if="{{activeNum == 1}}" wx:for="{{journeyList}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+            <view class="card1">
+              <view class="clearIcon" wx:if="{{showClearBtn}}" data-id="{{item.id}}" bindtap='clearBtn'>
+                <image src="../../common/resource/clearRed.png" mode="widthFix"></image>
+              </view>
+              <view class="card1-top">
+                <!-- 头像 -->
+                <view class="headImg">
+                    <image src="{{item.photo}}" mode="scaleToFill"></image>
+                </view>
+                <!-- 箭头指示 -->
+                <view class="longArrow">
+                  <text class="topTime">{{item.week}}</text>
+                  <view class="centerArrowColor">
+                    <view class="sjRed"></view></view>
+                  <text class="footCar">{{item.numberOfRuns}}</text>
+                </view>
+                <!-- 到站信息 -->
+                <view class="comeInfo">
+                  <view class="addr">{{item.city}}</view>
+                  <view class="addr-next">{{item.place}}</view>
+                  <view class="kong"></view>
+                  <view class="factTime">{{item.hour}}</view>
+                  <view class="expectTime">预计到达 {{item.hour}}</view>
+                </view>
+              </view>
+              <view class="card1-foot">
+                <text>其他成员 {{item.membersSize}}人</text>
+                <view class="moreImg" wx:if="{{item.members.length > 0}}">
+                  <view wx:for="{{item.members}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+                    <image src="{{item.photo}}"></image>
+                  </view>
+                  <text data-journeyId="{{item.id}}" bindtap='toMemberList'>more</text>
+                </view>
+              </view>
+            </view>
+            </block>
+          </view>
   <view class="foot" bindtap='toCar'>管理我的专车</view>
 </view>

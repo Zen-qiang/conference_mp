@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "酒店",
+  "usingComponents": {
+    "van-field": "/common/lib/vantUI/field/index",
+    "van-tab": "/common/lib/vantUI/tab/index",
+    "van-tabs": "/common/lib/vantUI/tabs/index",
+    "van-popup": "/common/lib/vantUI/popup/index",
+    "van-datetime-picker": "/common/lib/vantUI/datetime-picker/index"
+  }
+}

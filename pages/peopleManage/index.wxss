@@ -1,0 +1,165 @@
+/* pages/peopleManage/index.wxss */
+.peopleManage {
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+}
+.top {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-top: 1px solid #eee;
+  padding: 0rpx 30rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  font-size: 26rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.top text {
+  display: inline-block;
+}
+.textTitle1 {
+  color: red;
+}
+.textTitle {
+  color: #0cb4ce;
+}
+/*  */
+.kong {
+  width: 100%;
+  height: 80rpx;
+}
+
+/*  */
+.center {
+  width: 100%;
+}
+.one {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-top: 1px solid #f2f2f2;
+  font-size: 26rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.oneleft {
+  display: flex;
+  justify-content: flex-start;
+}
+.oneleft text {
+  margin-right: 30rpx;
+}
+.rommType {
+  min-width:150rpx;
+  height: 50rpx;
+  line-height: 48rpx;
+  padding-left: 10rpx;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  margin: auto 0;
+  border: 1px solid red;
+  position: relative;
+}
+.rommType text {
+  margin-right: 50rpx;
+}
+.arrowIcon {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  top: 50%;
+  right: 10rpx;
+  margin-top: -25rpx;
+}
+.arrowIcon image {
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  left: -15rpx;
+  top: -25rpx;
+}
+.oneRight {
+  display: flex;
+}
+.headImg {
+  width: 70rpx;
+  height: 70rpx;
+  margin-top: 15rpx;
+  border-radius: 50%;
+  margin-left: 10rpx;
+  background-color: blue;
+  vertical-align: middle;
+}
+.headImg image {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.titleBtn text:nth-child(1){
+  color: #0cb4ce;
+  margin-right: 50rpx;
+  margin-left: 10rpx;
+}
+.titleBtn text:nth-child(2) {
+  color: red;
+}
+
+/* 弹窗 */
+.popupBox {
+  width: 100%;
+  padding: 30rpx;
+  box-sizing: border-box;
+  border-radius: 30epx;
+  font-size: 26rpx;
+}
+.tipInfo {
+  text-align: center;
+  margin-bottom: 50rpx;
+}
+.btn {
+  display: flex;
+  justify-content: space-between;
+}
+.btn view {
+  background-color: #f2f2f2;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  width: 50%;
+}
+.btn view:nth-child(2) {
+  background-color: #0cb4ce;
+  color: #fff;
+}
+
+/*  */
+.foot {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-top: 1px solid #eee;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  background-color: #fff;
+  font-size: 30rpx;
+}
+.foot view{
+  width: 50%;
+  height: 100%;
+  text-align: center;
+}
+.footLeft {
+  color: #0cb4ce;
+}
+.footRight {
+  background-color: #f2f2f2;
+}

@@ -30,13 +30,14 @@
   font-size: 14px;
 }
 .head-img-box {
-  width: 200rpx;
-  height: 200rpx;
+  width: 180rpx;
+  height: 180rpx;
   border-radius: 50%;
   margin: auto 0;
 }
 .head-img-box image {
   width: 100%;
+  height: 100%;
   border-radius: 50%;
 }
 .set-icon {

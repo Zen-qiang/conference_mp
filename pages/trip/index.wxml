@@ -1,86 +1,94 @@
 <!--pages/trip/index.wxml-->
+<view class="closeTrafficLeft" bindtap='closeTrafficLeft'></view>
 <view class="tripBox">
   <view class="top">
-    <van-tabs color="#0cb4ce" line-width="70" active="{{ activeNum }}">
-      <van-tab title="到站信息" disabled="{{!disabled}}">
+    <van-tabs color="#0cb4ce" line-width="70" active="{{ activeNum }}" bind:click="titleInfo">
+      <van-tab title="到站信息">
         <view class="one">
-          <van-cell-group>
           <!-- 自行解决 -->
-            <view class="one-cell ">
-              <text>自行解决</text>
-              <view class="switchBtn">
-                <van-switch checked="{{ checked }}" active-color="#07c160" bind:change="switchBtnChange" />
-              </view>
+          <view class="one-cell">
+            <text bindtap='click'>自行解决</text>
+            <view class="switchBtn">
+              <van-switch checked="{{ checked }}" active-color="#07c160" bind:change="switchBtnChange" />
             </view>
+          </view>
+          <van-cell-group wx:if="{{!checked}}">
             <!-- 交通类型 -->
             <view class="one-cell  traffic">
               <text>交通类型</text>
               <view class="trafficLeft">
                 <view bindtap='showList'>
-                  <text class="textName">{{name}}</text>
+                  <text class="textName">{{value}}</text>
                   <view class="down-arrow">
                     <image src="../../common/resource/arrow-down.png" mode="widthFix"></image>
                   </view>
                 </view>
                 <view class="trafficList" wx:if="{{showList}}">
-                  <text class="{{index == ind ? 'textActeve' : ''}}" wx:for="{{trafficList}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}" data-index="{{index}}" data-name="{{item.name}}" bindtap='selectItem'>{{item.name}}</text>
+                  <text class="{{index == ind ? 'textActeve' : ''}}" wx:for="{{trafficList}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}" data-index="{{index}}" data-value="{{item.value}}" data-id="{{item.id}}" bindtap='selectItem'>{{item.value}}</text>
                 </view>
               </view>
             </view>
-            <van-field value="{{ city }}" clearable input-align="right" label="到达城市" placeholder="请输入到达城市"  bind:blur="blur"/>
-            <van-field value="{{ addr }}" clearable input-align="right" label="到达地点" placeholder="请输入到达地点"  />
-            <van-field value="{{ time }}" clearable input-align="right" label="到达时间" placeholder="请输入到达时间"  />
-            <van-field value="{{ shifts }}" clearable input-align="right" label="班次号" placeholder="请输入班次号"  />
+            <van-field value="{{ city }}" clearable input-align="right" label="到达城市" placeholder="请输入到达城市" bind:change="blurCity" />
+            <van-field value="{{ addr }}" clearable input-align="right" label="到达地点" placeholder="请输入到达地点" bind:change="blurAddr" />
+            <van-field value="{{ time }}" clearable input-align="right" label="到达时间" placeholder="请输入到达时间" bindtap="showpopup" bind:change="blurTime" />
+            <van-field value="{{ shifts }}" clearable input-align="right" label="班次号" placeholder="请输入班次号" bind:change="blurShifts" />
           </van-cell-group>
-
+        </view>
+        <view class="bottom">
+          <text>其他成员</text>
+          <view class="moreImg" bindtap="memberInfo">
+            <view wx:for="{{selectMemberInfo}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+              <image src="{{item.photo}}"></image>
+            </view>
+          </view>
         </view>
       </van-tab>
-      <van-tab title="返回信息" disabled="{{disabled}}">
+      <van-tab title="返回信息">
         <view class="one">
-        <van-cell-group>
-          <view class="one-cell ">
+          <view class="one-cell">
             <text>自行解决</text>
             <view class="switchBtn">
               <van-switch checked="{{ checked1 }}" active-color="#07c160" bind:change="switchBtnChange1" />
             </view>
           </view>
-          <!-- 交通 -->
-          <view class="one-cell  traffic">
-            <text>交通类型</text>
-            <view class="trafficLeft">
-              <view bindtap='showList2'>
-                <text class="textName">{{name2}}</text>
-                <view class="down-arrow">
-                  <image src="../../common/resource/arrow-down.png" mode="widthFix"></image>
+          <van-cell-group wx:if="{{!checked1}}">
+            <!-- 交通 -->
+            <view class="one-cell  traffic">
+              <text>交通类型</text>
+              <view class="trafficLeft">
+                <view bindtap='showList2'>
+                  <text class="textName">{{value1}}</text>
+                  <view class="down-arrow">
+                    <image src="../../common/resource/arrow-down.png" mode="widthFix"></image>
+                  </view>
+                </view>
+                <view class="trafficList" wx:if="{{showList2}}">
+                  <text class="{{index == ind1 ? 'textActeve' : ''}}" wx:for="{{trafficList2}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}" data-index="{{index}}" data-value="{{item.value}}" data-id="{{item.id}}" bindtap='selectItem2'>{{item.value}}</text>
                 </view>
               </view>
-              <view class="trafficList" wx:if="{{showList2}}">
-                <text class="{{index == ind2 ? 'textActeve' : ''}}" wx:for="{{trafficList2}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}" data-index="{{index}}" data-name="{{item.name}}" bindtap='selectItem2'>{{item.name}}</text>
-              </view>
+            </view>
+            <van-field value="{{ city1 }}" clearable input-align="right" label="到达城市" placeholder="请输入到达城市" bind:change="blurCity" />
+            <van-field value="{{ addr1 }}" clearable input-align="right" label="到达地点" placeholder="请输入到达地点" bind:change="blurAddr" />
+            <van-field value="{{ time1 }}" clearable input-align="right" label="到达时间" placeholder="请输入到达时间" bindtap="showpopup1" bind:change="blurTime1" />
+            <van-field value="{{ shifts1 }}" clearable input-align="right" label="班次号" placeholder="请输入班次号" bind:change="blurShifts" />
+          </van-cell-group>
+        </view>
+        <view class="bottom">
+          <text>其他成员</text>
+          <view class="moreImg" bindtap='memberInfo'>
+            <view wx:for="{{selectMemberInfo1}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+              <image src="{{item.photo}}"></image>
             </view>
           </view>
-                      <van-field value="{{ username }}" clearable input-align="right" label="到达城市" placeholder="请输入到达城市" bind:click-icon="onClickIcon" />
-            <van-field value="{{ username }}" clearable input-align="right" label="到达地点" placeholder="请输入到达地点" bind:click-icon="onClickIcon" />
-            <van-field value="{{ username }}" clearable input-align="right" label="到达时间" placeholder="请输入到达地点" bind:click-icon="onClickIcon" />
-            <van-field value="{{ username }}" clearable input-align="right" label="班次号" placeholder="请输入班次号" bind:click-icon="onClickIcon" />
-</van-cell-group>
         </view>
       </van-tab>
     </van-tabs>
   </view>
-  <view class="bottom">
-    <text>其他成员</text>
-    <view class="moreImg">
-      <view>
-        <image src="../../common/resource/default.jpg" mode="widthFix"></image>
-      </view>
-      <view>
-        <image src="../../common/resource/default.jpg" mode="widthFix"></image>
-      </view>
-      <view>
-        <image src="../../common/resource/default.jpg" mode="widthFix"></image>
-      </view>
-    </view>
-  </view>
+  <van-popup show="{{ show }}" position="bottom" overlay="{{ true }}" bind:close="onClose">
+    <van-datetime-picker type="date" min-date="{{ minDate }}" bind:input="onInput" bind:confirm='confirm' bind:cancel='cancel' />
+  </van-popup>
+  <van-popup show="{{ show1 }}" position="bottom" overlay="{{ true }}" bind:close="onClose">
+    <van-datetime-picker type="date" min-date="{{ minDate }}" bind:input="onInput" bind:confirm='confirm' bind:cancel='cancel' />
+  </van-popup>
   <view class="foot" bindtap='toDetail'>完 成</view>
 </view>

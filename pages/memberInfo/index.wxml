@@ -1,0 +1,80 @@
+<!--pages/memberInfo/index.wxml-->
+<view class="memberInfo {{page == 'trip' ? 'paddingTop' : ''}}">
+  <view class="contant">
+    <block wx:if="{{page != 'trip'}}">
+      <view class="topCard">
+        <view class="topCard-left">
+          <image src="{{membersInfo.photo}}"></image>
+        </view>
+        <view class="topCard-right">
+          <text>{{membersInfo.userName}}</text>
+          <text>{{membersInfo.companyName}}</text>
+        </view>
+      </view>
+      <view class="center">
+        <view class="center-head">
+          <text>同行人员</text>
+          <text>{{membersInfo.membersInfo.length}}</text>
+        </view>
+        <view class="center-content">
+          <!-- <view class="center-content-one" wx:for="{{membersInfo.membersInfo}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}"> -->
+          <view class="center-content-one" wx:for="{{membersInfo.membersInfo}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+            <view class="one-top">
+              <view class="one-top-img">
+                <image src="{{item.photo}}"></image>
+              </view>
+              <view class="memberName">
+                <text>{{item.name}}</text>
+                <view class="text-border">
+                  <view class="text-con">代</view>
+                </view>
+              </view>
+            </view>
+            <!-- 手机 -->
+            <view class="one-phone">
+              <view class="phone">{{item.phoneNo}}</view>
+            </view>
+            <!-- 身份证 -->
+            <view class="one-phone" hidden='{{!item.idNumber}}'>
+              <view class="phone">{{item.idNumber}}</view>
+            </view>
+            <!-- 酒店 -->
+            <view class="one-phone" hidden='{{!item.hotelName}}'>
+              <view class="phone">{{item.hotelName}}</view>
+            </view>
+            <!-- 房间类型 -->
+            <view class="one-phone" hidden='{{!item.roomType}}'>
+              <view class="phone">{{item.roomType}}</view>
+            </view>
+            <!-- 房间序号 -->
+            <view class="one-phone" hidden='{{!item.room_seq}}'>
+              <view class="phone">{{item.room_seq}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <!-- trip -->
+    <block wx:if="{{page == 'trip'}}">
+      <view class="center trip">
+        <view class="center-head">
+          <text>成员信息</text>
+          <text>{{tripMembersInfo.length}}</text>
+        </view>
+        <view class="img-name">
+          <view class="manInfo" wx:for="{{tripMembersInfo}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}" data-index="{{index}}" data-selectId="{{item.isChecked}}" bindtap='selectClick'>
+            <view class="imgBox">
+              <image class="{{item.isChecked? 'bgcActive':''}}" src="{{item.photo}}"></image>
+              <view class="selectIcon" wx:if="{{item.isChecked}}">
+                <image src="../../common/resource/selectIcon.png"></image>
+              </view>
+            </view>
+            <view class="imgBoxBottom">{{item.name}}</view>
+          </view>
+
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="footBtn" bindtap='footBtn'>确 定</view>
+</view>

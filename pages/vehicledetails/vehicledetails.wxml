@@ -1,0 +1,49 @@
+<!--pages/vehicledetails/vehicledetails.wxml-->
+<view class="vehicledetails">
+  <view class="infoBox">
+    <!-- 轮播图  -->
+    <swiper class="out-box" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" current="{{current}}" indicator-color="#fff" indicator-active-color="#0cb4ce">
+      <swiper-item class="swiper-wrapper" wx:for="{{carInfo.vehiclesPhoto}}" wx:for-index="index" wx:for-item="order" wx:key="{{index}}">
+        <view class="swiper-slide">
+          <image src="{{order}}" mode='widthFix' />
+        </view>
+      </swiper-item>
+    </swiper>
+    <!--  -->
+    <view class="textInfo">
+      <view class="cell">
+        <view>车辆名称</view>
+        <view>{{carInfo.vehiclesName}}</view>
+      </view>
+      <view class="cell">
+        <view>车牌号码</view>
+        <view>{{carInfo.licensePlateNumber}}</view>
+      </view>
+      <view class="cell">
+        <view>联系人：</view>
+        <view>{{carInfo.contact}}</view>
+      </view>
+      <view class="cell">
+        <view>手机号：</view>
+        <view>{{carInfo.phoneNo}}</view>
+      </view>
+      <view class="cell imgCell">
+        <view>乘车人员</view>
+        <view>
+          <view class='headImg' wx:for="{{carInfo.members}}" wx:for-item="item" wx:for-index="index" wx:key="{{index}}">
+            <image src="item.photo"></image>
+          </view>
+        </view>
+      </view>
+      <view class="cell">
+        <view>发车时间</view>
+        <view>{{carInfo.departTime}}</view>
+      </view>
+      <view class="cell">
+        <view>发车地点</view>
+        <view>{{carInfo.departPlace}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="foot" bindtap='toSendCar'>报名该车辆</view>
+</view>

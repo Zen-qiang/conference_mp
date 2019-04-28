@@ -1,0 +1,20 @@
+<!--pages/accomAdd/accomAdd.wxml-->
+<view class="accomAdd">
+  <view class="top">成员信息</view>
+  <view class="content">
+    <view class="img-name">
+      <!--  -->
+      <view class="manInfo" wx:for="{{accomAdd}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}" data-index="{{index}}" data-selectId="{{item.isChecked}}" bindtap='selectClick'>
+        <view class="imgBox">
+          <image class="{{item.isChecked? 'bgcActive':''}}" src="{{item.photo}}"></image>
+          <view class="selectIcon" wx:if="{{item.isChecked}}">
+            <image src="../../common/resource/selectIcon.png"></image>
+          </view>
+        </view>
+        <view class="imgBoxBottom">{{item.name}}</view>
+      </view>
+
+    </view>
+  </view>
+  <view class="foot" bindtap='toBack'>添加</view>
+</view>

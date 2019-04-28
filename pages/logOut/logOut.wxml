@@ -1,0 +1,26 @@
+<!--pages/logOut/logOut.wxml-->
+<view class="logOut">
+  <view class="top">
+    <view class="userImg">
+      <image src="{{userInfo.profilePhoto}}"></image>
+    </view>
+  </view>
+  <view class="filed phone">
+    <view>手机绑定</view>
+    <view wx:if="{{userInfo.phoneno}}">已绑定</view>
+    <view wx:else>未绑定</view>
+  </view>
+  <view class="filed name">
+    <view>姓名</view>
+    <view>{{userInfo.name}}</view>
+  </view>
+  <view class="filed sex">
+    <view>性别</view>
+    <view></view>
+  </view>
+  <view class="filed com">
+    <view>公司</view>
+    <view>{{userInfo.company.name}}</view>
+  </view>
+  <view class="foot" bindtap='logOut'>退出登录</view>
+</view>

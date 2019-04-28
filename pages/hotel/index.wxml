@@ -1,0 +1,49 @@
+<!--pages/hotel/index.wxml-->
+<view class="hotel">
+
+  <swiper class="out-box" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" current="{{current}}" indicator-color="#fff" indicator-active-color="#0cb4ce">
+    <swiper-item class="swiper-wrapper" wx:for="{{imgUrls}}" wx:for-index="index" wx:for-item="order" wx:key="{{index}}">
+      <view class="swiper-slide">
+        <image src="{{order}}" mode='widthFix' />
+      </view>
+    </swiper-item>
+  </swiper>
+  <!--  -->
+  <view class="mapIcon">
+    <view>{{hotelsInfo.name}}</view>
+    <view class="mapImg">
+      <image src="../../common/resource/map.png"></image>
+    </view>
+  </view>
+  <!--  -->
+  <view class="card">
+    <view>
+      <van-cell-group>
+        <view class="fieldBox">
+          <van-field value="{{ enterTime }}" bindtap="showpopup" label="请选择入住日期" icon="arrow" input-align="right" title-width="200px" border="{{false}}" />
+        </view>
+        <view class="fieldBox">
+          <van-field value="{{ leaveTime }}" bindtap="showpopup1" label="请选择退房日期" icon="arrow" input-align="right" border="{{false}}" title-width="200px" />
+        </view>
+      </van-cell-group>
+      <view class="selectHotel" bindtap='toPeoPleManage'>安排入住</view>
+  <!-- 日期弹窗 -->
+  <van-popup show="{{ show }}" position="bottom" overlay="{{ true }}" bind:close="onClose">
+    <van-datetime-picker type="date" min-date="{{ minDate }}" bind:confirm='confirm' bind:cancel='cancel' />
+  </van-popup>
+  <van-popup show="{{ show1 }}" position="bottom" overlay="{{ true }}" bind:close="onClose">
+    <van-datetime-picker type="date" min-date="{{ minDate }}" bind:confirm='confirm1' bind:cancel='cancel1' />
+  </van-popup>
+    </view>
+  </view>
+  <!--  -->
+  <view class="manNum">
+    <view>
+      <text>入住信息</text> <text class="numRatio"><text>{{hotelsInfo.status}}</text>/10 人</text>
+    </view>
+  </view>
+  <view class="remark">
+    <view class="remarkTitle">住宿备注</view>
+    <view>{{hotelsInfo.description}}</view>
+  </view>
+</view>

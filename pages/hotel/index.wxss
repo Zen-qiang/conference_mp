@@ -1,0 +1,109 @@
+/* pages/hotel/index.wxss */
+.hotel {
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+}
+/* 轮播图 */
+.out-box {
+  width: 100%;
+}
+.swiper-wrapper {
+   width: 100%;
+}
+/* 图片盒子 */
+.swiper-slide {
+  width: 100%;
+  }
+.swiper-slide image{ 
+  width: 100%;
+}
+.mapIcon {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1px solid #f2f2f2;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  font-size: 26rpx;
+  justify-content: space-between;
+  background-color: #fff;
+}
+.mapImg {
+  width: 64rpx;
+  height: 64rpx;
+  margin: auto 0;
+}
+.mapImg image {
+    width: 64rpx;
+  height: 64rpx;
+}
+.card {
+  width: 100%;
+  margin-top: 30rpx;
+  background-color: #fff;
+  padding-bottom: 50rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f2f2f2;
+  margin-bottom: 30rpx;
+}
+.fieldBox {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1px solid #f2f2f2;
+}
+.van-cell {
+  line-height: 65rpx !important;
+}
+.van-field__body {
+  height:65rpx;
+}
+.selectHotel {
+  width: 300rpx;
+  height: 100rpx;
+  background-color: #0cb4ce;
+  border-radius: 50rpx;
+  margin: 50rpx auto;
+  margin-bottom: 0;
+  color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 30rpx;
+}
+.manNum {
+  width: 100%;
+  height: 100rpx;
+  background-color: #fff;
+  line-height: 100rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 26rpx;
+  color: #595959;
+}
+.numRatio {
+  margin-left: 10rpx;
+}
+.numRatio text {
+  color: red;
+}
+.remark {
+  background-color: #fff;
+  padding: 0 30rpx;
+  padding-bottom: 30rpx;
+  box-sizing: border-box;
+}
+.remarkTitle {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+    font-size: 26rpx;
+  color: #595959;
+}
+.remark view:nth-child(2){
+  color: #929292;
+  font-size: 26rpx;
+  line-height: 50rpx;
+}
