@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "报名成功",
+  "usingComponents": {
+    "van-button": "/common/lib/vantUI/button/index",
+    "van-icon": "/common/lib/vantUI/icon/index",
+    "van-cell": "/common/lib/vantUI/cell/index"
+  }
+}

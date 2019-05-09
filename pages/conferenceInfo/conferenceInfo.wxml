@@ -39,7 +39,7 @@
     <view><image class="userCover" wx:for="{{userInfo.members}}" wx:key="conferenceMembersId" wx:if="{{index < 3}}" src="{{item.photo}}" mode="aspectFill"></image><text>more</text><van-icon name="arrow" /></view>
   </view>
 </view>
-<view class="content item margin2">
+<!-- <view class="content item margin2">
   <view>经销商</view>
   <view>
     <view>{{userInfo.companyName}}</view>
@@ -50,7 +50,7 @@
   <view>
     <view>{{userInfo.status}}</view>
   </view>
-</view>
+</view> -->
 <view class="content info">
   <view>会议信息</view>
   <view><text>{{conferenceDetails.description}}</text></view>

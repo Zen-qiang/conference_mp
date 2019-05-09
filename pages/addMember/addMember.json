@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "添加代报名",
+  "usingComponents": {
+    "van-icon": "/common/lib/vantUI/icon/index",
+    "van-button": "/common/lib/vantUI/button/index"
+  }
+}

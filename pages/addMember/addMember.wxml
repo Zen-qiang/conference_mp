@@ -1,0 +1,49 @@
+<view class="addMember" bind:tap="addMember">
+  <view><van-icon name="add-o" /><text>代报名</text></view>
+</view>
+<!-- 代报名信息 -->
+<view class="memberContainer">
+  <block wx:for="{{infoList}}" wx:key="{{index}}">
+    <view class="memberInfo">
+      <view class="info-item">
+        <view class="lt">姓名</view>
+        <view class="rt">
+          <input placeholder="请输入用户名" value="{{item.name}}" bindinput="inputName" data-index="{{index}}" class="{{item.verify.name && item.name ? 'err' : ''}}" maxlength="8" />
+        </view>
+      </view>
+      <view class="info-item">
+        <view class="lt">照片</view>
+        <view class="rt" bind:tap="chooseImg" data-index="{{index}}">
+          <image class="avatarImg" wx:if="{{item.pic}}" mode="aspectFit" src="{{item.pic}}"></image>
+          <view wx:else>
+            <text class="avatarTxt">将用于证件打印</text>
+            <van-icon name="photo" />
+          </view>
+        </view>
+      </view>
+      <view class="info-item">
+        <view class="lt">手机</view>
+        <view class="rt">
+          <input type="number" placeholder="请输入手机号" value="{{item.tel}}" bindinput="inputTel" data-index="{{index}}" class="{{item.verify.tel && item.tel ? 'err' : ''}}" maxlength="11" />
+        </view>
+      </view>
+      <view class="info-item">
+        <view class="lt">身份证</view>
+        <view class="rt">
+          <input type="idcard" placeholder="请输入身份证号" value="{{item.idCard}}" bindinput="inputIdCard" data-index="{{index}}" class="{{item.verify.idCard && item.idCard ? 'err' : ''}}" maxlength="18" />
+        </view>
+      </view>
+      <view class="info-item">
+        <view class="lt">性别</view>
+        <view class="rt">
+          <picker mode="selector" range="{{item.genderObj}}" range-key="value" value="{{item.genderIndex}}" data-index="{{index}}" bindchange="selectGender">
+            <view class="picker">{{item.genderObj[item.genderIndex].value}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class="complete">
+  <van-button type="default" custom-class="myBtn default" bind:click="saveMember">完成</van-button>
+</view>

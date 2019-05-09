@@ -14,6 +14,8 @@ Page({
     this.getConferenceInfo()
   },
   onShow () {
+    app.removeValue('conferenceDetails')
+    app.removeValue('conferenceUserInfo')
   },
   // 获取会务详情
   getConferenceInfo () {

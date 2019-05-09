@@ -1,0 +1,38 @@
+<view class="signSuccess">
+  <!-- 报名成功展示内容 -->
+  <view class="successInfo">
+    <view class="success-icon">
+      <van-icon name="checked" size="80rpx" />
+    </view>
+    <view class="success-title">
+      <text>恭喜您报名成功！</text>
+    </view>
+    <view class="success-subTitle">
+      <text>长按关注我们，以便及时获取最新动态</text>
+    </view>
+    <view class="success-qrCode">
+      <image mode="aspectFit" src="../../common/resource/_qrCode.png" />
+    </view>
+  </view>
+  <!-- 报名信息 -->
+  <view class="signInfo">
+    <view class="success-info">
+      <van-cell title="报名信息" value="{{number}}人" border="{{false}}" />
+    </view>
+    <view class="success-photo">
+      <van-cell is-link border="{{false}}" custom-class="customCell">
+        <view slot="title">
+          <view class="member-content">
+            <block wx:for="{{members}}" wx:key="{{index}}">
+              <image mode="aspectFit" src="{{item.userPicture}}" />
+            </block>
+          </view>
+        </view>
+      </van-cell>
+    </view>
+  </view>
+  <!-- 安排行程 -->
+  <view class="planJourney">
+    <van-button type="primary" custom-class="myBtn">安排行程</van-button>
+  </view>
+</view>

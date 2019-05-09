@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "申请报名",
   "usingComponents": {
+    "member": "/components/member/member",
     "van-button": "/common/lib/vantUI/button/index",
     "van-icon": "/common/lib/vantUI/icon/index"
   }

@@ -1,4 +1,38 @@
 <view class="com-member">
-  <view class="left"><van-icon name="cross" /></view>
-  <view class="right"></view>
+  <view class="left">
+    <view class="delete"><van-icon name="cross" /></view>
+  </view>
+  <view class="right">
+    <view class="title">
+      <view class="panel">
+        <view class="photo"><image mode="aspectFill" src="{{memberInfo.photo}}" lazy-load="{{true}}"/></view>
+        <view>{{memberInfo.name}}</view>
+        <view>{{memberInfo.fk_gender_id === 4 ? '男' : '女'}}</view>
+        <view class="icon">代</view>
+      </view>
+      <view class="edit"><van-icon name="edit" /></view>
+    </view>
+    <view class="infoList">
+      <view>
+        <text>手机：</text>
+        <text>{{memberInfo.phone_no}}</text>
+      </view>
+      <view>
+        <text>身份证：</text>
+        <text>{{memberInfo.id_number}}</text>
+      </view>
+      <!-- <view>
+        <text>酒店：</text>
+        <text>上海四季酒店</text>
+      </view>
+      <view>
+        <text>房间类型：</text>
+        <text>商务标间</text>
+      </view>
+      <view>
+        <text>房间序号：</text>
+        <text>304</text>
+      </view> -->
+    </view>
+  </view>
 </view>

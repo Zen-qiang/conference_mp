@@ -9,7 +9,7 @@
 <view class="signInfo-content">
   <view class="content desc">
     <view>报名信息</view>
-    <view>
+    <view bind:tap="jumpAddMember">
       <van-icon name="add-o" />
       <text>添加代报名</text>
     </view>
@@ -46,7 +46,7 @@
   </view>
 </view>
 <!-- 酒店信息 -->
-<view class="hotelInfo-content">
+<!-- <view class="hotelInfo-content">
   <view class="content desc">
     <view>酒店信息</view>
     <view>
@@ -66,16 +66,20 @@
     <view>房间序号</view>
     <view>613</view>
   </view>
-</view>
+</view> -->
 <!-- 代报名成员 -->
 <view class="subSigin-content">
   <view class="content desc">
     <view>代报名成员</view>
     <view>{{memberInfoList.length}}</view>
   </view>
-  <view class="subMember"></view>
+  <view class="subMember">
+    <view class="memberItem" wx:for="{{memberInfoList}}" wx:key="{{index}}">
+      <member member-info="{{item}}"></member>
+    </view>
+  </view>
 </view>
 <!-- 提交报名按钮 -->
 <view class="signAction-content">
-  <van-button type="danger" custom-class="myBtn">提交报名</van-button>
+  <van-button type="danger" custom-class="myBtn" bind:click="signAction">提交报名</van-button>
 </view>

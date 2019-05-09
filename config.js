@@ -1,7 +1,7 @@
 
 
-const host = "https://conferences.dlt-world.com";
-// const host = "http://192.168.8.8:5300";
+// const host = "https://conferences.dlt-world.com";
+const host = "http://192.168.8.8:5300";
 // const host = "https://sit.dingliantech.com";
 // const host = "http://192.168.3.16:5300";
 // const host = "http://192.168.3.23:5300";
@@ -71,10 +71,14 @@ let api = {
   searchAddVehiclesShiftsMembersInfo: `${host}/api/dispatching/searchAddVehiclesShiftsMembersInfo`,
   // 添加乘车信息/api/dispatching/addVehiclesMembers
   addVehiclesMembers: `${host}/api/dispatching/addVehiclesMembers`,
-
+  // 会务列表
   conferenceList: `${host}/api/conference/list`,
-  conferenceInfo: `${host}/api/conference/info`
-
+  // 会务详情
+  conferenceInfo: `${host}/api/conference/info`,
+  // 申请报名
+  conferenceSign: `${host}/api/conference/enter`,
+  // 报名成功显示信息
+  searchApplySuccessMemberInfo: `${host}/api/conference/searchApplySuccessMemberInfo`
 }
 
 var config = {

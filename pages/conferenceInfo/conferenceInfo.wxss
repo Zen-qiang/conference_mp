@@ -1,5 +1,4 @@
 Page {
-  background: #f0f0f0;
   padding-bottom: 10px;
 }
 .content {

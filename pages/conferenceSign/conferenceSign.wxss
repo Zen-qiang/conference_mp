@@ -1,6 +1,3 @@
-Page {
-  background: #f0f0f0;
-}
 [class$="-content"] {
   margin-bottom: 8px;
 }
@@ -28,6 +25,7 @@ Page {
 }
 .content > view:first-of-type {
   flex: 0 0 125rpx;
+  line-height: 24rpx;
 }
 .content > view:last-of-type {
   flex: auto;
@@ -52,4 +50,10 @@ Page {
   height: 80rpx;
   line-height: 80rpx;
   border-radius: 0;
+}
+/* 代报名成员 */
+.subMember .memberItem {
+  padding: 0 15px;
+  margin-top: 1px;
+  background: #fff;
 }

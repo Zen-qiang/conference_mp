@@ -23,7 +23,9 @@
     "pages/passengerInfo/passengerInfo",
     "pages/carMermber/carMermber",
     "pages/accomAdd/accomAdd",
-    "pages/vehicledetails/vehicledetails"
+    "pages/vehicledetails/vehicledetails",
+    "pages/addMember/addMember",
+    "pages/signSuccess/signSuccess"
   ],
   "window": {
     "backgroundTextStyle": "light",
