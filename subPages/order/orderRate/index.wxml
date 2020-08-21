@@ -1,0 +1,57 @@
+<wxs src="../../../wxs/rate.wxs" module="wxs"></wxs>
+<view class="proRate-container">
+  <view class="title-box">
+    <view class="title">
+      商品评价<text>（{{ ratedList.length }}/{{ list.length }}）</text>
+    </view>
+    <view class="batch" bind:tap="_batchRate">一键好评</view>
+  </view>
+  <view class="pro-box">
+    <scroll-view scroll-x>
+      <view class="pro-container">
+        <block wx:for="{{ list }}" wx:key="index">
+          <view class="pro-item {{ active === index && 'active' }}" data-index="{{ index }}" bind:tap="_selectItem">
+            <view class="lt">
+              <van-image
+                width="48"
+                height="48"
+                src="{{ item.realm + item.url }}"
+                fit="cover"
+                lazy-load
+              />
+            </view>
+            <view class="rt">
+              <view class="van-ellipsis name">{{ item.name }}</view>
+              <view class="price">¥{{ item.unitPrice }}</view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="rate-box">
+    <view class="rate">
+      <van-rate
+        size="{{ 25 }}"
+        value="{{ list[active].rate }}"
+        bind:change="_changeRate"
+      />
+      <text>{{ wxs.rate(list[active].rate) }}</text>
+    </view>
+    <view class="smg-box">
+      <textarea
+        placeholder="您对商品质量满意吗？"
+        placeholder-style="font-size: 14px;"
+        autosize
+        class="textarea-class"
+        border="{{ false }}"
+        value="{{ list[active].msg }}"
+        bind:input="_changeMsg"
+      />
+    </view>
+  </view>
+  <view class="submit-box">
+    <button class="btn" bind:tap="_submit">提交评价</button>
+  </view>
+</view>
+<van-toast id="van-toast" />

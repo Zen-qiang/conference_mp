@@ -1,0 +1,6 @@
+.pdt-list {
+  padding: 20rpx;
+}
+.pdt-list_item {
+  margin-bottom: 6px;
+}

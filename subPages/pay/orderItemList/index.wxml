@@ -1,0 +1,26 @@
+<view class="orderItemList">
+  <view class="summary">
+    <view>商品</view>
+    <view>共{{ list.length }}件</view>
+  </view>
+  <van-cell-group>
+    <block wx:for="{{ list }}" wx:key="index">
+      <van-cell
+        title="{{ item.name }}"
+        value="¥ {{ item.amt }}"
+        label="单价：¥ {{ item.unitPrice }} 数量：{{ item.qty }}"
+        value-class="valueClass"
+      >
+        <view slot="icon">
+          <van-image
+            width="45"
+            height="45"
+            custom-class="imageClass"
+            src="{{ item.realm + item.url }}"
+            fit="contain"
+          />
+        </view>
+      </van-cell>
+    </block>
+  </van-cell-group>
+</view>

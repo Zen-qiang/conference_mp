@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "促销商品",
+  "navigationBarBackgroundColor": "#3695e3",
+  "backgroundColor": "#ffffff",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "van-toast": "@vant/weapp/toast/index",
+    "pdt-list": "/components/pdt-list/index"
+  }
+}

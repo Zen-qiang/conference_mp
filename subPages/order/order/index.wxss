@@ -1,0 +1,77 @@
+.tabs {
+  line-height: 100rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  background: #ffffff;
+}
+.tabs .tabs_item {
+  flex: 0 0 25%;
+  text-align: center;
+  font-size: 28rpx;
+  position: relative;
+}
+.tabs .tabs_item.active {
+  color: #3695e3;
+}
+.tabs .tabs_item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 3px;
+  background: #3695e3;
+  border-radius: 3px;
+}
+.content {
+  position: absolute;
+  top: 100rpx;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.order-item {
+  margin: 20rpx 16rpx;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #ffffff;
+}
+.order-item .valueClass {
+  font-size: 24rpx;
+  color: #333;
+  flex: none;
+}
+.order-item .active {
+  color: #3695e3;
+}
+.order-item .title {
+  font-size: 24rpx;
+  color: #999;
+}
+.order-item .title .price {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.order-item-content {
+  padding: 8px 16px;
+}
+.order-item-content > view {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 16rpx;
+  line-height: 0;
+}
+.order-item-footer {
+  padding: 20rpx;
+  text-align: right;
+}
+.order-item-footer .cancelBtn {
+  color: #999;
+}
+.order-item-footer .payBtn {
+  margin-left: 20rpx;
+}

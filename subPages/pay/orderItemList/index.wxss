@@ -1,0 +1,20 @@
+.orderItemList {
+  margin-top: 20rpx;
+}
+.orderItemList .summary {
+  background: #fff;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  line-height: 28rpx;
+  padding: 6px 16px;
+}
+.orderItemList .valueClass {
+  color: #333;
+}
+.orderItemList .imageClass {
+  margin-right: 10rpx;
+  vertical-align: middle;
+}

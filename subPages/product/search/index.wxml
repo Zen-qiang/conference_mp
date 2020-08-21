@@ -1,0 +1,51 @@
+<view class="search-box">
+  <van-search
+    value="{{ value }}"
+    placeholder="请输入商品名称"
+    background="#3695e3"
+    shape="round"
+    focus
+    bind:search="onSearch"
+    bind:change="onChange"
+  />
+</view>
+<!-- 搜索完成显示搜索结果 -->
+<block wx:if="{{ searched }}">
+  <view class="content-box">
+    <scroll-view
+      class="scroll-box"
+      scroll-y
+      refresher-enabled
+      enable-back-to-top
+      refresher-triggered="{{ refresherTriggered }}"
+      bindrefresherrefresh="scrollRefresh"
+      bindrefresherrestore="scrollRestore"
+      bindrefresherabort="scrollAbort"
+      bindscrolltolower="scrollLower"
+    >
+      <pdt-list list="{{ list }}" is-no-more="{{ isNoMore }}" bind:addSuccess="_addSuccess" bind:addError="_addError" />
+    </scroll-view>
+  </view>
+</block>
+<!-- 搜索中时显示 -->
+<block wx:else>
+  <!-- 自动完成 -->
+  <view hidden="{{ value === '' }}" class="candidate-box">
+    <block wx:for="{{ candidateList }}" wx:key="value">
+      <van-cell title="{{ item.label }}" data-item="{{ item }}" icon="search" clickable bind:click="onItemClick" />
+    </block>
+  </view>
+  <!-- 历史记录 -->
+  <view hidden="{{ value }}" class="history-box">
+    <view class="title-box">
+      <view class="title">历史搜索</view>
+      <view class="clear" bind:tap="onDelete"><mp-icon icon="delete" color="#666" /></view>
+    </view>
+    <view class="history-list">
+      <block wx:for="{{ historyList }}" wx:key="*this">
+        <view class="history-item" data-item="{{ item }}" bind:tap="onItemClick">{{ item }}</view>
+      </block>
+    </view>
+  </view>
+</block>
+<van-toast id="van-toast" />

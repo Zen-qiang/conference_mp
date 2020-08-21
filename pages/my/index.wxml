@@ -1,0 +1,56 @@
+<view class="my-box">
+  <view class="avatar-box">
+    <view class="avatar-content" bind:tap="_onLogin">
+      <view class="avatar">
+        <my-image src="{{ avatar || '/assets/avatar.png' }}" mode="aspectFill" round></my-image>
+      </view>
+      <view class="user-info">
+        <block wx:if="{{ userInfo && userInfo.mobile }}">
+          <view class="name">{{ userInfo.mobile }}</view>
+          <view wx:if="{{ points !== null }}" class="accounts">积分：{{ points }}</view>
+        </block>
+        <block wx:else>
+          <view class="name">立即登录</view>
+        </block>
+      </view>
+      <block wx:if="{{ !(userInfo && userInfo.mobile) }}">
+        <view class="arrow">
+          <van-icon name="arrow" />
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="order-box">
+    <van-cell title="我的订单" value="查看全部订单" icon="notes-o" is-link data-index="0" bind:click="_onOrder" />
+    <van-grid border="{{ false }}" clickable>
+      <block wx:for="{{ gardList }}" wx:key="index">
+        <van-grid-item icon="{{ item.icon }}" text="{{ item.text }}" data-index="{{ item.index }}" info="{{ item.info }}" bind:click="_onOrder" />
+      </block>
+      <!-- <van-grid-item icon="peer-pay" text="待支付" data-index="1" bind:click="_onOrder" />
+      <van-grid-item icon="send-gift-o" text="待收货" data-index="3" bind:click="_onOrder" />
+      <van-grid-item icon="comment-o" text="待评价" data-index="4" bind:click="_onOrder" /> -->
+      <van-grid-item icon="gold-coin-o" text="售后" data-index="6" bind:tap="_previewImage" />
+    </van-grid>
+  </view>
+  <view class="my-content">
+    <van-cell-group>
+      <van-cell icon="logistics" title="我的收货地址" is-link data-father="address" data-child="address" bind:tap="_jump" />
+      <van-cell icon="coupon-o" title="我的优惠券" is-link data-father="coupon" data-child="coupon" bind:tap="_jump" />
+      <van-cell icon="gem-o" title="我的积分" is-link data-father="other" data-child="points" bind:tap="_jump" />
+      <van-cell icon="good-job-o" title="我的评价" is-link data-father="product" data-child="userEvaluate" bind:tap="_jump" />
+    </van-cell-group>
+  </view>
+  <view class="my-content">
+    <van-cell-group>
+      <van-cell icon="service-o" title="联系客服" is-link bind:tap="_previewImage" />
+      <van-cell icon="question-o" title="常见问题" is-link url="/subPages/service/FAQ/index" />
+      <van-cell icon="records" title="意见反馈" is-link data-father="service" data-child="feedback" bind:tap="_jump" />
+    </van-cell-group>
+  </view>
+  <view wx:if="{{ version }}" class="version">当前版本：{{version}}</view>
+</view>
+<block wx:if="{{ userInfo && userInfo.mobile }}">
+  <view class="logout">
+    <van-button color="#e44545" round block bind:click="_onLogout">退出登录</van-button>
+  </view>
+</block>

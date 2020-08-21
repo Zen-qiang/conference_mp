@@ -1,0 +1,58 @@
+<import src="../../../template/footer.wxml" />
+<import src="../template/policyAgreement.wxml" />
+<mp-toptips ext-class="tips" msg="{{ tips.msg }}" type="{{ tips.type }}" show="{{ tips.show }}"></mp-toptips>
+<view class="content-box">
+  <van-cell-group border="{{ false }}">
+    <van-field
+      value="{{ tel }}"
+      type="number"
+      maxlength="11"
+      focus clearable
+      placeholder="输入手机号(新号码自动注册)"
+      bind:change="onTelChange"
+      bind:clear="onTelChange"
+    />
+    <van-field
+      value="{{ sms }}"
+      type="number"
+      maxlength="6"
+      clearable
+      placeholder="输入验证码"
+      bind:change="onSmsChange"
+      bind:clear="onSmsChange">
+      <van-button
+        slot="button"
+        type="primary"
+        custom-class="smsBtn"
+        color="{{ dis ? '#dcdcdc' : '' }}"
+        round
+        disabled="{{ dis }}"
+        bind:click="getSms">
+        获取{{ text }}
+      </van-button>
+    </van-field>
+  </van-cell-group>
+  <van-button
+    block
+    type="primary"
+    custom-class="loginBtn"
+    color="{{ dis || !sms ? '#dcdcdc' : '' }}"
+    disabled="{{ dis || !sms  }}"
+    loading="{{ logging }}"
+    loading-type="spinner"
+    loading-text="登录中..."
+    round bind:click="toLogin"
+  >
+    登录
+  </van-button>
+</view>
+<view class="action-box">
+  <view class="btns">
+    <button class="wxBtn" open-type="getPhoneNumber" bindgetphonenumber="_getPhoneNumber">
+      <van-icon custom-class="wxIcon" name="/assets/wx.svg" size="40" />
+    </button>
+    <text class="wxText">微信手机号一键登录</text>
+  </view>
+  <template is="policyAgreement" />
+</view>
+<template is="footer" />

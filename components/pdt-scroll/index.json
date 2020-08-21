@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "add": "/components/add/index",
+    "my-image": "/components/my-image/index"
+  }
+}

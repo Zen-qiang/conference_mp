@@ -1,0 +1,53 @@
+.evaluate-container {
+  font-size: 24rpx;
+  padding: 20rpx;
+}
+
+.evaluate-container .title-box {
+  display: flex;
+  justify-content: space-between;
+}
+.title-box .name {
+  font-weight: 500;
+}
+.title-box .time {
+  color: #666;
+}
+
+.evaluate-container .rate-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #666;
+}
+.rate-box .rate {
+  display: flex;
+  align-items: center;
+}
+
+.evaluate-container .content-box {
+  font-size: 28rpx;
+}
+
+.evaluate-container .product-box {
+  display: flex;
+  flex-flow: row nowrap;
+  background: #f2f2f2;
+  border-radius: 8rpx;
+}
+.product-box .img {
+  padding: 4rpx;
+  line-height: 0;
+}
+.product-box .info {
+  flex: auto;
+  padding: 10rpx;
+}
+.product-box .info .info-container {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+.product-box .info .pdt-name {}
+.product-box .info .pdt-price {}

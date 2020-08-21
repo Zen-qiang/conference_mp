@@ -1,0 +1,133 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/classify/index",
+    "pages/cart/index",
+    "pages/my/index"
+  ],
+  "window": {
+    "backgroundColor": "#f5f5f5",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "大咖生鲜",
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 50
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#3695e3",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/home.png",
+        "selectedIconPath": "assets/home-selected.png"
+      },
+      {
+        "pagePath": "pages/classify/index",
+        "text": "分类",
+        "iconPath": "assets/classify.png",
+        "selectedIconPath": "assets/classify-selected.png"
+      },
+      {
+        "pagePath": "pages/cart/index",
+        "text": "购物篮",
+        "iconPath": "assets/cart.png",
+        "selectedIconPath": "assets/cart-selected.png"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "我的",
+        "iconPath": "assets/my.png",
+        "selectedIconPath": "assets/my-selected.png"
+      }
+    ]
+  },
+  "subPackages": [
+    {
+      "name": "login",
+      "root": "subPages/login/",
+      "pages": [
+        "login/index",
+        "register/index"
+      ]
+    },
+    {
+      "name": "product",
+      "root": "subPages/product/",
+      "pages": [
+        "details/index",
+        "saleList/index",
+        "search/index",
+        "evaluate/index",
+        "userEvaluate/index",
+        "productRate/index"
+      ]
+    },
+    {
+      "name": "pay",
+      "root": "subPages/pay/",
+      "pages": [
+        "orderReview/index",
+        "orderItemList/index",
+        "payStatus/index"
+      ]
+    },
+    {
+      "name": "order",
+      "root": "subPages/order/",
+      "pages": [
+        "order/index",
+        "orderDetail/index",
+        "orderRate/index"
+      ]
+    },
+    {
+      "name": "address",
+      "root": "subPages/address/",
+      "pages": [
+        "address/index",
+        "addressEdit/index"
+      ]
+    },
+    {
+      "name": "coupon",
+      "root": "subPages/coupon/",
+      "pages": [
+        "coupon/index",
+        "newPerson/index"
+      ]
+    },
+    {
+      "name": "other",
+      "root": "subPages/other/",
+      "pages": [
+        "modifyRate/index",
+        "points/index",
+        "web/index",
+        "webPage/index"
+      ]
+    },
+    {
+      "root": "subPages/service/",
+      "pages": [
+        "FAQ/index",
+        "feedback/index"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/index/index": {
+      "packages": ["coupon"]
+    },
+    "pages/cart/index": {
+      "packages": ["pay"]
+    },
+    "pages/my/index": {
+      "packages": ["order", "address", "coupon"]
+    }
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

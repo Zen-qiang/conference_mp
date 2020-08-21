@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "购物篮",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "mp-toptips": "weui-miniprogram/toptips/toptips",
+    "van-button": "@vant/weapp/button/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "cart-list": "./cart-list/index",
+    "status-list": "./status-list/index"
+  }
+}

@@ -1,0 +1,3 @@
+<view class="add" bind:tap="onItemClick">
+  <van-icon name="add" size="{{ size }}" />
+</view>

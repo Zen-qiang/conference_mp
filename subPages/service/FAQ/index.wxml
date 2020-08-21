@@ -1,0 +1,5 @@
+<van-cell-group title="常见问题">
+  <block wx:for="{{ titles }}" wx:key="index">
+    <van-cell title="{{ item.title }}" data-url="{{ item.url }}" is-link bind:click="_jump" />
+  </block>
+</van-cell-group>

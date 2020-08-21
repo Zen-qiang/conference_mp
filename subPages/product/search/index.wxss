@@ -1,0 +1,56 @@
+page {
+  background-color: #fff;
+}
+.search-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.content-box {
+  position: absolute;
+  top: 54px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+.content-box .scroll-box {
+  height: 100%;
+}
+
+.candidate-box {
+  padding-top: 54px;
+}
+
+.history-box {
+  padding-top: 54px;
+}
+.history-box .title-box {
+  color: #666;
+  padding: 30rpx;
+  position: relative;
+}
+.title-box .title {
+  font-size: 24rpx;
+}
+.title-box .clear {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 30rpx;
+}
+.history-box .history-list {
+  padding: 0 20rpx;
+  color: #666;
+}
+.history-list .history-item {
+  border: 1px solid #ddd;
+  border-radius: 8rpx;
+  padding: 8rpx 14rpx;
+  display: inline-block;
+  font-size: 24rpx;
+  margin: 20rpx 10rpx 0;
+}

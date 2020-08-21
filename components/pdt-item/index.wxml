@@ -1,0 +1,55 @@
+<wxs src="../../wxs/price.wxs" module="price" />
+<view class="pdt-item" data-id="{{ info.id }}" bind:tap="itemClick">
+  <view class="img-box">
+    <view class="img-content">
+      <my-image src="{{ info.realm + info.url }}" lazy-load mode="aspectFit"></my-image>
+    </view>
+  </view>
+  <view class="van-multi-ellipsis--l3 name-box">
+    <text class="van-ellipsis name">{{ info.name }}</text><text class="specs">{{ info.specs }}</text>
+    <text class="van-ellipsis title">{{ info.title }}</text>
+  </view>
+  <view class="amt-box">
+    <view class="price-container">
+      <view class="rulingPrice">
+        <text class="currency">¥</text>
+        <text>{{ price.pointBefore(info.rulingPrice) }}</text>
+        <text wx:if="{{price.pointAfter(info.rulingPrice)}}" class="small">.{{ price.pointAfter(info.rulingPrice) }}</text>
+      </view>
+      <view wx:if="{{ info.price && info.price !== info.rulingPrice }}" class="price">
+        <text class="currency">¥</text>
+        <view class="line-through">
+          <text>{{ price.pointBefore(info.price) }}</text>
+          <text wx:if="{{price.pointAfter(info.price)}}" class="small">.{{ price.pointAfter(info.price) }}</text>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="cart" data-id="{{ info.id }}" catch:tap="cartClick">
+      <add name="add" size="24" />
+    </view> -->
+    <view wx:if="{{ info.historyCount }}" class="buyed">
+      <text>历史下单：{{ info.historyCount }}</text>
+    </view>
+  </view>
+  <view class="stepper-box" catch:tap="stopBubble">
+    <view class="btn">
+      <block wx:if="{{ info.cartCount }}">
+        <van-stepper
+          input-width="34" button-size="24"
+          value="{{ info.cartCount }}"
+          min="{{ 0 }}"
+          max="{{ info.stock || 999 }}"
+          data-id="{{ info.id }}"
+          bind:blur="_blur"
+          bind:plus="_plus"
+          bind:minus="_minus"
+        />
+      </block>
+      <block wx:else>
+        <view data-id="{{ info.id }}" catch:tap="cartClick">
+          <add name="add" size="24" />
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

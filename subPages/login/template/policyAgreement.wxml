@@ -1,0 +1,8 @@
+<template name="policyAgreement">
+  <view class="policyAgreement">
+    登录注册即代表你同意大咖生鲜
+    <navigator class="webLink" url="/subPages/other/web/index?url=treaty">《服务协议》</navigator>
+    与
+    <navigator class="webLink" url="/subPages/other/web/index?url=policy">《隐私政策》</navigator>
+  </view>
+</template>

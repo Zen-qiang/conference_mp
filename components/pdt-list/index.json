@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "styleIsolation": "apply-shared",
+  "usingComponents": {
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index",
+    "pdt-item": "/components/pdt-item/index",
+    "mp-loading": "weui-miniprogram/loading/loading"
+  }
+}

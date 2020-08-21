@@ -1,0 +1,40 @@
+<view class="tabs van-hairline--bottom">
+  <view class="tabs_item {{ active === 0 && 'active'}}" data-index="{{ 0 }}" bind:tap="_tabChange">未使用</view>
+  <view class="tabs_item {{ active === 1 && 'active'}}" data-index="{{ 1 }}" bind:tap="_tabChange">已使用</view>
+  <view class="tabs_item {{ active === 2 && 'active'}}" data-index="{{ 2 }}" bind:tap="_tabChange">已过期</view>
+</view>
+<view class="content">
+  <scroll-view style="height: 100%;" scroll-y enable-back-to-top scroll-anchoring refresher-enabled
+    refresher-triggered="{{ triggered }}"
+    bind:refresherrefresh="_refresherrefresh"
+    bind:scrolltolower="_scrolltolower"
+  >
+    <view class="coupon-container">
+      <block wx:for="{{ list }}" wx:key="index">
+        <view class="coupon-item {{ active && 'used'}}">
+          <view class="lt">
+            <view class="price {{ active && 'used'}}">¥ <text class="amt">{{ item.amt }}</text></view>
+            <view class="desc">满¥{{ item.reductionAmt }}使用</view>
+          </view>
+          <view class="divider"></view>
+          <view class="rt">
+            <view class="title">{{ item.name }}</view>
+            <view class="label">{{ item.note }}</view>
+            <view class="label">有效期至 {{ item.endDate }}</view>
+          </view>
+          <view class="aside">
+            <view wx:if="{{ active }}" class="status2">
+              <block wx:if="{{ active === 1}}">
+                <van-icon name="/assets/used.svg" size="50" />
+              </block>
+              <block wx:else>
+                <van-icon name="/assets/overdue.svg" size="50" />
+              </block>
+            </view>
+            <view wx:else class="status1" bind:tap="_toIndex">立即使用</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>

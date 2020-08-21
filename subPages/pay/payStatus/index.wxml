@@ -1,0 +1,22 @@
+<view class="payStatus">
+  <mp-msg type="{{ status ? 'success' : 'warn' }}" title="{{ status ? '支付成功' : '支付失败' }}">
+    <!-- <view slot="desc">
+      <block wx:if="{{ status }}">请前往订单页面查看订单状态</block>
+      <block wx:else>请在15分钟内完成支付，否则订单会自动取消。</block>
+    </view> -->
+    <view slot="extend" class="extendText">
+      <view wx:if="{{ status }}">请前往订单页面查看订单状态</view>
+      <view wx:else>请在15分钟内完成支付，否则订单会自动取消。</view>
+    </view>
+    <view slot="handle">
+      <van-button round block custom-class="btnClass" bind:click="toOrder">查看订单</van-button>
+      <van-button wx:if="{{!status}}" custom-class="btnClass" color="#3695e3" round block bind:click="pay">重新支付</van-button>
+    </view>
+    <view slot="footer" class="fixed_bottom">
+    <!-- <view class="weui-footer__links">
+      <navigator url="" class="weui-footer__link">底部链接文本</navigator>
+    </view> -->
+    <view class="weui-footer__text">Copyright © 2017-2020 DinglianTech</view>
+  </view>
+  </mp-msg>
+</view>

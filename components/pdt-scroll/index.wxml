@@ -1,0 +1,49 @@
+<wxs src="../../wxs/price.wxs" module="price" />
+<view class="menu">
+  <scroll-view
+    id="scroller2" scroll-x style="width: 100%;"
+    bindscroll="scroll"
+    bindtouchend="touchend"
+    scroll-with-animation
+    scroll-left="{{scrollLeft}}"
+  >
+    <view class="menu_wrap" style="width: {{100 * list.length + 70}}px">
+      <view wx:for="{{list}}" wx:key="index" class="menu_item" data-id="{{ item.id }}" bind:tap="itemClick">
+        <view class="menu_item_image">
+          <view class="menu_item_image_content">
+            <my-image src="{{ item.realm + item.url }}" lazy-load mode="aspectFit"></my-image>
+          </view>
+        </view>
+        <view class="menu_item_info">
+          <view class="name-box">
+            <view class="van-ellipsis name">{{ item.name }}</view>
+            <view class="van-ellipsis title">{{ item.specs }}</view>
+            <!-- <view class="van-ellipsis"><text class="name">{{ item.name }}</text><text class="specs">{{ item.specs }}</text></view>
+            <view class="van-ellipsis title">{{ item.title }}</view> -->
+          </view>
+          <view class="amt-box">
+          <view wx:if="{{ item.price }}" class="price">
+            <text>¥</text>
+            <view class="line-through">
+              <text>{{ price.pointBefore(item.price) }}</text>
+              <text wx:if="{{price.pointAfter(item.price)}}" class="small">.{{ price.pointAfter(item.price) }}</text>
+            </view>
+          </view>
+          <view class="rulingPrice">
+            <text class="currency">¥</text>
+            <text>{{ price.pointBefore(item.rulingPrice) }}</text>
+            <text wx:if="{{price.pointAfter(item.rulingPrice)}}" class="small">.{{ price.pointAfter(item.rulingPrice) }}</text>
+          </view>
+          <view class="cart" data-id="{{ item.id }}" catch:tap="cartClick">
+            <add name="add" size="24" />
+          </view>
+        </view>
+        </view>
+      </view>
+      <view wx:if="{{ list.length && list.length > 3 }}" id="more" class="menu_item_more" style="left: {{left}}px">
+        <view class="text">{{wording || '查看更多'}}</view>
+        <view id="transform" class="transform"></view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,12 @@
+{
+  "disableScroll": true,
+  "usingComponents": {
+    "van-cell": "@vant/weapp/cell/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "mp-loading": "weui-miniprogram/loading/loading",
+    "van-toast": "@vant/weapp/toast/index"
+  }
+}

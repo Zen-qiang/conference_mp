@@ -1,0 +1,8 @@
+{
+  "disableScroll": true,
+  "navigationBarTitleText": "提交订单",
+  "usingComponents": {
+    "mp-msg": "weui-miniprogram/msg/msg",
+    "van-button": "@vant/weapp/button/index"
+  }
+}

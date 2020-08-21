@@ -1,0 +1,48 @@
+page {
+  height: 100%;
+  position: relative;
+  background-color: #fff;
+}
+.bg-box image {
+  width: 100%;
+}
+.action-box {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 8vh;
+  left: 0;
+  width: 100%;
+  padding: 10px 20px;
+  text-align: center;
+}
+.action-box .phoneBtn {
+  font-weight: 600;
+  padding: 0 58px;
+  font-size: 18px;
+  margin-bottom: 28px;
+}
+.navigatorLink {
+  font-size: 14px;
+  text-decoration: underline;
+  color: #333;
+}
+.navigator-hover {
+  background-color: transparent;
+  color: #3695e3;
+}
+.policyAgreement {
+  font-size: 12px;
+  margin-top: 12vh;
+  color: #999;
+}
+.webLink {
+  color: #3695e3;
+  display: inline-block;
+}
+.footer-box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 30px;
+}

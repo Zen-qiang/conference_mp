@@ -1,0 +1,26 @@
+<view class="pdt-list">
+  <block wx:if="{{ !list.length }}">
+    <view class="weui-loadmore weui-loadmore_line">
+      <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+    </view>
+  </block>
+  <block wx:else>
+    <van-row gutter="6">
+      <block wx:for="{{ list }}" wx:key="index">
+        <van-col span="12">
+          <view class="pdt-list_item">
+            <pdt-item info="{{ item }}" />
+          </view>
+        </van-col>
+      </block>
+    </van-row>
+    <block wx:if="{{ isNoMore }}">
+      <view class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+      </view>
+    </block>
+    <block wx:else>
+      <mp-loading type="circle"></mp-loading>
+    </block>
+  </block>
+</view>

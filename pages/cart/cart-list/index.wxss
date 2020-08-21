@@ -1,0 +1,77 @@
+.list-item {
+  background-color: #fff;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.list-item .my-check {
+  padding: 30rpx;
+  position: relative;
+}
+.list-item .my-check .my-check-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.list-item .content {
+  flex: 1;
+  padding: 20rpx 30rpx 20rpx 0;
+}
+.list-item .content .info-box {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.info-box .img {
+  width: 100px;
+  height: 100px;
+}
+.info-box .info {
+  flex: 1;
+  display: inline-flex;
+  flex-flow: column nowrap;
+  padding-left: 20rpx;
+}
+.info-box .info .name {
+  font-size: 28rpx;
+  line-height: 38rpx;
+  overflow: hidden;
+}
+.info-box .info .desc {
+  font-size: 24rpx;
+  line-height: 32rpx;
+  color: #666;
+  overflow: hidden;
+}
+.info-box .space {
+  flex: auto;
+}
+.info-box .info .calc-box {
+  height: 40px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.price-container .rulingPrice {
+  display: inline-block;
+  margin-right: 10rpx;
+  font-size: 38rpx;
+  color: #ec132d;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.price-container .rulingPrice .currency {
+  font-size: 28rpx;
+}
+.price-container .rulingPrice .small {
+  font-size: 28rpx;
+}
+.price-container .price {
+  display: inline-block;
+  color: #666;
+  text-decoration: line-through;
+  font-size: 24rpx;
+}

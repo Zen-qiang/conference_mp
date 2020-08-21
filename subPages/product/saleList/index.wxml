@@ -1,0 +1,15 @@
+<!-- 搜索完成显示搜索结果 -->
+<view class="content-box">
+  <scroll-view
+    class="scroll-box"
+    scroll-y
+    refresher-enabled
+    enable-back-to-top
+    refresher-triggered="{{ refresherTriggered }}"
+    bindrefresherrefresh="scrollRefresh"
+    bindscrolltolower="scrollLower"
+  >
+    <pdt-list list="{{ list }}" is-no-more="{{ isNoMore }}" bind:addSuccess="_addSuccess" bind:addError="_addError" />
+  </scroll-view>
+</view>
+<van-toast id="van-toast" />

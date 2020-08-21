@@ -1,0 +1,94 @@
+<wxs src="../../wxs/price.wxs" module="price"></wxs>
+<view class="search-box">
+  <navigator class="search" url="/subPages/product/search/index">
+    <van-icon name="search" />
+    <text>请输入商品名称</text>
+  </navigator>
+</view>
+<view class="classify-box">
+  <view class="lt-box">
+    <scroll-view scroll-y class="sidebar-scroll">
+      <van-sidebar custom-class="classify-sidebar" active-key="{{ activeKey }}">
+        <block wx:for="{{ categoryList }}" wx:key="id">
+          <van-sidebar-item custom-class="classify-sidebar-item" title="{{ item.name }}" data-id="{{item.id}}" bind:click="tapClassifyItem" />
+        </block>
+      </van-sidebar>
+    </scroll-view>
+  </view>
+  <view class="rt-box">
+    <stabs 
+      stabs="{{ stabs }}"
+      default-tab="{{ activeTab }}"
+    >
+      <block wx:for="{{ list }}" wx:for-index="outIndex" wx:key="id">
+        <stabs-item tab-index="{{ outIndex }}">
+          <view class="stabs-content-item">
+            <view class="item-title van-hairline--bottom">
+              {{item.name}}
+            </view>
+            <view class="item-list">
+              <block wx:for="{{ item.productVoList }}" wx:for-item="pItem" wx:for-index="inIndex" wx:key="id">
+                <view class="item-list-content van-hairline--bottom" data-id="{{ pItem.id }}" bind:tap="onItem">
+                  <view class="img-box">
+                    <my-image src="{{ pItem.realm + pItem.bannerUrls }}" square mode="aspectFit" />
+                  </view>
+                  <view class="info-box">
+                    <view class="info">
+                      <view class="name-box"><text class="name van-ellipsis">{{ pItem.name }}</text><text class="specs">{{ pItem.specs }}</text></view>
+                      <view class="desc van-multi-ellipsis--l2">{{ pItem.title }}</view>
+                    </view>
+                    <view class="space" />
+                    <view class="price-conent">
+                      <view class="price-box">
+                        <view class="rulingPrice">
+                          <text class="currency">¥</text>
+                          <text>{{ price.pointBefore(pItem.rulingPrice) }}</text>
+                          <text wx:if="{{price.pointAfter(pItem.rulingPrice)}}" class="small">.{{ price.pointAfter(pItem.rulingPrice) }}</text>
+                        </view>
+                        <view wx:if="{{ pItem.price && pItem.price !== pItem.rulingPrice }}" class="price">
+                          <text class="currency">¥</text>
+                          <text>{{ price.pointBefore(pItem.price) }}</text>
+                          <text wx:if="{{price.pointAfter(pItem.price)}}" class="small">.{{ price.pointAfter(pItem.price) }}</text>
+                        </view>
+                      </view>
+                      <view class="action" catch:tap="stopBubble">
+                        <view wx:if="{{ pItem.cartCount }}">
+                          <!-- <van-stepper value="{{ pItem.cartCount }}" button-size="24" async-change bind:change="onChange" /> -->
+                          <van-stepper
+                            input-width="30" button-size="24"
+                            value="{{ pItem.cartCount }}"
+                            min="{{ 0 }}"
+                            max="{{ pItem.stock || 999 }}"
+                            data-id="{{ pItem.id }}"
+                            data-out-index="{{ outIndex }}"
+                            data-in-index="{{ inIndex }}"
+                            bind:blur="_blur"
+                            bind:plus="_plus"
+                            bind:minus="_minus"
+                          />
+                        </view>
+                        <view wx:else
+                          data-id="{{ pItem.id }}"
+                          data-out-index="{{ outIndex }}"
+                          data-in-index="{{ inIndex }}"
+                          class="add-cart"
+                          catch:tap="onCart"
+                        >
+                          <add size="24" />
+                        </view>
+                      </view>
+                    </view>
+                    <view wx:if="{{ pItem.historyCount }}" class="buyed">
+                      <text>历史下单：{{ pItem.historyCount }}</text>
+                    </view>
+                  </view>
+                </view>
+              </block>
+            </view>
+          </view>
+        </stabs-item>
+      </block>
+    </stabs>
+  </view>
+</view>
+<van-toast id="van-toast" />

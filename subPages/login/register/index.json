@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "登录/注册",
+  "disableScroll": true,
+  "usingComponents": {
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "mp-toptips": "weui-miniprogram/toptips/toptips"
+  }
+}

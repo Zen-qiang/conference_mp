@@ -1,0 +1,63 @@
+page {
+  height: 100%;
+}
+.my-box {
+  min-height: 100%;
+  padding-bottom: 60rpx;
+  box-sizing: border-box;
+}
+.avatar-box {
+  background-color: #3695e3;
+  padding: 140rpx 30rpx 30rpx;
+}
+.avatar-content {
+  position: relative;
+  color: #fff;
+}
+.avatar-content > view {
+  display: inline-block;
+  vertical-align: middle;
+}
+.avatar-content .avatar {
+  width: 140rpx;
+  height: 140rpx;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.avatar-content .user-info {
+  margin-left: 30rpx;
+  padding-right: 30rpx;
+}
+.user-info .name {
+  font-size: 32rpx;
+}
+.user-info .accounts {
+  font-size: 24rpx;
+  font-weight: 300;
+}
+.avatar-content .arrow {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  line-height: 0;
+}
+
+.my-content {
+  margin: 20rpx 0;
+}
+
+.logout {
+  padding: 20rpx 30rpx;
+}
+
+.version {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+}

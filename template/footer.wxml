@@ -1,0 +1,5 @@
+<template name="footer">
+  <view class="weui-footer weui-footer_fixed-bottom">
+    <view class="weui-footer__text">Copyright © 2017-2020 DinglianTech</view>
+  </view>
+</template>

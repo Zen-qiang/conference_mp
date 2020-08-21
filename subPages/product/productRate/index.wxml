@@ -1,0 +1,28 @@
+<wxs src="../../../wxs/rate.wxs" module="wxs"></wxs>
+<view class="proRate-container">
+  <view class="rate-box">
+    <view class="rate">
+      <van-rate
+        size="{{ 25 }}"
+        value="{{ rate }}"
+        bind:change="_changeRate"
+      />
+      <text>{{ wxs.rate(rate) }}</text>
+    </view>
+    <view class="smg-box">
+      <textarea
+        placeholder="您对商品质量满意吗？"
+        placeholder-style="font-size: 14px;"
+        autosize
+        class="textarea-class"
+        border="{{ false }}"
+        value="{{ msg }}"
+        bind:input="_changeMsg"
+      />
+    </view>
+  </view>
+  <view class="submit-box">
+    <button class="btn" bind:tap="_submit">提交评价</button>
+  </view>
+</view>
+<van-toast id="van-toast" />

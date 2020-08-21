@@ -1,0 +1,42 @@
+<van-toast id="van-toast" />
+<view class="form-section">
+  <form bind:submit="_formSubmit">
+    <view class="textarea-box">
+      <textarea
+        name="textarea"
+        placeholder="我们想听听你的心声，如果愿意，你也可以留下联系方式，我们期待与你的真诚沟通。"
+        placeholder-class="textarea-placeholder"
+        auto-height
+      ></textarea>
+    </view>
+    <view class="img-box">
+      <view class="img-ul">
+        <block wx:for="{{ tempImg }}" wx:key="index">
+          <view class="img-li" data-index="{{ index }}" bind:tap="_deleteImg">
+            <view class="img-li-content">
+              <view class="img-li-content-image">
+                <image src="{{ item }}" mode="aspectFill" />
+                <mp-icon extClass="delete-icon" type="field" icon="close2" color="black" size="{{18}}" color="#666" />
+              </view>
+            </view>
+          </view>
+        </block>
+        <block wx:if="{{ tempImg.length < 4 }}">
+          <view class="img-li">
+            <view class="img-li-content">
+              <view class="choose-img" bind:tap="_chooseImg">
+                <view class="choose-icon">
+                  <mp-icon icon="camera" color="#666" size="{{38}}" />
+                </view>
+                <view>上传图片</view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="btn-box">
+      <button form-type="submit" class="btn">提交</button>
+    </view>
+  </form>
+</view>

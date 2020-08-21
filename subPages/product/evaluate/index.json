@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "商品评价",
+  "enablePullDownRefresh": true,
+  "backgroundColorBottom": "#ffffff",
+  "usingComponents": {
+    "mp-loading": "weui-miniprogram/loading/loading",
+    "the-evaluate": "../components/the-evaluate/evaluate"
+  }
+}

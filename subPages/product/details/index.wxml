@@ -1,0 +1,75 @@
+<wxs src="../../../wxs/price.wxs" module="price" />
+<view class="detail-box">
+  <view class="swiper-content">
+    <swiper indicator-dots="{{ swiper.length > 1 }}" indicator-active-color="#3695e3" circular>
+      <block wx:for="{{ detail.bannerUrls }}" wx:key="index">
+        <swiper-item>
+          <view class="swiper-item">
+            <image src="{{ detail.bannerRealm + item }}" mode="aspectFill" />
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>
+<view class="van-hairline--top detail-info">
+  <view class="van-ellipsis">
+    <text class="detail_name">{{ detail.name }}</text>
+    <text class="detail_specs">{{ detail.specs }}</text>
+  </view>
+  <view class="van-multi-ellipsis--l3 detail_desc"> {{ detail.title }}</view>
+  <view class="detail_price">
+    <text class="currency">¥</text>
+    <text>{{ price.pointBefore(detail.rulingPrice) }}</text>
+    <text wx:if="{{price.pointAfter(detail.rulingPrice)}}" class="small">.{{ price.pointAfter(detail.rulingPrice) }}</text>
+    <view class="price">
+      <text>¥</text>
+      <text>{{ price.pointBefore(detail.price) }}</text>
+      <text wx:if="{{price.pointAfter(detail.price)}}">.{{ price.pointAfter(detail.price) }}</text>
+    </view>
+  </view>
+</view>
+<view class="detail_evaluate">
+  <view class="detail_title">评论</view>
+  <block wx:if="{{ evaluate.length }}">
+    <block wx:for="{{ evaluate }}" wx:key="index">
+      <the-evaluate info="{{ item }}" less />
+    </block>
+    <view class="seeMore"><van-button plain round color="#666" size="small" bind:click="_toEvaluate">查看评论（{{ evaluateTotal }}）</van-button></view>
+  </block>
+  <block wx:else>
+    <view class="noMore">暂无评论～</view>
+  </block>
+</view>
+<view class="detail-norms">
+  <!-- <view class="norms">规格</view> -->
+  <view class="van-hairline--top norms_item">
+    <view class="label">库存</view>
+    <view class="value">{{ detail.stock }}</view>
+  </view>
+  <view class="details">
+    <block wx:for="{{ detail.detailUrls }}" wx:key="index">
+      <image src="{{ detail.detailRealm + item }}" mode="widthFix" />
+    </block>
+  </view>
+</view>
+<view class="goods-action van-hairline--top">
+  <view class="content">
+    <view class="ic" bind:tap="onToCart" animation="{{ cartAnimationData }}">
+      <van-icon name="shopping-cart-o" size="22" info="{{ cartCount }}" />
+    </view>
+    <view class="lt">
+      <view class="price">
+        <text class="currency">¥</text>
+        <text>{{ price.pointBefore(detail.rulingPrice) }}</text>
+        <text wx:if="{{price.pointAfter(detail.rulingPrice)}}" class="small">.{{ price.pointAfter(detail.rulingPrice) }}</text>
+      </view>
+    </view>
+    <view class="rt">
+      <van-button wx:if="{{ showLoginBtn }}" custom-class="btn-login" color="#3695e3" round bind:click="_toLogin">登录</van-button>
+      <van-button wx:else custom-class="btn-submit" color="#f75355" round bind:click="onAddToCart">
+        加入购物篮
+      </van-button>
+    </view>
+  </view>
+</view>

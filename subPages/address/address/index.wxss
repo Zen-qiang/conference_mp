@@ -1,0 +1,40 @@
+.address_list {
+  min-height: calc(100vh - 20rpx);
+  background: #ffffff;
+  margin-top: 20rpx;
+  padding-bottom: 140rpx;
+  box-sizing: border-box;
+}
+.address_item {
+  position: relative;
+}
+.address_item.active::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  height: 0;
+  border-top: 16px solid #3695e3;
+  border-right: 16px solid transparent;
+}
+.space {
+  height: 140rpx;
+}
+.editIcon {
+  display: inline-block;
+  padding: 20rpx 30rpx;
+  line-height: 0;
+}
+.address_add {
+  position: fixed;
+  /* bottom: calc(20rpx + constant(safe-area-inset-bottom));
+  bottom: calc(20rpx + env(safe-area-inset-bottom)); */
+  bottom: 40rpx;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.address_add .addBtn {
+  padding: 0 140rpx;
+}

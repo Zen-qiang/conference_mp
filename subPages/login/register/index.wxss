@@ -1,0 +1,64 @@
+page {
+  background-color: #fff;
+  height: 100%;
+}
+
+.tips {
+  font-size: 14px!important;
+}
+
+.content-box {
+  padding: 20rpx 30rpx;
+}
+.content-box .smsBtn {
+  height: 34px;
+}
+.content-box .loginBtn {
+  margin-top: 40rpx;
+  font-weight: bold;
+}
+
+.action-box {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 8vh;
+  left: 0;
+  width: 100%;
+  padding: 10px 20px;
+  text-align: center;
+}
+.action-box .btns {
+  margin-bottom: 50rpx;
+  text-align: center;
+}
+.action-box .wxBtn {
+  padding: 20rpx 20rpx 10rpx;
+  display: inline-block;
+  background: none;
+  color: black;
+  line-height: 0;
+}
+.action-box .wxBtn::after {
+  content: '';
+  border: none;
+}
+.action-box .wxIcon {
+  line-height: 0;
+}
+.action-box .wxText {
+  font-size: 14px;
+  color: #333;
+  display: block;
+}
+.navigator-hover {
+  background-color: transparent;
+  color: #3695e3;
+}
+.policyAgreement {
+  font-size: 12px;
+  color: #999;
+}
+.webLink {
+  color: #3695e3;
+  display: inline-block;
+}

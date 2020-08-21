@@ -1,0 +1,140 @@
+<wxs src="../../../wxs/price.wxs" module="price" />
+<mp-toptips msg="{{error}}" type="error" show="{{error}}" ext-class="errorToptips" delay="{{ 1500 }}"></mp-toptips>
+<van-toast id="van-toast" />
+<view class="selectAddress_box">
+  <van-cell
+    wx:if="{{ orderAddressVo && orderAddressVo.id}}"
+    title="{{ orderAddressVo.areas + ' ' + orderAddressVo.address }}"
+    label="{{ orderAddressVo.name + ' ' + orderAddressVo.mobile }}"
+    center border="{{ false }}"
+    is-link bind:click="_toAddress"
+  />
+  <van-cell wx:else is-link title="选择地址" border="{{ false }}" bind:click="_toAddress" />
+</view>
+<view class="service_box">
+  <van-cell-group>
+    <van-cell title="送达时间" value="{{ timeValue }}" value-class="service_time" is-link bind:click="_selectTime" />
+    <van-cell
+      value="{{ '共'+ orderItemVoList.length +'件'}}"
+      value-class="orderItemList_value"
+      title-class="orderItemList_title"
+      center is-link
+      bind:click="_toOrderItemList"
+    >
+      <view slot="title">
+        <view wx:for="{{ orderItemVoList }}" wx:key="index" class="orderItemList">
+          <van-image
+            wx:if="{{ index < 5 }}"
+            width="45"
+            height="45"
+            src="{{ item.realm + item.url }}"
+            fit="contain"
+          />
+        </view>
+      </view>
+    </van-cell>
+  </van-cell-group>
+</view>
+<view class="pay_box">
+  <van-cell-group>
+    <van-cell title="支付方式" value-class="black_color" value="微信" />
+    <van-cell title="优惠券"
+      value-class="{{ previewCouponVo.amt && 'price_color' }}"
+      value="{{ previewCouponVo.amt ? '- ¥ ' + previewCouponVo.amt : '共' + (previewCouponVo.qty || 0) + '张，' + (previewCouponVo.usableQty || 0) + '张可用' }}"
+      is-link
+      bind:click="_toCoupon"
+    />
+  </van-cell-group>
+</view>
+<view class="comment_box">
+  <van-cell-group>
+    <van-field
+      value="{{ comment }}"
+      label="备注"
+      placeholder="请输入备注"
+      border="{{ false }}"
+      bind:change="_commentChange"
+    />
+  </van-cell-group>
+</view>
+<view class="price_box">
+  <van-cell-group>
+    <van-cell title="商品金额" value-class="black_color" value="¥ {{ amt }}" />
+    <van-cell title="配送费" value-class="black_color" value="¥ {{ postage }}" />
+    <van-cell wx:if="{{ previewCouponVo.amt }}" title="优惠券" value-class="black_color" value="- ¥ {{ previewCouponVo.amt }}" />
+  </van-cell-group>
+</view>
+<view style="height: 50px;" />
+<view class="submit-box van-hairline--top">
+  <view class="content">
+    <text class="text">实际支付</text>
+    <view class="price">
+      <text class="currency">¥</text>
+      <text>{{ price.pointBefore(realAmt) }}</text>
+      <text wx:if="{{price.pointAfter(realAmt)}}" class="small">.{{ price.pointAfter(realAmt) }}</text>
+    </view>
+  </view>
+  <view class="btn">
+    <van-button custom-class="btn-submit" color="#f75355" round bind:click="onSubmit">去结算</van-button>
+  </view>
+</view>
+<van-popup
+  show="{{ showPop_date}}"
+  round
+  safe-area-inset-bottom
+  position="bottom"
+  custom-style="padding-top: 40px;"
+  bind:close="_closePop_date"
+>
+  <view class="time-title">送达时间</view>
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 150px;" bindchange="_timeChange">
+    <picker-view-column>
+      <view style="line-height: 50px; text-align: center;">{{time.date}}<text wx:if="{{ time.isToday }}">(今天)</text></view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{ time.time }}" wx:key="index" style="line-height: 50px; text-align: center;">{{item}}</view>
+    </picker-view-column>
+  </picker-view>
+  <view style="height: 30px;" />
+</van-popup>
+<van-popup
+  show="{{ showPop }}"
+  round
+  safe-area-inset-bottom="{{ false }}"
+  position="bottom"
+  custom-style="min-height: 24%; max-height: 80%;"
+  bind:close="_closePop"
+>
+  <block wx:if="{{ couponList && couponList.length }}">
+    <view class="coupon-container">
+      <block wx:for="{{ couponList }}" wx:key="index">
+        <view class="coupon-item {{ active && 'used'}}">
+          <view class="lt">
+            <view class="price {{ active && 'used'}}">¥ <text class="amt">{{ item.amt }}</text></view>
+            <view class="desc">满¥{{ item.reductionAmt }}使用</view>
+          </view>
+          <view class="divider"></view>
+          <view class="rt">
+            <view class="title">{{ item.name }}</view>
+            <view class="label">{{ item.note }}</view>
+            <view class="label">有效期至 {{ item.endDate }}</view>
+          </view>
+          <view class="aside">
+            <view class="status" data-id="{{ item.userCouponId }}" data-amt="{{ item.amt }}" bind:tap="_useCoupon">立即使用</view>
+          </view>
+        </view>
+      </block>
+      <view class="nouseCoupon" bind:tap="_nouseCoupon">不使用优惠券</view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="coupon-loading">
+      <block wx:if="{{ couponLoaded }}">
+        <text>暂无可用优惠券</text>
+      </block>
+      <block wx:else>
+        <van-loading size="24px" text-size="12px" color="#3695e3" vertical>优惠券加载中...</van-loading>
+      </block>
+    </view>
+  </block>
+</van-popup>

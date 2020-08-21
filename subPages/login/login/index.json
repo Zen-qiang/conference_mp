@@ -1,0 +1,7 @@
+{
+  "disableScroll": true,
+  "navigationBarTitleText": "登录",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index"
+  }
+}

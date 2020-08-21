@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的评价",
+  "enablePullDownRefresh": true,
+  "backgroundColorBottom": "#ffffff",
+  "usingComponents": {
+    "mp-loading": "weui-miniprogram/loading/loading",
+    "user-evaluate": "../components/user-evaluate/user-evaluate"
+  }
+}

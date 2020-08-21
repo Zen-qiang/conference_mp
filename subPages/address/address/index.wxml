@@ -1,0 +1,19 @@
+<view class="address_list">
+  <block wx:for="{{ list }}" wx:key="addressId">
+    <view
+      class="address_item {{ defaultAddressId === item.addressId && 'active' }}"
+      data-id="{{ item.addressId }}" data-index="{{ index }}"
+      bind:tap="_selectAddress"
+    >
+      <van-cell title="{{ item.areas + ' ' + item.address }}" center label="{{ item.name + ' ' + item.mobile }}" clickable="{{ canSelect }}">
+        <view data-id="{{ item.addressId }}" data-index="{{ index }}" class="editIcon" catch:tap="_editAddress">
+          <van-icon slot="right-icon" name="edit" size="20px" />
+        </view>
+      </van-cell>
+    </view>
+  </block>
+  <view class="space" />
+</view>
+<view class="address_add">
+  <van-button round icon="add-o" color="#3695e3" custom-class="addBtn" bind:click="_addAddress">添加新地址</van-button>
+</view>

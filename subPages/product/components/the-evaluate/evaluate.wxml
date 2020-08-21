@@ -1,0 +1,18 @@
+<wxs src="../../../../wxs/rate.wxs" module="wxs" />
+<view class="evaluate-container">
+  <view class="title-box">
+    <view class="name">{{ info.mobile }}</view>
+    <view class="time">{{ info.createTime }}</view>
+  </view>
+  <view class="rate-box">
+    <van-rate
+      size="{{ 15 }}"
+      value="{{ info.level }}"
+      bind:change="_changeRate"
+    />
+    <text>{{ wxs.rate(info.level) }}</text>
+  </view>
+  <view class="content {{ less && 'van-multi-ellipsis--l3' }}">
+    <text>{{ info.content }}</text>
+  </view>
+</view>

@@ -1,0 +1,32 @@
+<wxs src="../../../../wxs/rate.wxs" module="wxs" />
+<view class="evaluate-container">
+  <view class="title-box">
+    <view class="name">{{ info.mobile }}</view>
+    <view class="more" bind:tap="_showAction"><van-icon name="ellipsis" size="20" color="#666" /></view>
+  </view>
+  <view class="rate-box">
+    <view class="rate">
+      <van-rate
+        size="{{ 15 }}"
+        value="{{ info.level }}"
+        bind:change="_changeRate"
+      />
+      <text>{{ wxs.rate(info.level) }}</text>
+    </view>
+    <view class="time">{{ info.createTime }}</view>
+  </view>
+  <view class="content-box">
+    <text>{{ info.content }}</text>
+  </view>
+  <view class="product-box" bind:tap="_navigeteTo">
+    <view class="img">
+      <van-image width="58" height="58" src="{{ info.pic }}" fit="contain" />
+    </view>
+    <view class="info">
+      <view class="info-container">
+        <view class="pdt-name van-multi-ellipsis--l2">{{ info.name }}</view>
+        <view class="pdt-price">¥ {{ info.price }}</view>
+      </view>
+    </view>
+  </view>
+</view>

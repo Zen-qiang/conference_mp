@@ -1,0 +1,34 @@
+<view class="page_container">
+  <view class="input_content">
+    <input
+      value="{{ inputValue }}"
+      auto-focus
+      placeholder="请输入手机号"
+      placeholder-style="color: #fff;"
+      maxlength="{{ 11 }}"
+      type="number"
+      bindinput="_onInput"
+    />
+  </view>
+  <view class="btn_content">
+    <van-button block round color="#f7c120" bind:click="_getCoupon">领取优惠券</van-button>
+  </view>
+</view>
+<view class="coupon-desc">
+  <view class="desc-content">
+    <view>1、活动时间：2020年5月1日-8月31日；</view>
+    <view>2、活动期间新注册用户，即可获得100元新人专项礼包；</view>
+    <view>3、礼包有效期为领取当日起45天内使用有效；</view>
+    <view>4、礼包仅限在大咖生鲜APP在线支付时使用；</view>
+    <view>5、本活动最终解释权归大咖生鲜所有；</view>
+  </view>
+  <view class="desc-title">活动规则</view>
+</view>
+<van-toast id="van-toast" />
+<van-popup custom-class="popup-box" show="{{ showPop }}" close-on-click-overlay="{{ false }}">
+  <view class="popup-coupon-box">
+    <image src="../../../assets/successcoupon.png" mode="widthFix" />
+    <view class="getCoupon" bind:tap="_toGetCoupon"></view>
+    <view class="closeCoupon" bind:tap="_closePop"></view>
+  </view>
+</van-popup>

@@ -1,0 +1,36 @@
+<view class="stabs-box">
+  <view class="stabs-bar__wrp van-hairline--bottom">
+    <scroll-view
+      scroll-x
+      class="stabs-bar__scrollview"
+      scroll-into-view="stabs-item__{{ currentView }}"
+    >
+      <view class="stabs-bar_content">
+        <block wx:for="{{ stabs }}" wx:key="title">
+          <view 
+            id="stabs-item__{{ index }}"
+            class="stabs-bar__item {{ activeTab === index? 'active': '' }}"
+            data-index="{{ index }}"
+            bindtap="handleTabClick"
+          >
+            <view class="stabs-bar__item__title">
+              {{ item.title }}
+            </view>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="stabs-content__wrp">
+    <scroll-view 
+      scroll-y
+      class="stabs-content__scrollview" 
+      scroll-top="{{ contentScrollTop }}"
+      scroll-with-animation
+      enable-back-to-top
+      bindscroll="handleContentScroll"
+    >
+      <slot ></slot>
+    </scroll-view>
+  </view>
+</view>

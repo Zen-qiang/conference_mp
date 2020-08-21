@@ -1,0 +1,96 @@
+.list-item {
+  background-color: #fff;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  color: #666;
+  position: relative;
+}
+.list-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, .6);
+}
+.lose-text {
+  padding: 20rpx;
+  font-size: 24rpx;
+  color: #666;
+  line-height: 32rpx;
+  text-align: center;
+  background: #fff;
+}
+.clear-list {
+  text-align: center;
+  text-align: center;
+  background: #fff;
+  padding: 20rpx 0;
+}
+.clear-list .clearBtn {
+  padding: 0 20rpx;
+  font-size: 24rpx;
+}
+
+.list-item .content {
+  flex: 1;
+  padding: 20rpx 30rpx 20rpx 0;
+}
+.list-item .content .info-box {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.info-box .img {
+  width: 100px;
+  height: 100px;
+}
+.info-box .info {
+  flex: 1;
+  display: inline-flex;
+  flex-flow: column nowrap;
+  padding-left: 20rpx;
+}
+.info-box .info .name {
+  font-size: 28rpx;
+  line-height: 38rpx;
+  overflow: hidden;
+}
+.info-box .info .desc {
+  font-size: 24rpx;
+  line-height: 32rpx;
+  color: #666;
+  overflow: hidden;
+}
+.info-box .space {
+  flex: auto;
+}
+.info-box .info .calc-box {
+  height: 40px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.price-container .rulingPrice {
+  display: inline-block;
+  margin-right: 10rpx;
+  font-size: 38rpx;
+  color: #666;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.price-container .rulingPrice .currency {
+  font-size: 28rpx;
+}
+.price-container .rulingPrice .small {
+  font-size: 28rpx;
+}
+.price-container .price {
+  display: inline-block;
+  color: #666;
+  text-decoration: line-through;
+  font-size: 24rpx;
+}

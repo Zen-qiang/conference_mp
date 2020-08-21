@@ -1,0 +1,20 @@
+.evaluate-container {
+  font-size: 24rpx;
+  padding: 20rpx;
+}
+
+.evaluate-container .title-box {
+  display: flex;
+  justify-content: space-between;
+}
+.title-box .name {
+  font-weight: 500;
+}
+.title-box .time {
+  color: #666;
+}
+
+.evaluate-container .rate-box {
+  display: flex;
+  align-items: center;
+}

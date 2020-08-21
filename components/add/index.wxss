@@ -1,0 +1,4 @@
+.add {
+  color: #3695e3;
+  transition-timing-function: ease;
+}

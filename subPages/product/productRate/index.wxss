@@ -1,0 +1,41 @@
+.proRate-container {
+  padding: 30rpx;
+}
+
+.rate-box {
+  padding: 20rpx;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 6px;
+  margin-bottom: 40rpx;
+}
+.rate-box .rate {
+  display: flex;
+  align-items: center;
+}
+.rate-box .rate > text {
+  margin-left: 10rpx;
+  color: #666;
+  font-size: 28rpx;
+}
+.smg-box {
+  margin-top: 10rpx;
+}
+.smg-box .textarea-class {
+  width: 100%;
+  font-size: 14px;
+  line-height: 16px;
+  color: #666;
+  background: #f9f9f9;
+  border-radius: 4px;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.submit-box {}
+.submit-box .btn {
+  border-radius: 35px;
+  background: #3695e3;
+  color: #fff;
+  font-weight: normal;
+  font-size: 32rpx;
+}

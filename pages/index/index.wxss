@@ -1,0 +1,176 @@
+page {
+  /* padding-top: 80rpx; */
+}
+.bg-container {
+  position: relative;
+  padding-top: 80rpx;
+}
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+/**顶部定位和搜索按钮**/
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80rpx;
+  z-index: 3;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: -20rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.location-box, .search-box {
+  flex: none;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  margin-left: 20rpx;
+  box-sizing: border-box;
+}
+.topbar .location {
+  /* line-height: 28rpx; */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.topbar .location-box {
+  max-width: 50%;
+  color: #fff;
+  background-color: rgba(0, 0, 0, .6);
+  border-radius: 30rpx;
+  padding: 0 15rpx;
+}
+
+.topbar .search-box {
+  flex: 1;
+  color: #666;
+  justify-content: center;
+  background-color: #f2f2f2;
+  border-radius: 30rpx;
+}
+
+/**轮播图**/
+.swiper {
+  /* background: #fff; */
+}
+.swiper .swiper-item {
+  height: 100%;
+  padding: 0 20rpx;
+}
+.swiper .swiper-item image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+
+/**分类格子布局**/
+.grid {
+  padding: 14rpx 20rpx;
+  margin-bottom: 20rpx;
+}
+.grid-container {
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+  z-index: 1;
+}
+.grid-item-container {
+  flex: 0 0 20%;
+  box-sizing: border-box;
+  padding: 16rpx 16rpx 10rpx;
+  text-align: center;
+}
+.grid-item-container .grid-item_img {
+  height: 0;
+  padding-bottom: 100%;
+  position: relative;
+}
+.grid-item-container .grid-item_img .grid-item_img_content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.grid-item-container text {
+  font-size: 24rpx;
+  font-weight: 600;
+  color: #666;
+}
+
+/**单品列表**/
+.list {
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+.recommend-box {
+  padding: 20rpx 20rpx 0;
+  position: relative;
+}
+.recommend-box .recommend {
+  line-height: 60rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+  padding-left: 20rpx;
+  background: no-repeat;
+  background-image: linear-gradient(to right, #3695e3, #3695e3);
+  background-size: 10rpx 100%;
+}
+.recommend-box .more {
+  position: absolute;
+  right: 20rpx;
+  bottom: 6rpx;
+  color: #3695e3;
+  font-size: 28rpx;
+}
+.popup-box {
+  background-color: transparent !important;
+}
+.popup-coupon-box {
+  position: relative;
+}
+.getCoupon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 15%;
+  width: 50%;
+  height: 14%;
+  margin: auto;
+}
+.closeCoupon {
+  position: absolute;
+  top: 4%;
+  right: 5%;
+  width: 12%;
+  height: 12%;
+}
+
+.must-login {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, .6);
+  padding: 15rpx 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.must-login text {
+  color: #fff;
+  font-size: 26rpx;
+}

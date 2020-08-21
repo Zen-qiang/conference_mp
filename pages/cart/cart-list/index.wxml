@@ -1,0 +1,51 @@
+<wxs src="../../../wxs/price.wxs" module="price"></wxs>
+<block wx:for="{{ result }}" wx:key="id">
+  <mp-slideview buttons="{{ item.delete }}" icon="{{true}}" bindbuttontap="slideButtonTap" bind:hide="slideHide" bind:show="slideShow" bind:transitionend="slideTransitionEnd">
+    <view class="list-item">
+      <van-checkbox value="{{ item.checked }}" custom-class="my-check" label-class="my-check-label" checked-color="#3695e3" data-index="{{ index }}" bind:change="onItemCheck" />
+      <view class="content van-hairline--bottom">
+        <view class="info-box" data-id="{{ item.productId }}" bind:tap="onItemClick">
+          <view class="img">
+            <my-image src="{{ item.realm + item.productMainImg }}" mode="aspectFit" lazy-load square />
+          </view>
+          <view class="info">
+            <view class="name van-ellipsis">
+              <text>{{ item.productName }}</text>
+            </view>
+            <view class="desc van-multi-ellipsis--l2">
+              <text>{{ item.productTitle }}</text>
+            </view>
+            <view class="space"></view>
+            <view class="calc-box">
+              <view class="price-container">
+                <view class="rulingPrice">
+                  <text class="currency">¥</text>
+                  <text>{{ price.pointBefore(item.rulingPrice) }}</text>
+                  <text wx:if="{{price.pointAfter(item.rulingPrice)}}" class="small">.{{ price.pointAfter(item.rulingPrice) }}</text>
+                </view>
+                <view wx:if="{{ item.productPrice && item.productPrice != item.rulingPrice}}" class="price">
+                  <text>¥</text>
+                  <text>{{ price.pointBefore(item.productPrice) }}</text>
+                  <text wx:if="{{price.pointAfter(item.productPrice)}}" class="small">.{{ price.pointAfter(item.productPrice) }}</text>
+                </view>
+              </view>
+              <view class="stepper" catch:tap="stopBubble">
+                <!-- async-change -->
+                <!-- bind:change="onChangeQty" -->
+                <van-stepper
+                  value="{{ item.quantity }}"
+                  min="{{ 0 }}"
+                  max="{{ item.stock }}"
+                  data-index="{{ index }}"
+                  bind:blur="_blur"
+                  bind:plus="_plus"
+                  bind:minus="_minus"
+                />
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </mp-slideview>
+</block>

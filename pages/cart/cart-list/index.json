@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mp-slideview": "weui-miniprogram/slideview/slideview",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "my-image": "/components/my-image/index",
+    "van-stepper": "@vant/weapp/stepper/index"
+  }
+}

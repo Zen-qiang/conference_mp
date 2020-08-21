@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "add": "/components/add/index",
+    "my-image": "/components/my-image/index",
+    "van-stepper": "@vant/weapp/stepper/index"
+  }
+}

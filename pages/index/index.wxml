@@ -1,0 +1,70 @@
+<!-- index.wxml -->
+<view class="bg-container">
+  <image src="../../assets/iindex_bg.jpeg" class="bg" />
+
+<!-- class="topbar {{ topbarStyle? 'van-hairline--bottom': '' }}" style="background-color: {{ topbarStyle }}" -->
+  <view class="topbar">
+    <view class="location-box">
+      <van-icon name="location-o" />
+      <!-- <view class="van-ellipsis location">您当前的位置信息展示过长显示省略号</view> -->
+      <picker bind:change="_pickerChange" value="{{ areaIndex }}" range="{{ areaList }}" range-key="name" header-text="目前已开放配送范围">
+        <text class="van-ellipsis location">{{ areaList[areaIndex].name || '选择收货地址' }}</text>
+      </picker>
+      <van-icon name="arrow-down" />
+    </view>
+    <navigator class="search-box" url="/subPages/product/search/index">
+      <van-icon name="search" />
+      <text>输入商品名称</text>
+    </navigator>
+  </view>
+  <view class="swiper">
+    <swiper indicator-dots autoplay circular indicator-active-color="#3695e3">
+      <block wx:for="{{ bannerList }}" wx:key="index">
+        <swiper-item>
+          <view class="swiper-item" data-url="{{ item.netUrl }}" bind:tap="_toWebView">
+            <image src="{{item.realm + item.picUrl}}" mode="aspectFill" />
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="grid">
+    <view class="grid-container">
+      <block wx:for="{{ category }}" wx:key="index">
+        <view class="grid-item-container" data-id="{{item.id}}" bind:tap="_switchClassify">
+          <view class="grid-item_img">
+            <view class="grid-item_img_content">
+              <my-image src="{{item.url}}" round mode="aspectFill"></my-image>
+            </view>
+          </view>
+          <text>{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+<view class="list">
+  <view class="recommend-box">
+    <view class="recommend">促销商品<van-tag type="danger">hot</van-tag></view>
+    <view class="more"><navigator url="/subPages/product/saleList/index">更多</navigator></view>
+  </view>
+  <pdt-scroll list="{{ saleList }}" bind:addSuccess="_addSuccess" bind:addError="_addError" />
+</view>
+<view class="list">
+  <view class="recommend-box">
+    <view class="recommend">推荐商品</view>
+  </view>
+  <pdt-list list="{{ list }}" is-no-more="{{ isNoMore }}" bind:addSuccess="_addSuccess" bind:addError="_addError" />
+</view>
+<van-toast id="van-toast" />
+<van-popup custom-class="popup-box" show="{{ showPop }}" close-on-click-overlay="{{ false }}">
+  <view class="popup-coupon-box">
+    <image src="../../assets/npcoupon.png" mode="widthFix" />
+    <view class="getCoupon" bind:tap="_toGetCoupon"></view>
+    <view class="closeCoupon" bind:tap="_closePop"></view>
+  </view>
+</van-popup>
+<view class="must-login" wx:if="{{ showLoginBtn }}">
+  <text>如果你不登录，我就霸占这里不离开</text>
+  <van-button round color="#3695e3" size="small" bind:click="_toLogin">马上登录</van-button>
+</view>

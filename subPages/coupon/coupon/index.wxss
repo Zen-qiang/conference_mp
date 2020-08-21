@@ -1,0 +1,137 @@
+.tabs {
+  line-height: 100rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  background: #ffffff;
+}
+.tabs .tabs_item {
+  flex: auto;
+  text-align: center;
+  font-size: 28rpx;
+  position: relative;
+}
+.tabs .tabs_item.active {
+  color: #3695e3;
+}
+.tabs .tabs_item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 3px;
+  background: #3695e3;
+  border-radius: 3px;
+}
+.content {
+  position: absolute;
+  top: 100rpx;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.coupon-container {
+  padding: 20rpx;
+  position: relative;
+}
+
+.coupon-container .coupon-item {
+  background: #fff;
+  border-radius: 4px;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: 24rpx;
+  position: relative;
+}
+.coupon-container .coupon-item.used {
+  color: #666;
+}
+
+.coupon-item .lt {
+  flex: none;
+  text-align: center;
+  padding: 30rpx 20rpx;
+}
+.lt .price {
+  color: #3695e3;
+}
+.lt .price.used {
+  color: #666;
+}
+.lt .price .amt {
+  font-size: 68rpx;
+  font-weight: 500;
+}
+.lt .desc {
+  color: #666;
+}
+
+.coupon-item .divider {
+  width: 25rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  position: relative;
+  background: linear-gradient(to top, #f5f5f5, #f5f5f5 6px, transparent 4px, transparent) repeat-y center;
+  background-size: 2px 10px;
+}
+.coupon-item .divider::before, .coupon-item .divider::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 25rpx;
+  height: 15rpx;
+  background: #f5f5f5;
+}
+.coupon-item .divider::before {
+  top: -30rpx;
+  border-radius: 0 0 15rpx 15rpx;
+}
+.coupon-item .divider::after {
+  bottom: -30rpx;
+  border-radius: 15rpx 15rpx 0 0;
+}
+
+.coupon-item .rt {
+  flex: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  padding: 30rpx 20rpx;
+}
+.rt .title {
+  font-weight: 400;
+  font-size: 28rpx;
+}
+.rt .label {
+  color: #999;
+}
+
+.coupon-item .aside {
+  position: absolute;
+  right: 20rpx;
+  bottom: 30rpx;
+}
+.aside .status1 {
+  color: #3695e3;
+  padding-right: 18rpx;
+  position: relative;
+}
+.aside .status1::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 14rpx;
+  height: 14rpx;
+  margin: auto 0;
+  background: linear-gradient(to top, #3695e3, #3695e3) no-repeat, linear-gradient(to right, #3695e3, #3695e3) no-repeat;
+  background-size: 14rpx 1px, 1px 14rpx;
+  transform: rotate(135deg);
+}

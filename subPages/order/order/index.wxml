@@ -1,0 +1,77 @@
+<wxs src="../../../wxs/orderStatus.wxs" module="wxs" />
+<van-toast id="van-toast" />
+<view class="tabs van-hairline--bottom">
+  <view class="tabs_item {{ active === 0 && 'active'}}" data-index="{{ 0 }}" bind:tap="_tabChange">全部</view>
+  <view class="tabs_item {{ active === 1 && 'active'}}" data-index="{{ 1 }}" bind:tap="_tabChange">待支付</view>
+  <view class="tabs_item {{ active === 3 && 'active'}}" data-index="{{ 3 }}" bind:tap="_tabChange">待收货</view>
+  <view class="tabs_item {{ active === 4 && 'active'}}" data-index="{{ 4 }}" bind:tap="_tabChange">待评价</view>
+</view>
+<view class="content">
+  <scroll-view style="height: 100%;" scroll-y enable-back-to-top scroll-anchoring refresher-enabled
+    refresher-triggered="{{ triggered }}"
+    bind:refresherrefresh="_refresherrefresh"
+    bind:scrolltolower="_scrolltolower"
+  >
+    <block wx:for="{{ list }}" wx:key="index">
+      <view class="order-item">
+        <van-cell
+          label="{{ item.createTime }}"
+          value="{{ wxs.statusConvert(item.status) }}"
+          value-class="valueClass {{item.status === 1 && 'active'}}"
+          data-no="{{ item.orderno }}" bind:click="_toOrderDetail"
+        >
+          <view slot="title" class="title">
+            共{{ item.qty }}份商品 实付<text class="price">¥{{ item.amt }}</text><text wx:if="{{ item.postage }}" class="price">(含配送费¥{{ item.postage }})</text>
+          </view>
+        </van-cell>
+        <view class="order-item-content" data-no="{{ item.orderno }}" bind:tap="_toOrderDetail">
+          <block wx:for="{{ item.orderItemVoList }}" wx:for-item="orderItem" wx:for-index="orderIndex" wx:key="productId">
+            <view wx:if="{{ orderIndex < 5 }}">
+              <van-image width="45" height="45" src="{{ orderItem.realm + orderItem.url }}" fit="contain" />
+            </view>
+          </block>
+          <view wx:if="{{ item.orderItemVoList.length >= 5 }}" class="more">
+            <van-icon name="ellipsis" size="24px" color="#999" />
+          </view>
+        </view>
+        <view wx:if="{{ item.status === 1 }}" class="van-hairline--top order-item-footer">
+          <van-button
+            round size="small"
+            custom-class="cancelBtn"
+            data-no="{{ item.orderno }}"
+            bind:click="_orderCancel"
+          >取消订单</van-button>
+          <van-button
+            round size="small" color="#3695e3"
+            custom-class="payBtn"
+            data-no="{{ item.orderno }}"
+            bind:click="_orderPay"
+          >立即支付</van-button>
+        </view>
+        <view wx:if="{{ item.status === 3 }}" class="van-hairline--top order-item-footer">
+          <van-button
+            round size="small" color="#3695e3"
+            custom-class="payBtn"
+            data-no="{{ item.orderno }}"
+            bind:click="_orderConfirm"
+          >确认收货</van-button>
+        </view>
+        <view wx:if="{{ item.status === 4 }}" class="van-hairline--top order-item-footer">
+          <van-button
+            round size="small" color="#3695e3"
+            custom-class="payBtn"
+            data-no="{{ item.orderno }}"
+            data-index="{{ index }}"
+            bind:click="_orderRate"
+          >评价订单</van-button>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{ isNoMore }}">
+      <van-divider contentPosition="center" customStyle="width: 90%; margin-left: auto; margin-right: auto;">·</van-divider>
+    </block>
+    <block wx:else>
+      <mp-loading type="circle"></mp-loading>
+    </block>
+  </scroll-view>
+</view>

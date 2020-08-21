@@ -1,0 +1,216 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"enhance": true,
+		"postcss": true,
+		"preloadBackgroundData": false,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": false,
+		"scopeDataCheck": false,
+		"uglifyFileName": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": false,
+		"uploadWithSourceMap": true,
+		"compileHotReLoad": false,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"useIsolateContext": true,
+		"useCompilerModule": true,
+		"userConfirmedUseCompilerModuleSwitch": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.10.4",
+	"appid": "wx1e8a20e5b163069e",
+	"projectname": "maicai",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/search/index",
+					"pathName": "pages/search/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/index",
+					"pathName": "pages/my/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/cart/index",
+					"pathName": "pages/cart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/classify/index",
+					"pathName": "pages/classify/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/login/index",
+					"pathName": "pages/login/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "pages/details/index",
+					"pathName": "pages/details/index",
+					"query": "id=1157",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/login/index",
+					"pathName": "pages/login/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/register/index",
+					"pathName": "pages/register/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/reviewOrder/index",
+					"pathName": "pages/reviewOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/address/index",
+					"pathName": "pages/address/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/coupon/index",
+					"pathName": "pages/coupon/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/payStatus/index",
+					"pathName": "pages/payStatus/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/editAddress/index",
+					"pathName": "pages/editAddress/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 13,
+					"name": "pages/order/index",
+					"pathName": "pages/order/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/coupon/index",
+					"pathName": "pages/coupon/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/orderDetail/index",
+					"pathName": "pages/orderDetail/index",
+					"query": "orderNo=20200414225014986",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "subPages/coupon/newPreson/index",
+					"pathName": "subPages/coupon/newPreson/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "subPages/service/feedback/index",
+					"pathName": "subPages/service/feedback/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "subPages/other/points/index",
+					"pathName": "subPages/other/points/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "subPages/product/evaluate/index",
+					"pathName": "subPages/product/evaluate/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "subPages/product/userEvaluate/index",
+					"pathName": "subPages/product/userEvaluate/index",
+					"scene": null
+				}
+			]
+		}
+	}
+}

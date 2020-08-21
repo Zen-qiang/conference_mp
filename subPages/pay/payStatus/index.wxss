@@ -1,0 +1,21 @@
+page {
+  height: 100%;
+}
+.payStatus {
+  min-height: 100%;
+  background: #ffffff;
+}
+.btnClass {
+  margin-bottom: 30rpx;
+}
+.extendText {
+  color: #999;
+  font-size: 28rpx;
+}
+.fixed_bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30rpx;
+}

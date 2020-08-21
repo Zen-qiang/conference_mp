@@ -1,0 +1,6 @@
+page {
+  background: #fff;
+}
+.value-class {
+  color: #3695e3 !important;
+}

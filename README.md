@@ -1,2 +1,2 @@
-# conference_mp
-会务小程序项目
+# maicai-mp
+买菜小程序

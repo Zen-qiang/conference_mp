@@ -1,0 +1,72 @@
+page {
+  background: #ce2b40;
+}
+
+.page_container {
+  text-align: center;
+  padding-top: 20%;
+}
+.input_content {
+  margin-bottom: 40rpx;
+  text-align: center;
+  padding: 0 30px;
+}
+.input_content input {
+  border: 1px solid #fff;
+  border-radius: 21px;
+  height: 42px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+.btn_content {
+  padding: 0 30px;
+  margin-bottom: 40px;
+}
+
+.coupon-desc {
+  padding: 0 30rpx;
+  position: relative;
+}
+.desc-content {
+  border: 2px solid rgba(000, 000, 000, .1);
+  border-radius: 8px;
+  padding: 40rpx 30rpx;
+  color: #fff;
+  font-size: 14px;
+}
+.desc-title {
+  font-size: 14px;
+  position: absolute;
+  left: 90rpx;
+  top: -15px;
+  background: rgba(000, 000, 000, .3);
+  color: #fff;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  border-radius: 8px;
+}
+
+.popup-box {
+  background-color: transparent !important;
+}
+.popup-coupon-box {
+  position: relative;
+}
+.getCoupon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10%;
+  width: 50%;
+  height: 14%;
+  margin: auto;
+}
+.closeCoupon {
+  position: absolute;
+  top: 4%;
+  right: 5%;
+  width: 12%;
+  height: 12%;
+}

@@ -1,0 +1,14 @@
+// 获取小数点前的数字
+var pointBefore = function (value) {
+  var val = parseInt(value)
+  return isNaN(val) ? value : val
+}
+// 获取小数点后的数字
+var pointAfter = function (value) {
+  var val = parseInt(value)
+  return isNaN(val)? '': (value + '').split('.')[1]
+}
+module.exports = {
+  pointBefore: pointBefore,
+  pointAfter: pointAfter
+}

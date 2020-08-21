@@ -1,0 +1,15 @@
+<import src="../../../template/footer.wxml" />
+<import src="../template/policyAgreement.wxml" />
+<view class="bg-box">
+  <image src="../../../assets/bg.png" mode="widthFix" />
+</view>
+<view class="action-box">
+  <view class="btns">
+    <van-button type="primary" custom-class="phoneBtn" round open-type="getPhoneNumber" bindgetphonenumber="_getPhoneNumber">
+      微信用户一键登录
+    </van-button>
+    <navigator class="navigatorLink" url="/subPages/login/register/index">手机号验证注册/登录</navigator>
+  </view>
+  <template is="policyAgreement" />
+</view>
+<template is="footer" />

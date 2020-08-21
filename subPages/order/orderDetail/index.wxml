@@ -1,0 +1,93 @@
+<wxs src="../../../wxs/orderStatus.wxs" module="wxs" />
+<van-toast id="van-toast" />
+<view class="status van-hairline--bottom">
+  <text>{{ wxs.statusConvert(status) }}</text>
+</view>
+<view class="address-box">
+  <view class="row">
+    <view class="lt">收货地址</view>
+    <view class="rt">
+      <view wxif="{{ orderAddressVo.name || orderAddressVo.mobile}}">{{ orderAddressVo.name + ' ' + orderAddressVo.mobile }}</view>
+      <view wxif="{{ orderAddressVo.areas || orderAddressVo.address}}">{{ orderAddressVo.areas + ' ' + orderAddressVo.address }}</view>
+    </view>
+  </view>
+</view>
+<view class="product">
+  <view class="container {{ more && 'more' }}">
+    <van-cell-group>
+      <block wx:for="{{ orderItemVoList }}" wx:key="index">
+        <van-cell
+          title="{{ item.name }}"
+          label="单价：¥{{ item.unitPrice }} 数量：{{ item.qty }}"
+          value="{{ item.amt }}" value-class="valueClass"
+        >
+          <view slot="icon" class="img">
+            <my-image src="{{ item.realm + item.url }}" square mode="aspectFit" />
+          </view>
+        </van-cell>
+      </block>
+    </van-cell-group>
+  </view>
+  <view wx:if="{{ orderItemVoList.length > 3 }}" class="moreAction" bind:tap="_displayMore">
+    <block wx:if="{{ more }}">收起<van-icon name="arrow-up" /></block>
+    <block wx:else>
+      还有{{ orderItemVoList.length - 3 }}种商品<van-icon name="arrow-down" />
+    </block>
+  </view>
+</view>
+<view class="price-box">
+  <view class="row">
+    <view class="lt">订单金额</view>
+    <view class="rt right">¥{{ amt }}</view>
+  </view>
+  <view class="row">
+    <view class="lt">配送费</view>
+    <view class="rt right">¥{{ postage }}</view>
+  </view>
+</view>
+<view class="info-box">
+  <view class="row">
+    <view class="lt">订单编号</view>
+    <view class="rt">{{ orderno }}</view>
+  </view>
+  <view class="row">
+    <view class="lt">下单时间</view>
+    <view class="rt">{{ createTime }}</view>
+  </view>
+  <view class="row">
+    <view class="lt">订单备注</view>
+    <view class="rt" wx:if="{{ note }}">{{ note }}</view>
+  </view>
+</view>
+<view class="footer-container">
+  <view wx:if="{{ status === 1 }}" class="van-hairline--top footer">
+    <van-button
+      round size="small"
+      custom-class="cancelBtn"
+      data-no="{{ orderno }}"
+      bind:click="_orderCancel"
+    >取消订单</van-button>
+    <van-button
+      round size="small" color="#3695e3"
+      custom-class="payBtn"
+      data-no="{{ orderno }}"
+      bind:click="_orderPay"
+    >立即支付</van-button>
+  </view>
+  <view wx:if="{{ status === 3 }}" class="van-hairline--top footer">
+    <van-button
+      round size="small" color="#3695e3"
+      custom-class="payBtn"
+      data-no="{{ orderno }}"
+      bind:click="_orderConfirm"
+    >确认收货</van-button>
+  </view>
+  <view wx:if="{{ status === 4 }}" class="van-hairline--top footer">
+    <van-button
+      round size="small" color="#3695e3"
+      custom-class="payBtn"
+      data-no="{{ orderno }}"
+      bind:click="_orderRate"
+    >评价订单</van-button>
+  </view>
+</view>
